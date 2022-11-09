@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	overflow-x: hidden;
+}
+
+.scrollbar-track-rounded::-webkit-scrollbar-track {
+	border-radius: 999px;
+}
+
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+	border-radius: 999px;
+}
+
+.animation-hover:after {
+	background: none repeat scroll 0 0 transparent;
+	content: "";
+	height: 2px;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	@apply w-0 bg-orange-500 left-1/2 block bottom-0 absolute;
+}
+.animation-active:after {
+	@apply left-0 w-full;
+}
+.animation-hover:hover:after {
+	@apply left-0 w-full;
+}
+
+.home_spotlight {
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		rgb(255, 255, 255) 0,
+		hsla(0, 0%, 100%, 0) 100%
+	);
+	opacity: 0.06;
+	transform: rotate(45deg);
+	width: 100%;
+	top: -80px;
+	max-width: 1800px;
+}
+
+.home_spotlight {
+	pointer-events: none;
+	position: absolute;
+	height: 100%;
+}
+
+#pattern {
+	width: 100%;
+	height: 100vh;
+	max-height: 900px;
+	background-size: cover;
+	position: relative;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 700px),
+		fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
+		fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
+}
+
+#title {
+	background: linear-gradient(
+			0deg,
+			hsla(0, 0%, 10%, 0.2) 0,
+			#000 min(150vw, 800px)
+		),
+		fixed
+			repeating-radial-gradient(
+				circle at 50% min(calc(50vw + 3.5rem), calc(300px + 5rem)),
+				#050505 0,
+				#000 70px
+			);
+}
+
+#gridd {
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(../public/gridd.webp);
+}
+
+#gridd-bg,
+.gridd-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(../public/gridd-bg.svg);
+}
+
+.container {
+	position: absolute;
+	z-index: -6;
+	inset: 0;
+	transition: perspective 3000ms ease 0s;
+}
+
+.lines {
+	--right: #00abfa;
+	--left: #ffd000;
+	position: absolute;
+	width: 200vw;
+	margin-left: -50%;
+	transform: translateY(0);
+	background-image: linear-gradient(
+		to right,
+		var(--left) 45%,
+		/* rgba(0, 0, 0, 0) 50%, */ 
+		var(--right) 55%
+	);
+	mask-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 1) 2px,
+			rgba(0, 0, 0, 0) 1px
+		),
+		linear-gradient(to bottom, rgba(0, 0, 0, 1) 2px, rgba(0, 0, 0, 0) 1px);
+	mask-size: 60px 60px;
+	overflow: hidden;
+	mask-repeat: repeat repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	inset: -100% 0px;
+	background-position-y: 100%;
+	mask-position: 50% 0px;
+}
+
+
+@media (min-width: 1024px) {
+  .lines {
+    mask-size: 80px 80px;
+  }
+}
