@@ -53,7 +53,11 @@ body {
 	max-height: 900px;
 	background-size: cover;
 	position: relative;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 700px),
+	background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0) 0%,
+			rgb(0, 0, 0) 700px
+		),
 		fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
 		fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
 }
@@ -75,7 +79,7 @@ body {
 #gridd {
 	position: relative;
 	background-repeat: no-repeat;
-	background-position: 50%;
+	background-position: 49%;
 	background-image: url(../public/gridd.webp);
 }
 
@@ -106,8 +110,7 @@ body {
 	background-image: linear-gradient(
 		to right,
 		var(--left) 45%,
-		/* rgba(0, 0, 0, 0) 50%, */ 
-		var(--right) 55%
+		/* rgba(0, 0, 0, 0) 50%, */ var(--right) 55%
 	);
 	mask-image: linear-gradient(
 			to right,
@@ -126,9 +129,8 @@ body {
 	mask-position: 50% 0px;
 }
 
-
 @media (min-width: 1024px) {
-  .lines {
-    mask-size: 80px 80px;
-  }
+	.lines {
+		mask-size: 80px 80px;
+	}
 }

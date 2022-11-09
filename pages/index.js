@@ -3,7 +3,7 @@ import MobileNav from '@components/MobileNav';
 import { Inter } from '@next/font/google';
 import cn from "classnames";
 import styles from '../components/index.module.css'
-import { motion, useTime, useTransform } from "framer-motion";
+import { motion, useTime, useTransform, useScroll } from "framer-motion";
 import { FadeIn } from '@components/FadeIn';
 import { Gradient } from '@components/Gradient';
 import Image from 'next/image';
@@ -13,6 +13,14 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   const time = useTime();
   const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
+  const rainbow = ["#eab308", "#22c55e", "#0ea5e9", "#ca8a04", "#159947", "#0284c7"];
+  const { scrollYProgress } = useScroll();
+  const range = Array.from(Array(rainbow.length).keys()).map(
+    (v) => v / (rainbow.length - 1)
+  );
+  const rainbowColors = useTransform(scrollYProgress, range, rainbow);
+  const forwardX = useTransform(scrollYProgress, [0, 1], ["-50%", "100%"]);
+  const backwardsX = useTransform(scrollYProgress, [0, 1], ["50%", "-100%"]);
 
   return (
     <>
@@ -96,8 +104,8 @@ export default function Home() {
             <div className="absolute top-0 z-10 w-full h-52 from-black to-transparent bg-gradient-to-b" />
           </section>
 
-          <section className="relative h-full flex items-center">
-            <div className="flex flex-col md:flex-row w-full items-center justify-center gap-16">
+          <section className="relative h-full flex items-center pt-24 sm:pt-8">
+            <div className="flex flex-col md:flex-row w-full items-center justify-center gap-8 lg:gap-24">
               <FadeIn delay={0.3}>
                 <div
                   className={cn(
@@ -164,15 +172,37 @@ export default function Home() {
             {/* <FadeIn delay={0.5}> */}
 
             <div className="w-full text-center">
-              <h1 className="z-10 font-extrabold md:text-left text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+              <motion.p
+                className="font-bold whitespace-nowrap uppercase tracking-widest py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
+                style={{
+                  x: forwardX,
+                  // WebkitTextStrokeColor: rainbowColors,
+                  // WebkitTextStroke: '4px currentColor',
+                  fontSize: 'calc(100vw / 20)',
+                }}
+              >
                 John
-              </h1>
+              </motion.p>
+              {/* <h1 className="z-10 font-extrabold md:text-left text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                John
+              </h1> */}
               <h1 className="z-10 font-extrabold md:text-center text-5xl lg:text-6xl p-4 mb-4 text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 to-sky-600">
                 /
               </h1>
-              <h1 className="z-10 font-extrabold md:text-right text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+              {/* <h1 className="z-10 font-extrabold md:text-right text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 Doe
-              </h1>
+              </h1> */}
+              <motion.p
+                className="font-bold whitespace-nowrap uppercase tracking-widest py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
+                style={{
+                  x: backwardsX,
+                  // WebkitTextStrokeColor: rainbowColors,
+                  // WebkitTextStroke: '4px currentColor',
+                  fontSize: 'calc(100vw / 20)',
+                }}
+              >
+                Doe
+              </motion.p>
             </div>
 
             {/* </FadeIn> */}
@@ -195,19 +225,70 @@ export default function Home() {
               <h1 className="z-10 mx-6 font-extrabold text-4xl lg:text-5xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 Gradient Title
               </h1>
-              <h1 className="z-10 mx-6 font-extrabold text-2xl lg:text-3xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+              {/* <h1 className="z-10 mx-6 font-extrabold text-2xl lg:text-3xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 Sabtu, 21 Desember
               </h1>
               <h1 className="z-10 mx-6 font-extrabold text-2xl lg:text-3xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 2022
-              </h1>
+              </h1> */}
             </div>
           </section>
 
           <section id="gridd" className="h-screen relative">
             <div className="gridd-bg"></div>
+            {/* <h1 className="absolute right-0 top-[38%] lg:[writing-mode:vertical-rl] z-20 font-extrabold  text-2xl lg:text-4xl pt-10 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+              GALERI
+            </h1>
+            <div className="absolute left-0 top-0 z-20 flex items-center justify-end h-screen">
+              <h1 className="[writing-mode:vertical-rl] z-10 font-extrabold md:text-left text-2xl lg:text-4xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                GALERI
+              </h1>
+            </div> */}
             <div className="relative z-10 flex items-center justify-center h-screen">
-              GRIDD
+              <div>
+                {/* <h1 className="relative z-20 font-extrabold text-center text-2xl lg:text-4xl p-4 mb-4 bg-clip-text text-transparent pb-16 bg-gradient-to-b from-white to-[#AAAAAA]">
+                  GALERI
+                </h1> */}
+                <FadeIn delay={0.3}>
+                  <div className="flex justify-center gap-10 overflow-hidden py-10">
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <div className="relative aspect-[9/10] flex-none overflow-hidden rounded-xl bg-neutral-900 shadow-lg shadow-yellow-500/40 w-72 sm:rounded-2xl rotate-3">
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <div className="relative aspect-[9/10] flex-none rounded-xl bg-neutral-900 shadow-lg shadow-yellow-500/40 w-72 sm:rounded-2xl -rotate-3">
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <div className="relative aspect-[9/10] flex-none rounded-xl bg-neutral-900 shadow-lg shadow-teal-500/40 w-72 sm:rounded-2xl">
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <div className="relative aspect-[9/10] flex-none rounded-xl bg-neutral-900 shadow-lg shadow-sky-600/40 w-72 sm:rounded-2xl rotate-3">
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <div className="relative aspect-[9/10] flex-none rounded-xl bg-neutral-900 shadow-lg shadow-sky-600/40 w-72 sm:rounded-2xl -rotate-3">
+                      </div>
+                    </motion.div>
+                  </div>
+                </FadeIn>
+              </div>
             </div>
           </section>
 
