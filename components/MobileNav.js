@@ -1,6 +1,5 @@
 import { Link as LinkScroll } from "react-scroll";
 import { useState } from "react";
-import { MapPinIcon, PhotoIcon, SparklesIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 
 export default function MobileNav() {
@@ -8,8 +7,8 @@ export default function MobileNav() {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 shadow-t">
-      <div className="backdrop-blur-md py-2 mx-2 px-4 sm:px-6 flex sm:max-w-md sm:mx-auto justify-between items-center rounded-t-lg">
-        
+      <div className="backdrop-blur-md py-3 mx-2 px-4 flex space-x-3 sm:max-w-md sm:mx-auto justify-between items-center rounded-t-lg overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-900">
+
         <motion.div
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -24,8 +23,8 @@ export default function MobileNav() {
             onSetActive={() => {
               setActiveLink("pattern");
             }}
-            className={`
-            ${activeLink === "pattern" ? "text-transparent font-semibold bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "font-medium text-neutral-200"} 
+            className={`animation-hover 
+            ${activeLink === "pattern" ? "text-transparent font-semibold bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
             }
           >
@@ -47,8 +46,8 @@ export default function MobileNav() {
             onSetActive={() => {
               setActiveLink("title");
             }}
-            className={`
-            ${activeLink === "title" ? "text-transparent font-semibold bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "font-medium text-neutral-200"} 
+            className={`animation-hover 
+            ${activeLink === "title" ? "text-transparent font-semibold bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
             }
           >
@@ -70,8 +69,8 @@ export default function MobileNav() {
             onSetActive={() => {
               setActiveLink("gridd");
             }}
-            className={`
-            ${activeLink === "gridd" ? "text-transparent font-semibold bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "font-medium text-neutral-200"} 
+            className={`animation-hover 
+            ${activeLink === "gridd" ? "text-transparent font-semibold bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
             }
           >

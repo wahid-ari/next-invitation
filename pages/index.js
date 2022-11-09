@@ -2,9 +2,8 @@ import Head from 'next/head'
 import MobileNav from '@components/MobileNav';
 import { Inter } from '@next/font/google';
 import cn from "classnames";
-import { useState } from "react";
 import styles from '../components/index.module.css'
-import { motion, useTime, useTransform, useMotionValue, useCycle } from "framer-motion";
+import { motion, useTime, useTransform } from "framer-motion";
 import { FadeIn } from '@components/FadeIn';
 import { Gradient } from '@components/Gradient';
 import Image from 'next/image';
@@ -12,7 +11,6 @@ import Image from 'next/image';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  // const [rotateSpeed, setRotateSpeed] = useState(8000)
   const time = useTime();
   const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
 
