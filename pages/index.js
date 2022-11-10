@@ -53,13 +53,13 @@ export default function Home() {
         <meta property="og:url" content="https://next-invitation.vercel.app/" />
         <meta property="og:title" content="Next Invitation" />
         <meta property="og:description" content="Next Invitation" />
-        <meta property="og:image" content="https://next-invitation.vercel.app/" />
+        <meta property="og:image" content="https://next-invitation.vercel.app/og.jpg" />
         {/* <!-- Twitter --/> */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://next-invitation.vercel.app/" />
         <meta property="twitter:title" content="Next Invitation" />
         <meta property="twitter:description" content="Next Invitation" />
-        <meta property="twitter:image" content="https://next-invitation.vercel.app/" />
+        <meta property="twitter:image" content="https://next-invitation.vercel.app/og.jpg" />
       </Head>
 
       <main className="bg-black text-white min-h-screen relative overflow-hidden">
