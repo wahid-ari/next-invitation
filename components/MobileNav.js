@@ -51,7 +51,7 @@ export default function MobileNav() {
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
             }
           >
-            LOKASI
+            LOCATION
           </LinkScroll>
         </motion.div>
 
@@ -74,7 +74,7 @@ export default function MobileNav() {
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
             }
           >
-            GALERI
+            GALLERY
           </LinkScroll>
         </motion.div>
       </div>
