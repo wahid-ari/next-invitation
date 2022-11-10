@@ -22,29 +22,10 @@ body {
 	@apply w-0 bg-gradient-to-r from-sky-500 to-yellow-500 left-1/2 block bottom-0 absolute;
 }
 .animation-active:after {
-	@apply left-0 w-full;
+	@apply left-0 hidden;
 }
 .animation-hover:hover:after {
 	@apply left-0 w-full;
-}
-
-.home_spotlight {
-	background: radial-gradient(
-		50% 50% at 50% 50%,
-		rgb(255, 255, 255) 0,
-		hsla(0, 0%, 100%, 0) 100%
-	);
-	opacity: 0.06;
-	transform: rotate(45deg);
-	width: 100%;
-	top: -80px;
-	max-width: 1800px;
-}
-
-.home_spotlight {
-	pointer-events: none;
-	position: absolute;
-	height: 100%;
 }
 
 #pattern {
@@ -66,7 +47,7 @@ body {
 	background: linear-gradient(
 			0deg,
 			hsla(0, 0%, 10%, 0.2) 0,
-			#000 min(150vw, 800px)
+			#000 min(250vw, 1000px)
 		),
 		fixed
 			repeating-radial-gradient(
@@ -74,6 +55,25 @@ body {
 				#050505 0,
 				#000 70px
 			);
+}
+
+.home_spotlight {
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		rgb(255, 255, 255) 0,
+		hsla(0, 0%, 100%, 0) 100%
+	);
+	opacity: 0.06;
+	transform: rotate(45deg);
+	width: 100%;
+	top: -80px;
+	max-width: 1800px;
+}
+
+.home_spotlight {
+	pointer-events: none;
+	position: absolute;
+	height: 100%;
 }
 
 #gridd {
@@ -133,4 +133,9 @@ body {
 	.lines {
 		mask-size: 80px 80px;
 	}
+}
+
+/* SWIPER CONTINOUS PLAY  */
+.swiper-continous-play > .swiper-wrapper{
+  transition-timing-function : linear;
 }

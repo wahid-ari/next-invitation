@@ -7,6 +7,9 @@ import { motion, useTime, useTransform, useScroll } from "framer-motion";
 import { FadeIn } from '@components/FadeIn';
 import { Gradient } from '@components/Gradient';
 import Image from 'next/image';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+import '@splidejs/react-splide/css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,6 +25,21 @@ export default function Home() {
   const forwardX = useTransform(scrollYProgress, [0, 1], ["-50%", "100%"]);
   const backwardsX = useTransform(scrollYProgress, [0, 1], ["50%", "-100%"]);
 
+  const draw = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (i) => {
+      const delay = 1 + i * 0.5;
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+          opacity: { delay, duration: 0.01 }
+        }
+      };
+    }
+  };
+
   return (
     <>
       <Head>
@@ -35,8 +53,8 @@ export default function Home() {
 
           <MobileNav />
 
-          <section id="pattern" className="relative w-full h-full flex items-center justify-center mb-48 md:mb-24">
-            <FadeIn className="z-10 mt-40 md:mt-0 md:flex justify-center md:gap-16 space-y-8 sm:space-y-12 md:space-y-0 w-full">
+          <section id="pattern" className="relative w-full h-full flex items-center justify-center mb-24 sm:pt-16 md:pt-0">
+            <FadeIn className="z-10 mt-8 sm:mt-40 md:mt-0 md:flex justify-center md:gap-16 space-y-8 sm:space-y-12 md:space-y-0 w-full">
               <div className="w-full h-[180px] md:w-1/6 relative flex items-center justify-center">
                 <div className="absolute z-10 min-w-[550px] min-h-[550px] md:min-w-[600px] md:min-h-[600px]">
                   <Image
@@ -101,10 +119,10 @@ export default function Home() {
               className="top-[-200px] opacity-20"
               conic
             />
-            <div className="absolute top-0 z-10 w-full h-52 from-black to-transparent bg-gradient-to-b" />
+            {/* <div className="absolute top-0 z-10 w-full h-32 from-black to-transparent bg-gradient-to-b" /> */}
           </section>
 
-          <section className="relative h-full flex items-center pt-24 sm:pt-8">
+          <section className="relative h-full flex items-center py-24 sm:pt-8">
             <div className="flex flex-col md:flex-row w-full items-center justify-center gap-8 lg:gap-24">
               <FadeIn delay={0.3}>
                 <div
@@ -173,12 +191,12 @@ export default function Home() {
 
             <div className="w-full text-center">
               <motion.p
-                className="font-bold whitespace-nowrap uppercase tracking-widest py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
+                className="text-5xl lg:text-6xl font-bold whitespace-nowrap uppercase tracking-widest py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
                 style={{
                   x: forwardX,
                   // WebkitTextStrokeColor: rainbowColors,
                   // WebkitTextStroke: '4px currentColor',
-                  fontSize: 'calc(100vw / 20)',
+                  // fontSize: 'calc(100vw / 20)',
                 }}
               >
                 John
@@ -193,12 +211,12 @@ export default function Home() {
                 Doe
               </h1> */}
               <motion.p
-                className="font-bold whitespace-nowrap uppercase tracking-widest py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
+                className="text-5xl lg:text-6xl font-bold whitespace-nowrap uppercase tracking-widest py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
                 style={{
                   x: backwardsX,
                   // WebkitTextStrokeColor: rainbowColors,
                   // WebkitTextStroke: '4px currentColor',
-                  fontSize: 'calc(100vw / 20)',
+                  // fontSize: 'calc(100vw / 20)',
                 }}
               >
                 Doe
@@ -206,10 +224,11 @@ export default function Home() {
             </div>
 
             {/* </FadeIn> */}
-            <span className="absolute bottom-0 left-0 right-0 w-full h-48 bg-gradient-to-t from-black to-transparent" />
+            <span className="absolute top-0 left-0 right-0 w-full h-24 bg-gradient-to-b from-black to-transparent" />
+            <span className="absolute bottom-0 left-0 right-0 w-full h-24 bg-gradient-to-t from-black to-transparent" />
           </section>
 
-          <section className="relative w-full h-screen flex items-center justify-center my-16">
+          <section className="relative w-full h-screen flex items-center justify-center my-16 md:my-24">
             <motion.div
               className="absolute inset-0"
               style={{
@@ -244,11 +263,61 @@ export default function Home() {
                 GALERI
               </h1>
             </div> */}
-            <div className="relative z-10 flex items-center justify-center h-screen">
-              <div>
+            <div className="relative z-10 flex items-center justify-center h-screen w-screen">
+              
+              <Splide className="block md:hidden" aria-label="Images"
+                options={{
+                  type: 'loop',
+                  drag: false,
+                  focus: 'center',
+                  pagination: false,
+                  arrows: false,
+                  perPage: 3,
+                  rewind: true,
+                  autoScroll: {
+                    speed: 1,
+                    pauseOnHover: true,
+                  },
+                }}
+                extensions={{ AutoScroll }}
+              >
+                <SplideSlide>
+                  <div className="p-8">
+                    <div className="relative h-72 bg-neutral-900 rounded-xl shadow-lg shadow-yellow-500/40 rotate-3">
+                    </div>
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="p-8">
+                    <div className="relative h-72 bg-neutral-900 rounded-xl shadow-lg shadow-yellow-500/40 -rotate-3">
+                    </div>
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="p-8">
+                    <div className="relative h-72 bg-neutral-900 rounded-xl shadow-lg shadow-teal-500/40">
+                    </div>
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="p-8">
+                    <div className="relative h-72 bg-neutral-900 rounded-xl shadow-lg shadow-sky-600/40 rotate-3">
+                    </div>
+                  </div>
+                </SplideSlide>
+                <SplideSlide>
+                  <div className="p-8">
+                    <div className="relative h-72 bg-neutral-900 shadow-lg shadow-sky-600/40 -rotate-3">
+                    </div>
+                  </div>
+                </SplideSlide>
+              </Splide>
+
+              <div className="hidden md:block">
                 {/* <h1 className="relative z-20 font-extrabold text-center text-2xl lg:text-4xl p-4 mb-4 bg-clip-text text-transparent pb-16 bg-gradient-to-b from-white to-[#AAAAAA]">
                   GALERI
                 </h1> */}
+
                 <FadeIn delay={0.3}>
                   <div className="flex justify-center gap-10 overflow-hidden py-10">
                     <motion.div
@@ -292,12 +361,12 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="relative z-[1] h-screen w-screen ">
+          <section className="relative z-[1] h-screen w-screen">
             <span className={cn(styles.leftLights, "opacity-100")} />
             <span className={cn(styles.rightLights, "opacity-100")} />
             <span className="absolute bottom-0 left-0 right-0 w-full h-48 bg-gradient-to-t from-black to-transparent" />
-            <span className="bg-black absolute top-[10vh] left-0 right-0 w-full h-[30vh]" />
-            <span class="bg-gradient-to-b from-black to-transparent absolute top-[20vh] left-0 right-0 w-full h-[550vh]"></span>
+            <span className="bg-black absolute top-[10vh] left-0 right-0 w-full h-[20vh]" />
+            <span className="bg-gradient-to-b from-black to-transparent absolute top-[20vh] left-0 right-0 w-full h-[550vh]"></span>
             <div className="container ![perspective:1000px]">
               <div className="absolute inset-0"
                 style={{
@@ -307,6 +376,90 @@ export default function Home() {
                 <div className="lines" />
               </div>
             </div>
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute z-10 top-0 md:left-14"
+            >
+              <motion.circle
+                cx="100"
+                cy="100"
+                r="80"
+                className="stroke-yellow-500"
+                variants={draw}
+                custom={1}
+              />
+            </motion.svg>
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute z-10 top-5 -left-40 md:-left-10"
+            >
+              <motion.rect
+                width="140"
+                height="140"
+                x="410"
+                y="30"
+                rx="20"
+                className="stroke-sky-500 stroke-1 fill-transparent"
+                variants={draw}
+                custom={3}
+              />
+            </motion.svg>
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute z-10 top-16 -right-32"
+            >
+              <motion.circle
+                cx="100"
+                cy="100"
+                r="50"
+                className="stroke-yellow-500"
+                variants={draw}
+                custom={1}
+              />
+            </motion.svg>
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute z-10 -right-16 top-16"
+            >
+              <motion.line
+                x1="220"
+                y1="30"
+                x2="360"
+                y2="170"
+                className="stroke-yellow-500"
+                variants={draw}
+                custom={2}
+              />
+              <motion.line
+                x1="220"
+                y1="170"
+                x2="360"
+                y2="30"
+                className="stroke-sky-500"
+                variants={draw}
+                custom={2.5}
+              />
+            </motion.svg>
             <div className="relative flex items-center h-screen justify-center">
               aa
             </div>
