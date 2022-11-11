@@ -1,17 +1,18 @@
 import Head from 'next/head'
+import Image from 'next/image';
+import { Inter, EB_Garamond } from '@next/font/google';
 import MobileNav from '@components/MobileNav';
-import { Inter } from '@next/font/google';
+import { FadeIn } from '@components/FadeIn';
+import { Gradient } from '@components/Gradient';
 import cn from "classnames";
 import styles from '../components/index.module.css'
 import { motion, useTime, useTransform, useScroll } from "framer-motion";
-import { FadeIn } from '@components/FadeIn';
-import { Gradient } from '@components/Gradient';
-import Image from 'next/image';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/react-splide/css';
 
 const inter = Inter({ subsets: ['latin'] });
+const eb = EB_Garamond({ subsets: ['latin'] });
 
 export default function Home() {
   const time = useTime();
@@ -97,7 +98,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full h-[180px] md:w-1/6 flex items-center justify-center">
-                <h1 className="text-6xl sm:text-8xl text-transparent font-semibold bg-clip-text bg-gradient-to-r from-yellow-500 to-sky-600">&</h1>
+                <h1 className="text-6xl sm:text-8xl text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-500 to-sky-600">
+                  <span className={eb.className}>&</span>
+                  </h1>
               </div>
               <div className="w-full h-[180px] md:w-1/6 relative flex items-center justify-center">
                 <div className="absolute min-w-[550px] min-h-[550px] md:min-w-[600px] md:min-h-[600px]">
@@ -205,7 +208,7 @@ export default function Home() {
 
             <div className="w-full text-center">
               <motion.p
-                className="text-5xl lg:text-6xl font-bold whitespace-nowrap uppercase tracking-widest py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
+                className="text-6xl lg:text-8xl font-bold whitespace-nowrap tracking-wide py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
                 style={{
                   x: forwardX,
                   // WebkitTextStrokeColor: rainbowColors,
@@ -213,7 +216,7 @@ export default function Home() {
                   // fontSize: 'calc(100vw / 20)',
                 }}
               >
-                John Doe
+                <span className={eb.className}><i>John Doe</i></span>
               </motion.p>
               {/* <h1 className="z-10 font-extrabold md:text-left text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 John
@@ -225,7 +228,7 @@ export default function Home() {
                 Doe
               </h1> */}
               <motion.p
-                className="text-5xl lg:text-6xl font-bold whitespace-nowrap uppercase tracking-widest py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
+                className="text-6xl lg:text-8xl font-bold whitespace-nowrap tracking-wide py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
                 style={{
                   x: backwardsX,
                   // WebkitTextStrokeColor: rainbowColors,
@@ -233,7 +236,7 @@ export default function Home() {
                   // fontSize: 'calc(100vw / 20)',
                 }}
               >
-                Jane Doe
+                <span className={eb.className}><i>Jane Doe</i></span>
               </motion.p>
             </div>
 
@@ -293,7 +296,7 @@ export default function Home() {
                     perPage: 3,
                     rewind: true,
                     autoScroll: {
-                      speed: 1,
+                      speed: 0.5,
                       pauseOnHover: false,
                     },
                   }}
@@ -408,7 +411,7 @@ export default function Home() {
                 cx="100"
                 cy="100"
                 r="80"
-                className="stroke-yellow-500 fill-transparent"
+                className="stroke-yellow-500/50 fill-transparent"
                 variants={draw}
                 custom={1}
               />
@@ -428,7 +431,7 @@ export default function Home() {
                 x="410"
                 y="30"
                 rx="20"
-                className="stroke-sky-500 stroke-1 fill-transparent"
+                className="stroke-sky-500/50 stroke-1 fill-transparent"
                 variants={draw}
                 custom={3}
               />
@@ -446,7 +449,7 @@ export default function Home() {
                 cx="100"
                 cy="100"
                 r="50"
-                className="stroke-yellow-500"
+                className="stroke-yellow-500/50"
                 variants={draw}
                 custom={1}
               />
@@ -465,7 +468,7 @@ export default function Home() {
                 y1="30"
                 x2="360"
                 y2="170"
-                className="stroke-yellow-500"
+                className="stroke-yellow-500/50"
                 variants={draw}
                 custom={2}
               />
@@ -474,7 +477,7 @@ export default function Home() {
                 y1="170"
                 x2="360"
                 y2="30"
-                className="stroke-sky-500"
+                className="stroke-sky-500/50"
                 variants={draw}
                 custom={2.5}
               />
