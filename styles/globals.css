@@ -47,7 +47,7 @@ body {
 	background: linear-gradient(
 			0deg,
 			hsla(0, 0%, 10%, 0.2) 0,
-			#000 min(250vw, 1000px)
+			#000 min(250vw, 1200px)
 		),
 		fixed
 			repeating-radial-gradient(

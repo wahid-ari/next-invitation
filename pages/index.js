@@ -98,8 +98,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="w-full h-[180px] md:w-1/6 flex items-center justify-center">
-                <h1 className="text-6xl sm:text-8xl text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-yellow-500 to-sky-600">
-                  <span className={eb.className}>&</span>
+                <h1 className="text-6xl sm:text-8xl text-transparent font-bold bg-clip-text bg-gradient-to-r from-yellow-500 to-sky-600">
+                  {/* <span className={eb.className}>&</span> */}
+                  &
                   </h1>
               </div>
               <div className="w-full h-[180px] md:w-1/6 relative flex items-center justify-center">
@@ -342,35 +343,35 @@ export default function Home() {
                   <FadeIn delay={0.3}>
                     <div className="flex justify-center gap-10 overflow-hidden py-10">
                       <motion.div
-                        whileHover={{ scale: 1.08 }}
+                        whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
                         <div className="relative aspect-[9/10] flex-none overflow-hidden rounded-xl bg-black/50 shadow-lg shadow-yellow-500/40 w-72 sm:rounded-2xl rotate-3">
                         </div>
                       </motion.div>
                       <motion.div
-                        whileHover={{ scale: 1.08 }}
+                        whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
                         <div className="relative aspect-[9/10] flex-none rounded-xl bg-black/50 shadow-lg shadow-yellow-500/40 w-72 sm:rounded-2xl -rotate-3">
                         </div>
                       </motion.div>
                       <motion.div
-                        whileHover={{ scale: 1.08 }}
+                        whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
                         <div className="relative aspect-[9/10] flex-none rounded-xl bg-black/50 shadow-lg shadow-teal-500/40 w-72 sm:rounded-2xl">
                         </div>
                       </motion.div>
                       <motion.div
-                        whileHover={{ scale: 1.08 }}
+                        whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
                         <div className="relative aspect-[9/10] flex-none rounded-xl bg-black/50 shadow-lg shadow-sky-600/40 w-72 sm:rounded-2xl rotate-3">
                         </div>
                       </motion.div>
                       <motion.div
-                        whileHover={{ scale: 1.08 }}
+                        whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
                         <div className="relative aspect-[9/10] flex-none rounded-xl bg-black/50 shadow-lg shadow-sky-600/40 w-72 sm:rounded-2xl -rotate-3">
