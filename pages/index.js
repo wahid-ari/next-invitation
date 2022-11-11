@@ -76,7 +76,7 @@ export default function Home() {
                     alt="Turborepo"
                     src="/pack-hexagons.svg"
                     fill="true"
-                    className="block"
+                  // className="block"
                   />
                 </div>
                 <div className="absolute z-10 flex items-center justify-center w-64 h-64">
@@ -93,7 +93,7 @@ export default function Home() {
                     alt=""
                     src={`/pack-logo.svg`}
                     fill="true"
-                    className="block"
+                  // className="block"
                   />
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function Home() {
                 <h1 className="text-6xl sm:text-8xl text-transparent font-bold bg-clip-text bg-gradient-to-r from-yellow-500 to-sky-600">
                   {/* <span className={eb.className}>&</span> */}
                   &
-                  </h1>
+                </h1>
               </div>
               <div className="w-full h-[180px] md:w-1/6 relative flex items-center justify-center">
                 <div className="absolute min-w-[550px] min-h-[550px] md:min-w-[600px] md:min-h-[600px]">
@@ -158,14 +158,22 @@ export default function Home() {
                     }}
                     aria-hidden="true"
                   ></motion.i>
-                  <div className="p-8 rounded-lg">
+                  <div className="p-6">
                     <div className="relative flex items-center justify-center">
-                      <div className="z-10 absolute w-54 h-54 inset-0 bg-gradient-to-b from-sky-700 to-green-500 mix-blend-normal opacity-[0.15] blur-[60px]" />
-                      <div className="bg-black h-64 w-64">
+                      <div className="z-10 absolute w-54 h-54 inset-0 bg-gradient-to-b from-sky-500 to-yellow-500 mix-blend-normal opacity-[0.3] blur-[60px]" />
+                      {/* <div className="bg-black h-64 w-64"> */}
+                      <div className="relative w-64 h-64">
+                        <Image
+                          alt="John"
+                          src={`/johns.png`}
+                          fill="true"
+                          className="rounded-3xl"
+                        />
                       </div>
+                      {/* </div> */}
                     </div>
                     <div className="flex justify-center">
-                      <span className="text-2xl no-underline mt-2 font-bold text-gray-200 tracking-wide">John Doe</span>
+                      <span className="text-2xl no-underline mt-5 font-bold text-gray-200 tracking-wide">John Doe</span>
                     </div>
                   </div>
                 </div>
@@ -189,14 +197,22 @@ export default function Home() {
                     }}
                     aria-hidden="true"
                   ></motion.i>
-                  <div className="p-8 rounded-lg">
+                  <div className="p-6">
                     <div className="relative flex items-center justify-center">
-                      <div className="z-10 absolute w-54 h-54 inset-0 bg-gradient-to-b from-sky-700 to-green-500 mix-blend-normal opacity-[0.15] blur-[60px]" />
-                      <div className="bg-black h-64 w-64">
+                      <div className="z-10 absolute w-54 h-54 inset-0 bg-gradient-to-b from-sky-500 to-yellow-500 mix-blend-normal opacity-[0.3] blur-[60px]" />
+                      {/* <div className="bg-black h-64 w-64"> */}
+                      <div className="relative w-64 h-64">
+                        <Image
+                          alt="Jane"
+                          src={`/janes.png`}
+                          fill="true"
+                          className="rounded-3xl"
+                        />
                       </div>
+                      {/* </div> */}
                     </div>
                     <div className="flex justify-center">
-                      <span className="text-2xl no-underline mt-2 font-bold text-gray-200 tracking-wide">Jane Doe</span>
+                      <span className="text-2xl no-underline mt-5 font-bold text-gray-200 tracking-wide">Jane Doe</span>
                     </div>
                   </div>
                 </div>

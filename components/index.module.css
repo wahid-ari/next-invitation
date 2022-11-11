@@ -90,7 +90,7 @@
 }
 
 .counter-border {
-  --border-radius: 50px;
+  --border-radius: 44px;
   --border-size: 3px;
   --border-bg: conic-gradient(
     from 180deg at 50% 50%,
@@ -141,7 +141,7 @@
 }
 
 .counter-border-blue {
-  --border-radius: 50px;
+  --border-radius: 44px;
   --border-size: 3px;
   --border-bg: conic-gradient(
     from 180deg at 50% 50%,
