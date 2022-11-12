@@ -46,12 +46,12 @@ body {
 #title {
 	background: linear-gradient(
 			0deg,
-			hsla(0, 0%, 10%, 0.2) 0,
-			#000 min(250vw, 1200px)
+			hsla(0, 0%, 10%, 0.3) 0,
+			#000 min(350vw, 1200px)
 		),
 		fixed
 			repeating-radial-gradient(
-				circle at 50% min(calc(50vw + 3.5rem), calc(300px + 5rem)),
+				circle at 50% min(calc(50vw + 9rem), calc(300px + 5rem)),
 				#050505 0,
 				#000 70px
 			);
@@ -136,6 +136,6 @@ body {
 }
 
 /* SWIPER CONTINOUS PLAY  */
-.swiper-continous-play > .swiper-wrapper{
-  transition-timing-function : linear;
+.swiper-continous-play > .swiper-wrapper {
+	transition-timing-function: linear;
 }

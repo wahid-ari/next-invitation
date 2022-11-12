@@ -17,7 +17,7 @@ const eb = EB_Garamond({ subsets: ['latin'] });
 export default function Home() {
   const time = useTime();
   const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
-  const rainbow = ["#eab308", "#22c55e", "#0ea5e9", "#ca8a04", "#159947", "#0284c7"];
+  const rainbow = ["#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9"];
   const { scrollYProgress } = useScroll();
   const range = Array.from(Array(rainbow.length).keys()).map(
     (v) => v / (rainbow.length - 1)
@@ -220,7 +220,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="title" className="relative h-screen w-full flex items-center my-16">
+          <section id="title" className="relative h-screen w-full flex items-center my-16 pb-8">
             {/* <FadeIn delay={0.5}> */}
 
             <div className="w-full text-center">
@@ -228,8 +228,8 @@ export default function Home() {
                 className="text-6xl lg:text-8xl font-bold whitespace-nowrap tracking-wide py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
                 style={{
                   x: forwardX,
-                  // WebkitTextStrokeColor: rainbowColors,
-                  // WebkitTextStroke: '4px currentColor',
+                  WebkitTextStrokeColor: rainbowColors,
+                  WebkitTextStroke: '1px currentColor',
                   // fontSize: 'calc(100vw / 20)',
                 }}
               >
@@ -238,7 +238,7 @@ export default function Home() {
               {/* <h1 className="z-10 font-extrabold md:text-left text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 John
               </h1> */}
-              <h1 className="z-10 font-extrabold md:text-center text-5xl lg:text-6xl p-4 mb-4 text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 to-sky-600">
+              <h1 className="z-10 font-extrabold md:text-center text-5xl lg:text-6xl p-4 text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 to-sky-600">
                 /
               </h1>
               {/* <h1 className="z-10 font-extrabold md:text-right text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
@@ -248,8 +248,8 @@ export default function Home() {
                 className="text-6xl lg:text-8xl font-bold whitespace-nowrap tracking-wide py-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"
                 style={{
                   x: backwardsX,
-                  // WebkitTextStrokeColor: rainbowColors,
-                  // WebkitTextStroke: '4px currentColor',
+                  WebkitTextStrokeColor: rainbowColors,
+                  WebkitTextStroke: '1px currentColor',
                   // fontSize: 'calc(100vw / 20)',
                 }}
               >
@@ -258,8 +258,8 @@ export default function Home() {
             </div>
 
             {/* </FadeIn> */}
-            <span className="absolute top-0 left-0 right-0 w-full h-24 bg-gradient-to-b from-black to-transparent" />
-            <span className="absolute bottom-0 left-0 right-0 w-full h-24 bg-gradient-to-t from-black to-transparent" />
+            <span className="absolute top-0 left-0 right-0 w-full h-14 bg-gradient-to-b from-black to-transparent" />
+            <span className="absolute bottom-0 left-0 right-0 w-full h-14 bg-gradient-to-t from-black to-transparent" />
           </section>
 
           <section className="relative w-full h-screen flex items-center justify-center my-16 md:my-24">
@@ -321,31 +321,61 @@ export default function Home() {
                 >
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-72 bg-black/50 rounded-xl shadow-lg shadow-yellow-500/40 rotate-3">
+                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-yellow-500/40 rotate-3">
+                        <Image
+                          alt="John"
+                          src={`/johns.png`}
+                          fill="true"
+                          className="rounded-xl"
+                        />
                       </div>
                     </div>
                   </SplideSlide>
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-72 bg-black/50 rounded-xl shadow-lg shadow-yellow-500/40 -rotate-3">
+                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-yellow-500/40 -rotate-3">
+                        <Image
+                          alt="Jane"
+                          src={`/janes.png`}
+                          fill="true"
+                          className="rounded-xl"
+                        />
                       </div>
                     </div>
                   </SplideSlide>
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-72 bg-black/50 rounded-xl shadow-lg shadow-teal-500/40">
+                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-teal-500/40">
+                        <Image
+                          alt="John"
+                          src={`/johns.png`}
+                          fill="true"
+                          className="rounded-xl"
+                        />
                       </div>
                     </div>
                   </SplideSlide>
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-72 bg-black/50 rounded-xl shadow-lg shadow-sky-600/40 rotate-3">
+                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-sky-600/40 rotate-3">
+                        <Image
+                          alt="Jane"
+                          src={`/janes.png`}
+                          fill="true"
+                          className="rounded-xl"
+                        />
                       </div>
                     </div>
                   </SplideSlide>
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-72 bg-black/50 shadow-lg shadow-sky-600/40 -rotate-3">
+                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-sky-600/40 -rotate-3">
+                        <Image
+                          alt="John"
+                          src={`/johns.png`}
+                          fill="true"
+                          className="rounded-xl"
+                        />
                       </div>
                     </div>
                   </SplideSlide>
@@ -362,35 +392,65 @@ export default function Home() {
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <div className="relative aspect-[9/10] flex-none overflow-hidden rounded-xl bg-black/50 shadow-lg shadow-yellow-500/40 w-72 sm:rounded-2xl rotate-3">
+                        <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-yellow-500/40 w-72 rounded-2xl rotate-3">
+                          <Image
+                            alt="John"
+                            src={`/johns.png`}
+                            fill="true"
+                            className="rounded-2xl"
+                          />
                         </div>
                       </motion.div>
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <div className="relative aspect-[9/10] flex-none rounded-xl bg-black/50 shadow-lg shadow-yellow-500/40 w-72 sm:rounded-2xl -rotate-3">
+                        <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-yellow-500/40 w-72 rounded-2xl -rotate-3">
+                          <Image
+                            alt="Jane"
+                            src={`/janes.png`}
+                            fill="true"
+                            className="rounded-2xl"
+                          />
                         </div>
                       </motion.div>
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <div className="relative aspect-[9/10] flex-none rounded-xl bg-black/50 shadow-lg shadow-teal-500/40 w-72 sm:rounded-2xl">
+                        <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-teal-500/40 w-72 rounded-2xl">
+                          <Image
+                            alt="John"
+                            src={`/johns.png`}
+                            fill="true"
+                            className="rounded-2xl"
+                          />
                         </div>
                       </motion.div>
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <div className="relative aspect-[9/10] flex-none rounded-xl bg-black/50 shadow-lg shadow-sky-600/40 w-72 sm:rounded-2xl rotate-3">
+                        <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-sky-600/40 w-72 rounded-2xl rotate-3">
+                          <Image
+                            alt="Jane"
+                            src={`/janes.png`}
+                            fill="true"
+                            className="rounded-2xl"
+                          />
                         </div>
                       </motion.div>
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <div className="relative aspect-[9/10] flex-none rounded-xl bg-black/50 shadow-lg shadow-sky-600/40 w-72 sm:rounded-2xl -rotate-3">
+                        <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-sky-600/40 w-72 rounded-2xl -rotate-3">
+                          <Image
+                            alt="John"
+                            src={`/johns.png`}
+                            fill="true"
+                            className="rounded-2xl"
+                          />
                         </div>
                       </motion.div>
                     </div>
