@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image';
 import { Inter, EB_Garamond } from '@next/font/google';
@@ -11,10 +10,6 @@ import { motion, useTime, useTransform, useScroll } from "framer-motion";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/react-splide/css';
-import useSound from 'use-sound';
-// Import your audio file
-// import song from "../music.mp3";
-
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
@@ -46,8 +41,6 @@ export default function Home() {
     }
   };
 
-  const [play] = useSound("/music.mp3");
-
   return (
     <>
       <Head>
@@ -73,11 +66,17 @@ export default function Home() {
       <main className="bg-black text-white min-h-screen relative overflow-hidden">
         <div className={inter.className}>
 
-          <button onClick={play}>Boop!</button>
+          {/* <audio className="relative z-20"
+            controls
+            autoPlay={true}
+            loop={true}
+            preload="auto"
+            src="/music.mp3">
+          </audio> */}
 
           <MobileNav />
 
-          <section id="pattern" className="relative w-full h-full flex items-center justify-center mb-24 sm:pt-16 md:pt-0">
+          <section id="pattern" className="relative w-full h-full flex items-center justify-center mb-24 md:mb-12 sm:pt-16 md:pt-0">
             <FadeIn className="z-10 mt-8 sm:mt-40 md:mt-0 md:flex justify-center md:gap-16 space-y-8 sm:space-y-12 md:space-y-0 w-full">
               <div className="w-full h-[180px] md:w-1/6 relative flex items-center justify-center">
                 <div className="absolute z-10 min-w-[550px] min-h-[550px] md:min-w-[600px] md:min-h-[600px]">
@@ -106,7 +105,7 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div className="w-full h-[180px] md:w-1/6 flex items-center justify-center">
+              <div className="relative z-20 w-full h-[180px] md:w-1/6 flex items-center justify-center">
                 <h1 className="text-6xl sm:text-8xl text-transparent font-bold bg-clip-text bg-gradient-to-r from-yellow-500 to-sky-600">
                   {/* <span className={eb.className}>&</span> */}
                   &
@@ -149,7 +148,7 @@ export default function Home() {
             {/* <div className="absolute top-0 z-10 w-full h-32 from-black to-transparent bg-gradient-to-b" /> */}
           </section>
 
-          <section className="relative h-full flex items-center py-24 sm:pt-8">
+          <section className="relative h-full flex items-center py-24 sm:pt-64 md:pt-8">
             <div className="flex flex-col md:flex-row w-full items-center justify-center gap-8 lg:gap-24">
               <FadeIn delay={0.3}>
                 <div
