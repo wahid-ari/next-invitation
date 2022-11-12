@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image';
 import { Inter, EB_Garamond } from '@next/font/google';
@@ -10,6 +11,10 @@ import { motion, useTime, useTransform, useScroll } from "framer-motion";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/react-splide/css';
+import useSound from 'use-sound';
+// Import your audio file
+// import song from "../music.mp3";
+
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
@@ -41,6 +46,8 @@ export default function Home() {
     }
   };
 
+  const [play] = useSound("/music.mp3");
+
   return (
     <>
       <Head>
@@ -65,6 +72,8 @@ export default function Home() {
 
       <main className="bg-black text-white min-h-screen relative overflow-hidden">
         <div className={inter.className}>
+
+          <button onClick={play}>Boop!</button>
 
           <MobileNav />
 
