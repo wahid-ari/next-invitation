@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image';
 import { Inter, EB_Garamond } from '@next/font/google';
@@ -65,14 +66,6 @@ export default function Home() {
 
       <main className="bg-black text-white min-h-screen relative overflow-hidden">
         <div className={inter.className}>
-
-          {/* <audio className="relative z-20"
-            controls
-            autoPlay={true}
-            loop={true}
-            preload="auto"
-            src="/music.mp3">
-          </audio> */}
 
           <MobileNav />
 

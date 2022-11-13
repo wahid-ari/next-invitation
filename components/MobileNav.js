@@ -1,5 +1,5 @@
 import { Link as LinkScroll } from "react-scroll";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 function Heart({ className }) {
@@ -152,67 +152,19 @@ function NavigationIcon({ className }) {
 
 function Play({ className }) {
   return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path opacity="0.4" fillRule="evenodd" clipRule="evenodd" d="M14.0501 11.4668C13.3211 12.2528 11.3371 13.5828 10.3221 14.0098C10.1601 14.0778 9.74709 14.2218 9.65809 14.2238C9.46909 14.2298 9.28709 14.1238 9.19909 13.9538C9.16509 13.8878 9.06509 13.4568 9.03309 13.2648C8.93809 12.6808 8.88909 11.7738 8.89009 10.8618C8.88909 9.90483 8.94209 8.95483 9.04809 8.37683C9.07609 8.22083 9.15809 7.86183 9.18209 7.80383C9.22709 7.69583 9.30909 7.61083 9.40809 7.55783C9.48409 7.51683 9.57109 7.49483 9.65809 7.49783C9.74709 7.49983 10.1091 7.62683 10.2331 7.67583C11.2111 8.05583 13.2801 9.43383 14.0401 10.2438C14.1081 10.3168 14.2951 10.5128 14.3261 10.5528C14.3971 10.6428 14.4321 10.7518 14.4321 10.8618C14.4321 10.9638 14.4011 11.0678 14.3371 11.1548C14.3041 11.1998 14.1131 11.3998 14.0501 11.4668Z" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-function PlayIcon({ className }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" clipRule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke="url(#paint0_linear_138_38)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M12.4632 9V12.2908" stroke="url(#paint1_linear_138_38)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M10 9V12.2908" stroke="url(#paint2_linear_138_38)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <defs>
-        <linearGradient id="paint0_linear_138_38" x1="11" y1="1" x2="11" y2="21" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#CB9F01" />
-          <stop offset="0.526042" stopColor="#20740D" />
-          <stop offset="1" stopColor="#044A6C" />
-        </linearGradient>
-        <linearGradient id="paint1_linear_138_38" x1="12.4632" y1="9" x2="12.4632" y2="12.2908" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#014576" stopOpacity="0.5" />
-          <stop offset="1" stopColor="#CB9F01" stopOpacity="0.5" />
-        </linearGradient>
-        <linearGradient id="paint2_linear_138_38" x1="10.5" y1="9" x2="10.5" y2="12.2908" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#CB9F01" stopOpacity="0.5" />
-          <stop offset="1" stopColor="#014576" stopOpacity="0.5" />
-        </linearGradient>
-      </defs>
     </svg>
   )
 }
 
 function Pause({ className }) {
   return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M12.4632 9V12.2908" stroke="#666666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M10 9V12.2908" stroke="#666666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-function PauseIcon({ className }) {
-  return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" clipRule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke="url(#paint0_linear_138_38)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M12.4632 9V12.2908" stroke="url(#paint1_linear_138_38)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M10 9V12.2908" stroke="url(#paint2_linear_138_38)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <defs>
-        <linearGradient id="paint0_linear_138_38" x1="11" y1="1" x2="11" y2="21" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#CB9F01" />
-          <stop offset="0.526042" stopColor="#20740D" />
-          <stop offset="1" stopColor="#044A6C" />
-        </linearGradient>
-        <linearGradient id="paint1_linear_138_38" x1="12.4632" y1="9" x2="12.4632" y2="12.2908" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#014576" />
-          <stop offset="1" stopColor="#CB9F01" />
-        </linearGradient>
-        <linearGradient id="paint2_linear_138_38" x1="10.5" y1="9" x2="10.5" y2="12.2908" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#CB9F01" />
-          <stop offset="1" stopColor="#014576" />
-        </linearGradient>
-      </defs>
     </svg>
   )
 }
@@ -248,10 +200,40 @@ function MapIcon({ className }) {
 
 export default function MobileNav() {
   const [activeLink, setActiveLink] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [audio, setAudio] = useState(null)
+  useEffect(() => {
+    setAudio(new Audio("/musicc.mp3"))
+  }, [])
+
+  function playAudio() {
+    setIsPlaying(true)
+    audio?.play()
+  }
+
+  function pauseAudio() {
+    setIsPlaying(false)
+    audio?.pause()
+  }
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 shadow-t">
-      <div className="bg-black/90 backdrop-blur pb-3 pt-2 mx-2 px-4 flex space-x-3 sm:max-w-md sm:mx-auto justify-between items-center rounded-t-lg overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-900">
+      
+      {/* <div className="hidden sm:block absolute left-0 bottom-2 bg-black/90 backdrop-blur py-0.5 mx-2 px-1.5 rounded-lg">
+        <motion.div
+          className="py-1 flex flex-col transition-all cursor-pointer"
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+          {isPlaying ?
+            <button aria-label="Play" onClick={pauseAudio}><Pause className="w-[26px] h-[26px] xs:w-[22px] xs:h-[22px]" /> </button>
+            :
+            <button aria-label="Pause" onClick={playAudio}><Play className="w-[26px] h-[26px] xs:w-[22px] xs:h-[22px]" /> </button>
+          }
+        </motion.div>
+      </div> */}
+
+      <div className="bg-black/90 backdrop-blur pb-2 sm:pb-3 pt-2 mx-2 px-4 flex space-x-3 sm:max-w-md sm:mx-auto justify-between items-center rounded-t-lg overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-900">
 
         <motion.div
           whileHover={{ scale: 1.15 }}
@@ -273,11 +255,11 @@ export default function MobileNav() {
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
             }
           >
-            <span className="hidden xs:block">WELCOME</span>
+            <span className="hidden sm:block">WELCOME</span>
             {activeLink === "pattern" ?
-              <HeartIcon className="block xs:hidden w-6 h-6 pb-1" />
+              <HeartIcon className="block sm:hidden w-6 h-6 pb-1" />
               :
-              <Heart className="block xs:hidden w-6 h-6 pb-1" />
+              <Heart className="block sm:hidden w-6 h-6 pb-1" />
             }
           </LinkScroll>
         </motion.div>
@@ -302,11 +284,11 @@ export default function MobileNav() {
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
             }
           >
-            <span className="hidden xs:block">LOCATION</span>
+            <span className="hidden sm:block">LOCATION</span>
             {activeLink === "title" ?
-              <MapIcon className="block xs:hidden w-6 h-6 pb-1" />
+              <MapIcon className="block sm:hidden w-6 h-6 pb-1" />
               :
-              <Map className="block xs:hidden w-6 h-6 pb-1" />
+              <Map className="block sm:hidden w-6 h-6 pb-1" />
             }
           </LinkScroll>
         </motion.div>
@@ -331,14 +313,26 @@ export default function MobileNav() {
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
             }
           >
-            <span className="hidden xs:block">GALLERY</span>
+            <span className="hidden sm:block">GALLERY</span>
             {activeLink === "gridd" ?
-              <GalleryIcon className="block xs:hidden w-6 h-6 pb-1" />
+              <GalleryIcon className="block sm:hidden w-6 h-6 pb-1" />
               :
-              <Gallery className="block xs:hidden w-6 h-6 pb-1" />
+              <Gallery className="block sm:hidden w-6 h-6 pb-1" />
             }
           </LinkScroll>
         </motion.div>
+
+        {/* <motion.div
+          className="block sm:hidden transition-all cursor-pointer"
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+          {isPlaying ?
+            <button aria-label="Play" onClick={pauseAudio}><Pause className="w-[25px] h-[25px] sm:w-[22px] sm:h-[22px] pt-0.5" /> </button>
+            :
+            <button aria-label="Pause" onClick={playAudio}><Play className="w-[25px] h-[25px] sm:w-[22px] sm:h-[22px] pt-0.5" /> </button>
+          }
+        </motion.div> */}
       </div>
     </ nav>
   )
