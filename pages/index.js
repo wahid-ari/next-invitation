@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import Image from 'next/image';
 import { Inter, EB_Garamond } from '@next/font/google';
@@ -99,7 +98,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative z-20 w-full h-[180px] md:w-1/6 flex items-center justify-center">
-                <h1 className="text-6xl sm:text-8xl text-transparent font-bold bg-clip-text bg-gradient-to-r from-yellow-500 to-sky-600">
+                <h1 className="text-6xl sm:text-8xl text-transparent font-bold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">
                   {/* <span className={eb.className}>&</span> */}
                   &
                 </h1>
@@ -179,7 +178,7 @@ export default function Home() {
                   </div>
                 </div>
               </FadeIn>
-              <div className="flex items-center justify-center text-6xl sm:text-8xl text-transparent font-semibold bg-clip-text bg-gradient-to-r from-yellow-500 to-sky-600">
+              <div className="flex items-center justify-center text-6xl sm:text-8xl text-transparent font-semibold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">
                 &
               </div>
               <FadeIn delay={0.5}>
@@ -239,7 +238,7 @@ export default function Home() {
               {/* <h1 className="z-10 font-extrabold md:text-left text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 John
               </h1> */}
-              <h1 className="z-10 font-extrabold md:text-center text-5xl lg:text-6xl p-4 text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 to-sky-600">
+              <h1 className="z-10 font-extrabold md:text-center text-5xl lg:text-6xl p-4 text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-600 to-sky-500">
                 /
               </h1>
               {/* <h1 className="z-10 font-extrabold md:text-right text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">

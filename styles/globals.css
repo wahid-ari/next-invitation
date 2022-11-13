@@ -28,6 +28,21 @@ body {
 	@apply left-0 w-full;
 }
 
+.onboard {
+	width: 100%;
+	height: 100vh;
+	max-height: 1900px;
+	background-size: cover;
+	position: relative;
+	background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0) 0%,
+			rgb(0, 0, 0) 1000px
+		),
+		fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
+		fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
+}
+
 #pattern {
 	width: 100%;
 	height: 100vh;

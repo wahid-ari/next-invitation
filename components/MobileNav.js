@@ -1,6 +1,9 @@
 import { Link as LinkScroll } from "react-scroll";
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Dialog, Transition } from '@headlessui/react'
+import { Gradient } from "./Gradient";
+import Image from "next/image";
 
 function Heart({ className }) {
   return (
@@ -198,6 +201,129 @@ function MapIcon({ className }) {
   )
 }
 
+function Border({ className }) {
+  return (
+    <svg className={className} width="250" height="63" viewBox="0 0 440 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M205.459 56.2496C196.98 33.138 129.64 28.6744 75.6013 48.5663C67.5091 50.8115 61.3581 52.6033 54.077 52.3469C50.2383 52.2117 46.7225 51.3036 43.6707 49.3575C34.3999 43.4455 36.4605 25.5001 50.7103 26.8674M50.7103 26.8674C51.1182 26.9065 51.5361 26.9615 51.9641 27.033M50.7103 26.8674C51.1325 26.8863 51.5517 26.9429 51.9641 27.033M50.7103 26.8674C50.6234 26.8635 50.5364 26.8612 50.4493 26.8605M51.9641 27.033C52.0638 27.0497 52.164 27.0672 52.2648 27.0857M51.9641 27.033C57.0883 28.1529 61.1496 34.4457 56.6095 37.7798C53.4013 40.1358 48.4663 38.2683 48.7637 33.4053" stroke="url(#paint0_linear_155_14)" strokeWidth="3" />
+      <path d="M234.208 56.2496C242.687 33.138 310.027 28.6744 364.065 48.5663C372.158 50.8115 378.309 52.6033 385.59 52.3469C389.428 52.2117 392.944 51.3036 395.996 49.3575C405.267 43.4455 403.206 25.5001 388.956 26.8674M388.956 26.8674C388.549 26.9065 388.131 26.9615 387.703 27.033M388.956 26.8674C388.534 26.8863 388.115 26.9429 387.703 27.033M388.956 26.8674C389.043 26.8635 389.13 26.8612 389.217 26.8605M387.703 27.033C387.603 27.0497 387.503 27.0672 387.402 27.0857M387.703 27.033C382.578 28.1529 378.517 34.4457 383.057 37.7798C386.265 40.1358 391.201 38.2683 390.903 33.4053" stroke="url(#paint1_linear_155_14)" strokeWidth="3" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M224.252 30.5672C225.406 27.6734 226.133 23.4769 226.133 18.8074C226.133 15.3463 223.595 6.1615 220.464 3C217.333 6.1615 214.795 15.3463 214.795 18.8074C214.795 23.6524 215.577 27.9883 216.808 30.8879C204.773 22.291 195.076 30.7502 189.022 33.0888C197.275 32.7736 207.979 37.6503 214.28 43.8511C216.872 46.4026 218.904 49.2969 220.375 52.3857C221.874 48.8032 224.102 45.4466 227.059 42.5361C233.11 36.5814 243.404 31.6973 251.334 31.7517C244.896 28.9724 235.638 22.3335 224.252 30.5672Z" stroke="url(#paint2_linear_155_14)" strokeWidth="3" />
+      <path d="M408.195 48.5675C411.182 49.4511 415.428 49.7884 420.077 49.3591C423.524 49.041 433.578 45.1158 436.438 41.7078C428.152 39.3828 418.406 38.4904 414.945 38.4475C409.317 38.3777 412.589 41.9062 408.195 48.5675Z" stroke="url(#paint3_linear_155_14)" strokeWidth="3" />
+      <path d="M31.8054 48.5675C28.8178 49.4511 24.5722 49.7884 19.9225 49.3591C16.4761 49.041 6.42244 45.1158 3.5621 41.7078C11.8479 39.3828 21.5942 38.4904 25.055 38.4475C30.6834 38.3777 27.4111 41.9062 31.8054 48.5675Z" stroke="url(#paint4_linear_155_14)" strokeWidth="3" />
+      <path d="M31.8054 48.5675C28.8178 49.4511 24.5722 49.7884 19.9225 49.3591C16.4761 49.041 6.42244 45.1158 3.5621 41.7078C11.8479 39.3828 21.5942 38.4904 25.055 38.4475C30.6834 38.3777 27.4111 41.9062 31.8054 48.5675Z" stroke="url(#paint5_linear_155_14)" strokeWidth="3" />
+      <defs>
+        <linearGradient id="paint0_linear_155_14" x1="120.889" y1="24.1376" x2="122.187" y2="59.3229" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF9900" />
+          <stop offset="0.494792" stopColor="#08AC36" />
+          <stop offset="1" stopColor="#00B2FF" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_155_14" x1="318.778" y1="24.1376" x2="317.48" y2="59.3229" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF9900" />
+          <stop offset="0.494792" stopColor="#08AC36" />
+          <stop offset="1" stopColor="#00B2FF" />
+        </linearGradient>
+        <linearGradient id="paint2_linear_155_14" x1="220.178" y1="3" x2="220.178" y2="52.3857" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF9900" />
+          <stop offset="0.494792" stopColor="#08AC36" />
+          <stop offset="1" stopColor="#00B2FF" />
+        </linearGradient>
+        <linearGradient id="paint3_linear_155_14" x1="436.476" y1="42.1229" x2="407.844" y2="44.7659" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF9900" />
+          <stop offset="0.494792" stopColor="#08AC36" />
+          <stop offset="1" stopColor="#00B2FF" />
+        </linearGradient>
+        <linearGradient id="paint4_linear_155_14" x1="3.52378" y1="42.1229" x2="32.1563" y2="44.7659" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF9900" />
+          <stop offset="0.494792" stopColor="#08AC36" />
+          <stop offset="1" stopColor="#00B2FF" />
+        </linearGradient>
+        <linearGradient id="paint5_linear_155_14" x1="3.52378" y1="42.1229" x2="32.1563" y2="44.7659" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FF9900" />
+          <stop offset="0.494792" stopColor="#08AC36" />
+          <stop offset="1" stopColor="#00B2FF" />
+        </linearGradient>
+      </defs>
+    </svg>
+  )
+}
+
+function MyModal({ isOpen, closeModal }) {
+  return (
+    <Transition appear show={isOpen} as={Fragment}>
+      <Dialog as="div" className=" relative z-[51]" onClose={closeModal}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black bg-opacity-90" />
+        </Transition.Child>
+
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="bg-black/80 relative w-full transform overflow-hidden h-screen flex min-h-full items-center justify-center shadow-xl transition-all">
+                <div className="onboard flex items-center justify-center">
+                  <Gradient
+                    width={1000}
+                    height={700}
+                    className="top-[-200px] opacity-20"
+                    conic
+                  />
+                  <div className="w-full h-[200px] relative flex items-center justify-center">
+                    <div className="absolute z-10 min-w-[800px] min-h-[800px]">
+                      <Image
+                        alt="Turborepo"
+                        src="/pack-hexagons.svg"
+                        fill="true"
+                      // className="block"
+                      />
+                    </div>
+                    <div className="absolute z-10 flex items-center justify-center w-64 h-64">
+                      <Gradient
+                        small
+                        width={120}
+                        height={120}
+                        conic
+                        className="opacity-50"
+                      />
+                    </div>
+                    <div className="z-10">
+                      <h1 className="text-5xl font-bold text-white mb-2 mt-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">John & Jane</h1>
+                      {/* <h3 className="text-5xl font-bold text-white mb-2 mt-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">John & Jane</h3> */}
+
+                      <Border className="ml-4" />
+
+                      <h2 className="text-xl font-semibold text-white mt-4 mb-2">Thursday, 22 Dec 2022</h2>
+                      <h2 className="text-xl font-semibold text-white">Earth</h2>
+                      <div className="mt-8">
+                        <button onClick={closeModal} className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-yellow-600 via-green-500 to-sky-500 group-hover:from-yellow-600 group-hover:via-green-600 group-hover:to-sky-500 text-white">
+                          <span className="relative px-6 py-2 transition-all ease-in duration-75 bg-black rounded-md group-hover:bg-opacity-0">Open</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </div>
+      </Dialog>
+    </Transition>
+  )
+}
+
 export default function MobileNav() {
   const [activeLink, setActiveLink] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false)
@@ -216,10 +342,18 @@ export default function MobileNav() {
     audio?.pause()
   }
 
+  let [isOpen, setIsOpen] = useState(true)
+  function closeModal() {
+    setIsOpen(false)
+    // playAudio()
+  }
+
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 shadow-t">
-      
-      {/* <div className="hidden sm:block absolute left-0 bottom-2 bg-black/90 backdrop-blur py-0.5 mx-2 px-1.5 rounded-lg">
+    <>
+      <MyModal isOpen={isOpen} closeModal={closeModal} />
+
+      <nav className="fixed bottom-0 left-0 right-0 z-50 shadow-t">
+        {/* <div className="hidden sm:block absolute left-0 bottom-2 bg-black/90 backdrop-blur py-0.5 mx-2 px-1.5 rounded-lg">
         <motion.div
           className="py-1 flex flex-col transition-all cursor-pointer"
           whileHover={{ scale: 1.15 }}
@@ -233,96 +367,96 @@ export default function MobileNav() {
         </motion.div>
       </div> */}
 
-      <div className="bg-black/90 backdrop-blur pb-2 sm:pb-3 pt-2 mx-2 px-4 flex space-x-3 sm:max-w-md sm:mx-auto justify-between items-center rounded-t-lg overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-900">
+        <div className="bg-black/90 backdrop-blur pb-2 sm:pb-3 pt-2 mx-2 px-4 flex space-x-3 sm:max-w-md sm:mx-auto justify-between items-center rounded-t-lg overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-900">
 
-        <motion.div
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-          <LinkScroll
-            activeClass="active"
-            to="pattern"
-            href="/#pattern"
-            spy={true}
-            smooth={true}
-            aria-label="Welcome"
-            duration={1000}
-            onSetActive={() => {
-              setActiveLink("pattern");
-            }}
-            className={`animation-hover 
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            <LinkScroll
+              activeClass="active"
+              to="pattern"
+              href="/#pattern"
+              spy={true}
+              smooth={true}
+              aria-label="Welcome"
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("pattern");
+              }}
+              className={`animation-hover 
             ${activeLink === "pattern" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
-            }
-          >
-            <span className="hidden sm:block">WELCOME</span>
-            {activeLink === "pattern" ?
-              <HeartIcon className="block sm:hidden w-6 h-6 pb-1" />
-              :
-              <Heart className="block sm:hidden w-6 h-6 pb-1" />
-            }
-          </LinkScroll>
-        </motion.div>
+              }
+            >
+              <span className="hidden sm:block">WELCOME</span>
+              {activeLink === "pattern" ?
+                <HeartIcon className="block sm:hidden w-6 h-6 pb-1" />
+                :
+                <Heart className="block sm:hidden w-6 h-6 pb-1" />
+              }
+            </LinkScroll>
+          </motion.div>
 
-        <motion.div
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-          <LinkScroll
-            activeClass="active"
-            to="title"
-            href="/#title"
-            spy={true}
-            smooth={true}
-            aria-label="Location"
-            duration={1000}
-            onSetActive={() => {
-              setActiveLink("title");
-            }}
-            className={`animation-hover 
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            <LinkScroll
+              activeClass="active"
+              to="title"
+              href="/#title"
+              spy={true}
+              smooth={true}
+              aria-label="Location"
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("title");
+              }}
+              className={`animation-hover 
             ${activeLink === "title" ? " animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
-            }
-          >
-            <span className="hidden sm:block">LOCATION</span>
-            {activeLink === "title" ?
-              <MapIcon className="block sm:hidden w-6 h-6 pb-1" />
-              :
-              <Map className="block sm:hidden w-6 h-6 pb-1" />
-            }
-          </LinkScroll>
-        </motion.div>
+              }
+            >
+              <span className="hidden sm:block">LOCATION</span>
+              {activeLink === "title" ?
+                <MapIcon className="block sm:hidden w-6 h-6 pb-1" />
+                :
+                <Map className="block sm:hidden w-6 h-6 pb-1" />
+              }
+            </LinkScroll>
+          </motion.div>
 
-        <motion.div
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-          <LinkScroll
-            activeClass="active"
-            to="gridd"
-            href="/#gridd"
-            spy={true}
-            smooth={true}
-            duration={1000}
-            aria-label="Gallery"
-            onSetActive={() => {
-              setActiveLink("gridd");
-            }}
-            className={`animation-hover 
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            <LinkScroll
+              activeClass="active"
+              to="gridd"
+              href="/#gridd"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              aria-label="Gallery"
+              onSetActive={() => {
+                setActiveLink("gridd");
+              }}
+              className={`animation-hover 
             ${activeLink === "gridd" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
-            }
-          >
-            <span className="hidden sm:block">GALLERY</span>
-            {activeLink === "gridd" ?
-              <GalleryIcon className="block sm:hidden w-6 h-6 pb-1" />
-              :
-              <Gallery className="block sm:hidden w-6 h-6 pb-1" />
-            }
-          </LinkScroll>
-        </motion.div>
+              }
+            >
+              <span className="hidden sm:block">GALLERY</span>
+              {activeLink === "gridd" ?
+                <GalleryIcon className="block sm:hidden w-6 h-6 pb-1" />
+                :
+                <Gallery className="block sm:hidden w-6 h-6 pb-1" />
+              }
+            </LinkScroll>
+          </motion.div>
 
-        {/* <motion.div
+          {/* <motion.div
           className="block sm:hidden transition-all cursor-pointer"
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 0.9 }}
@@ -333,7 +467,8 @@ export default function MobileNav() {
             <button aria-label="Pause" onClick={playAudio}><Play className="w-[25px] h-[25px] sm:w-[22px] sm:h-[22px] pt-0.5" /> </button>
           }
         </motion.div> */}
-      </div>
-    </ nav>
+        </div>
+      </ nav>
+    </>
   )
 }

@@ -95,9 +95,9 @@
   --border-bg: conic-gradient(
     from 180deg at 50% 50%,
     rgba(42, 138, 246, 0) 0deg,
-    #2a4ff63a 112.5deg,
-    #ebdd1450 228.75deg,
-    #d882003b 360deg
+    #2a7cf66b 112.5deg,
+    #08cf2398 228.75deg,
+    #d8b80079 360deg
   );
   position: relative;
   overflow: hidden;
@@ -145,9 +145,9 @@
   --border-size: 3px;
   --border-bg: conic-gradient(
     from 180deg at 50% 50%,
-    #d882003b 0deg,
-    #ebdd1450 112.5deg,
-    #2a4ff63a 228.75deg,
+    #d8b80079 0deg,
+    #08cf2398 112.5deg,
+    #2a7cf66b 228.75deg,
     rgba(42, 138, 246, 0) 360deg
   );
   position: relative;
