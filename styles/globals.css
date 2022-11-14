@@ -154,3 +154,8 @@ body {
 .swiper-continous-play > .swiper-wrapper {
 	transition-timing-function: linear;
 }
+
+.react-images__view {
+	display: flex;
+	justify-content: center;
+}

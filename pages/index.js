@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image';
 import { Inter, EB_Garamond } from '@next/font/google';
@@ -11,6 +12,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/react-splide/css';
 import Countdown from 'react-countdown';
+import Carousel, { Modal, ModalGateway } from "react-images";
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
@@ -42,6 +44,84 @@ export default function Home() {
     }
   };
 
+  const album = [
+    {
+      src: "https://images.unsplash.com/photo-1638091986258-0c285a62defd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1638201977889-7cf4026c7960?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1518387801569-c9372e7f2dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1638091986258-0c285a62defd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1638201977889-7cf4026c7960?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
+    },
+  ]
+
+  const albums = [
+    {
+      src: "/johns.png",
+    },
+    {
+      src: "/janes.png",
+    },
+    {
+      src: "/johns.png",
+    },
+    {
+      src: "/janes.png",
+    },
+    {
+      src: "/johns.png",
+    },
+  ]
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  function handleOpenGallery(id) {
+    console.log(id)
+    setCurrentImage(id)
+    setViewerIsOpen(true)
+  }
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
+
+  const lightboxStyles = {
+    header: (base, state) => {
+      const opacity = 1;
+      const transform = "translateY(10px)";
+      const top = "-10";
+      return { ...base, opacity, transform, top };
+    },
+    navigation: (base, state) => {
+      const opacity = 1;
+      const background = "rgba(0, 0, 0, 0.8)";
+      return { ...base, opacity, background };
+    },
+    navigationPrev: (base, state) => {
+      const background = "rgba(0, 0, 0, 0.5) !important";
+      return { ...base, background };
+    },
+    navigationNext: (base, state) => {
+      const background = "rgba(0, 0, 0, 0.5) !important";
+      return { ...base, background };
+    },
+    footer: (base, state) => {
+      const opacity = 1;
+      const transform = "translateY(-10px)";
+      const bottom = "-10";
+      return { ...base, opacity, transform, bottom };
+    }
+  }
+
   return (
     <>
       <Head>
@@ -65,6 +145,22 @@ export default function Home() {
       </Head>
 
       <main className="bg-black text-white min-h-screen relative overflow-hidden">
+
+        <ModalGateway>
+          {viewerIsOpen ? (
+            <Modal onClose={closeLightbox}>
+              <Carousel
+                styles={lightboxStyles}
+                showNavigationOnTouchDevice={true}
+                currentIndex={currentImage}
+                views={albums.map(x => ({
+                  ...x,
+                }))}
+              />
+            </Modal>
+          ) : null}
+        </ModalGateway>
+
         <div className={inter.className}>
 
           <MobileNav />
@@ -322,7 +418,8 @@ export default function Home() {
                 >
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-yellow-500/40 rotate-3">
+                      <div
+                        onClick={() => handleOpenGallery(0)} className="cursor-pointer relative h-80 bg-black/50 rounded-xl shadow-lg shadow-yellow-500/40 rotate-3">
                         <Image
                           alt="John"
                           src={`/johns.png`}
@@ -334,7 +431,7 @@ export default function Home() {
                   </SplideSlide>
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-yellow-500/40 -rotate-3">
+                      <div onClick={() => handleOpenGallery(1)} className="cursor-pointer relative h-80 bg-black/50 rounded-xl shadow-lg shadow-yellow-500/40 -rotate-3">
                         <Image
                           alt="Jane"
                           src={`/janes.png`}
@@ -346,7 +443,7 @@ export default function Home() {
                   </SplideSlide>
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-teal-500/40">
+                      <div onClick={() => handleOpenGallery(2)} className="cursor-pointer relative h-80 bg-black/50 rounded-xl shadow-lg shadow-teal-500/40">
                         <Image
                           alt="John"
                           src={`/johns.png`}
@@ -358,7 +455,7 @@ export default function Home() {
                   </SplideSlide>
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-sky-600/40 rotate-3">
+                      <div onClick={() => handleOpenGallery(3)} className="cursor-pointer relative h-80 bg-black/50 rounded-xl shadow-lg shadow-sky-600/40 rotate-3">
                         <Image
                           alt="Jane"
                           src={`/janes.png`}
@@ -370,7 +467,7 @@ export default function Home() {
                   </SplideSlide>
                   <SplideSlide>
                     <div className="p-8">
-                      <div className="relative h-80 bg-black/50 rounded-xl shadow-lg shadow-sky-600/40 -rotate-3">
+                      <div onClick={() => handleOpenGallery(4)} className="cursor-pointer relative h-80 bg-black/50 rounded-xl shadow-lg shadow-sky-600/40 -rotate-3">
                         <Image
                           alt="John"
                           src={`/johns.png`}
@@ -392,6 +489,8 @@ export default function Home() {
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        className="cursor-pointer"
+                        onClick={() => handleOpenGallery(0)}
                       >
                         <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-yellow-500/40 w-72 rounded-2xl rotate-3">
                           <Image
@@ -405,6 +504,8 @@ export default function Home() {
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        className="cursor-pointer"
+                        onClick={() => handleOpenGallery(1)}
                       >
                         <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-yellow-500/40 w-72 rounded-2xl -rotate-3">
                           <Image
@@ -418,6 +519,8 @@ export default function Home() {
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        className="cursor-pointer"
+                        onClick={() => handleOpenGallery(2)}
                       >
                         <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-teal-500/40 w-72 rounded-2xl">
                           <Image
@@ -431,6 +534,8 @@ export default function Home() {
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        className="cursor-pointer"
+                        onClick={() => handleOpenGallery(3)}
                       >
                         <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-sky-600/40 w-72 rounded-2xl rotate-3">
                           <Image
@@ -444,6 +549,8 @@ export default function Home() {
                       <motion.div
                         whileHover={{ scale: 1.06 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        className="cursor-pointer"
+                        onClick={() => handleOpenGallery(4)}
                       >
                         <div className="relative aspect-[9/10] flex-none bg-black/50 shadow-lg shadow-sky-600/40 w-72 rounded-2xl -rotate-3">
                           <Image
