@@ -10,6 +10,7 @@ import { motion, useTime, useTransform, useScroll } from "framer-motion";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/react-splide/css';
+import Countdown from 'react-countdown';
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
@@ -560,9 +561,31 @@ export default function Home() {
               />
             </motion.svg>
             <div className="relative flex items-center h-screen justify-center">
-              <h1 className="font-extrabold text-center mb-10 text-4xl md:text-5xl p-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
-                Credits
-              </h1>
+              <div className="-mt-16">
+                <h1 className="font-extrabold text-center mb-10 text-4xl md:text-5xl p-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                  Countdown
+                </h1>
+                <Countdown date={'2023-11-14'} renderer={props => (
+                  <div className="mx-auto max-w-2xl grid grid-cols-1 sm:grid-cols-4 gap-8 md:gap-16">
+                    <div className="text-center">
+                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-600 to-sky-500">{props.days}</p>
+                      <p className="text-xl mt-2 text-neutral-300">Days</p>
+                    </div>
+                    <div className="text-center">
+                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-t from-yellow-500 via-green-600 to-sky-500">{props.hours}</p>
+                      <p className="text-xl mt-2 text-neutral-300">Hours</p>
+                    </div>
+                    <div className="text-center">
+                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-l from-yellow-500 via-green-600 to-sky-500">{props.minutes}</p>
+                      <p className="text-xl mt-2 text-neutral-300">Minutes</p>
+                    </div>
+                    <div className="text-center">
+                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">{props.seconds}</p>
+                      <p className="text-xl mt-2 text-neutral-300">Seconds</p>
+                    </div>
+                  </div>
+                )} />
+              </div>
             </div>
           </section>
 

@@ -303,12 +303,12 @@ function MyModal({ isOpen, closeModal }) {
                       <h1 className="text-5xl font-bold text-white mb-2 mt-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">John & Jane</h1>
                       {/* <h3 className="text-5xl font-bold text-white mb-2 mt-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">John & Jane</h3> */}
 
-                      <Border className="ml-4" />
+                      <Border className="mx-auto" />
 
                       <h2 className="text-xl font-semibold text-white mt-4 mb-2">Thursday, 22 Dec 2022</h2>
                       <h2 className="text-xl font-semibold text-white">Earth</h2>
                       <div className="mt-8">
-                        <button onClick={closeModal} className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-yellow-600 via-green-500 to-sky-500 group-hover:from-yellow-600 group-hover:via-green-600 group-hover:to-sky-500 text-white">
+                        <button onClick={closeModal} className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-yellow-600 via-green-500 to-sky-500 group-hover:from-yellow-600 group-hover:via-green-600 group-hover:to-sky-500 text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-neutral-500">
                           <span className="relative px-6 py-2 transition-all ease-in duration-75 bg-black rounded-md group-hover:bg-opacity-0">Open</span>
                         </button>
                       </div>
