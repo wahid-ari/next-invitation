@@ -329,7 +329,7 @@ export default function MobileNav() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [audio, setAudio] = useState(null)
   useEffect(() => {
-    setAudio(new Audio("/musicc.mp3"))
+    setAudio(new Audio("/musiccc.mp3"))
   }, [])
 
   function playAudio() {
