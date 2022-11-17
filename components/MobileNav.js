@@ -201,6 +201,35 @@ function MapIcon({ className }) {
   )
 }
 
+function Time({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M19.2498 10.0005C19.2498 15.1095 15.1088 19.2505 9.99982 19.2505C4.89082 19.2505 0.749817 15.1095 0.749817 10.0005C0.749817 4.89149 4.89082 0.750488 9.99982 0.750488C15.1088 0.750488 19.2498 4.89149 19.2498 10.0005Z" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path opacity="0.4" d="M13.4314 12.9427L9.66144 10.6937V5.84668" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+function TimeIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M19.5 10.25C19.5 15.359 15.359 19.5 10.25 19.5C5.141 19.5 1 15.359 1 10.25C1 5.141 5.141 1 10.25 1C15.359 1 19.5 5.141 19.5 10.25Z" stroke="url(#paint0_linear_160_10)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path opacity="0.4" d="M13.6816 13.1922L9.91162 10.9432V6.09619" stroke="url(#paint1_linear_160_10)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <defs>
+        <linearGradient id="paint0_linear_160_10" x1="10.25" y1="1" x2="10.25" y2="19.5" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#C69F01" />
+          <stop offset="0.510417" stopColor="#31790C" />
+          <stop offset="1" stopColor="#044A6C" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_160_10" x1="11.7966" y1="6.09619" x2="11.7966" y2="13.1922" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#C69F01" />
+          <stop offset="0.520833" stopColor="#467F0B" />
+          <stop offset="1" stopColor="#044A6C" />
+        </linearGradient>
+      </defs>
+    </svg>
+  )
+}
+
 function Border({ className }) {
   return (
     <svg className={className} width="250" height="63" viewBox="0 0 440 63" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -350,7 +379,7 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* <MyModal isOpen={isOpen} closeModal={closeModal} /> */}
+      <MyModal isOpen={isOpen} closeModal={closeModal} />
 
       <nav className="fixed bottom-0 left-0 right-0 z-50 shadow-t">
         {/* <div className="hidden sm:block absolute left-0 bottom-2 bg-black/90 backdrop-blur py-0.5 mx-2 px-1.5 rounded-lg">
@@ -452,6 +481,35 @@ export default function MobileNav() {
                 <GalleryIcon className="block sm:hidden w-6 h-6 pb-1" />
                 :
                 <Gallery className="block sm:hidden w-6 h-6 pb-1" />
+              }
+            </LinkScroll>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            <LinkScroll
+              activeClass="active"
+              to="countdown"
+              href="/#countdown"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              aria-label="Countdown"
+              onSetActive={() => {
+                setActiveLink("countdown");
+              }}
+              className={`animation-hover 
+            ${activeLink === "countdown" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
+            font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
+              }
+            >
+              <span className="hidden sm:block">COUNTDOWN</span>
+              {activeLink === "countdown" ?
+                <TimeIcon className="block sm:hidden w-6 h-6 pb-1" />
+                :
+                <Time className="block sm:hidden w-6 h-6 pb-1" />
               }
             </LinkScroll>
           </motion.div>

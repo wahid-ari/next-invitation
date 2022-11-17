@@ -72,6 +72,14 @@ body {
 			);
 }
 
+#ripple {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../public/ripple.svg);
+}
+
 .home_spotlight {
 	background: radial-gradient(
 		50% 50% at 50% 50%,
