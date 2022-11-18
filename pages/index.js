@@ -256,7 +256,7 @@ export default function Home() {
             {/* <div className="absolute top-0 z-10 w-full h-32 from-black to-transparent bg-gradient-to-b" /> */}
           </section>
 
-          <section id="title" className="relative h-screen min-h-screen w-full flex items-center my-16 pb-8">
+          <section id="title" className="relative h-screen min-h-screen w-full flex items-center pb-8">
             {/* <FadeIn delay={0.5}> */}
 
             <div className="w-full text-center">
