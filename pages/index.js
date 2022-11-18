@@ -85,7 +85,6 @@ export default function Home() {
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
   function handleOpenGallery(id) {
-    console.log(id)
     setCurrentImage(id)
     setViewerIsOpen(true)
   }
@@ -122,6 +121,8 @@ export default function Home() {
       return { ...base, opacity, transform, bottom };
     }
   }
+
+  const [showMap, setShowMap] = useState(false);
 
   return (
     <>
@@ -388,7 +389,7 @@ export default function Home() {
             </div>
           </section>
 
-          <div id="ripple" className="relative min-h-screen h-screen flex items-center justify-center py-24 md:py-36">
+          <div id="ripple" className="relative min-h-screen h-screen flex items-center justify-center pt-16 pb-36 md:pt-44">
             {/* <div className="absolute top-[55%] z-10 flex items-center justify-center">
               <Gradient
                 small
@@ -399,7 +400,7 @@ export default function Home() {
               />
             </div> */}
             <div>
-              <h1 className="-mt-20 font-extrabold text-center mb-4 text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+              <h1 className="md:-mt-32 font-extrabold text-center mb-4 text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 Location
               </h1>
               <div className="flex justify-center mb-16">
@@ -408,15 +409,28 @@ export default function Home() {
               {/* <h1 className="mb-20 md:mb-0 text-center relative md:absolute md:right-4 md:[writing-mode:vertical-rl] z-20 font-extrabold text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 Location
               </h1> */}
-              <div className="z-20 relative shadow-xl shadow-green-600/40 rounded-2xl mx-4">
-                <iframe className="rounded-2xl hidden md:block shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" width={800} height={400} src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
-                <iframe className="rounded-2xl hidden xs:block md:hidden shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" width={500} height={300} src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
-                <iframe className="rounded-2xl block xs:hidden shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" width={350} height={300} src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
+              <h1 className="z-10 mx-6 font-extrabold text-2xl lg:text-3xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                Jl. Panglima Sudirman, Kec. Genteng,
+              </h1>
+              <h1 className="z-10 mx-6 font-extrabold text-xl lg:text-2xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                Kota SBY, Jawa Timur
+              </h1>
+              <div className="flex justify-center mb-4">
+                <button onClick={() => setShowMap(!showMap)} className="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-yellow-600 via-green-500 to-sky-500 group-hover:from-yellow-600 group-hover:via-green-600 group-hover:to-sky-500 text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-neutral-500">
+                  <span className="relative px-6 py-2 transition-all ease-in duration-75 bg-black rounded-md group-hover:bg-opacity-0">{showMap ? "Hide Map" : "Show Map"}</span>
+                </button>
               </div>
+              {showMap ?
+                <div className="z-20 relative shadow-xl shadow-green-600/40 rounded-2xl mx-4 flex justify-center">
+                  <iframe className="rounded-2xl hidden md:block shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" width={800} height={400} src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
+                  <iframe className="rounded-2xl hidden xs:block md:hidden shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" width={500} height={300} src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
+                  <iframe className="w-full h-64 rounded-2xl block xs:hidden shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
+                </div>
+                : null}
             </div>
           </div>
 
-          <section id="gridd" className="min-h-screen relative flex items-center justify-between">
+          <section id="gridd" className="min-h-screen relative flex items-center justify-between pt-16 pb-36 md:pb-16">
             <div className="gridd-bg"></div>
             {/* <h1 className="absolute right-0 top-[38%] lg:[writing-mode:vertical-rl] z-20 font-extrabold  text-2xl lg:text-4xl pt-10 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
               GALERI
