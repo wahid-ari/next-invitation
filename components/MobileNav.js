@@ -414,7 +414,7 @@ export default function MobileNav() {
                 setActiveLink("pattern");
               }}
               className={`animation-hover 
-            ${activeLink === "pattern" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
+            ${activeLink === "pattern" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
               }
             >
@@ -443,7 +443,7 @@ export default function MobileNav() {
                 setActiveLink("title");
               }}
               className={`animation-hover 
-            ${activeLink === "title" ? " animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
+            ${activeLink === "title" ? " animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
               }
             >
@@ -472,7 +472,7 @@ export default function MobileNav() {
                 setActiveLink("gridd");
               }}
               className={`animation-hover 
-            ${activeLink === "gridd" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
+            ${activeLink === "gridd" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
               }
             >
@@ -501,7 +501,7 @@ export default function MobileNav() {
                 setActiveLink("countdown");
               }}
               className={`animation-hover 
-            ${activeLink === "countdown" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
+            ${activeLink === "countdown" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
               }
             >
