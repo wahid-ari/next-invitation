@@ -379,7 +379,7 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* <MyModal isOpen={isOpen} closeModal={closeModal} /> */}
+      <MyModal isOpen={isOpen} closeModal={closeModal} />
 
       <nav className="fixed bottom-0 left-0 right-0 z-50 shadow-t">
         {/* <div className="hidden sm:block absolute left-0 bottom-2 bg-black/90 backdrop-blur py-0.5 mx-2 px-1.5 rounded-lg">

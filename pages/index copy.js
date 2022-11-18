@@ -167,13 +167,85 @@ export default function Home() {
 
           <MobileNav />
 
-          <section id="pattern" className="relative w-full h-full min-h-screen flex items-center justify-center pt-16 sm:pt-8 md:pt-0 pb-16 sm:pb-8 md:pb-0">
+          <section id="pattern" className="relative w-full h-full flex items-center justify-center mb-24 md:mb-12 sm:pt-16 md:pt-0">
+            <FadeIn className="z-10 mt-8 sm:mt-40 md:mt-0 md:flex justify-center md:gap-16 space-y-8 sm:space-y-12 md:space-y-0 w-full">
+              <div className="w-full h-[180px] md:w-1/6 relative flex items-center justify-center">
+                <div className="absolute z-10 min-w-[550px] min-h-[550px] md:min-w-[600px] md:min-h-[600px]">
+                  <Image
+                    alt="Turborepo"
+                    src="/pack-hexagons.svg"
+                    fill="true"
+                  // className="block"
+                  />
+                </div>
+                <div className="absolute z-10 flex items-center justify-center w-64 h-64">
+                  <Gradient
+                    small
+                    width={120}
+                    height={120}
+                    conic
+                    className="opacity-100"
+                  />
+                </div>
+                <div className="w-[150px] h-[150px] z-10">
+                  <Image
+                    alt=""
+                    src={`/pack-logo.svg`}
+                    fill="true"
+                  // className="block"
+                  />
+                </div>
+              </div>
+              <div className="relative z-20 w-full h-[180px] md:w-1/6 flex items-center justify-center">
+                <h1 className="text-6xl sm:text-8xl text-transparent font-bold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-500 to-sky-500">
+                  {/* <span className={eb.className}>&</span> */}
+                  &
+                </h1>
+              </div>
+              <div className="w-full h-[180px] md:w-1/6 relative flex items-center justify-center">
+                <div className="absolute min-w-[550px] min-h-[550px] md:min-w-[600px] md:min-h-[600px]">
+                  <Image
+                    alt="Turborepo"
+                    src="/pack-hexagons.svg"
+                    fill="true"
+                    className="block"
+                  />
+                </div>
+                <div className="absolute z-10 flex items-center justify-center w-64 h-64">
+                  <Gradient
+                    small
+                    width={120}
+                    height={120}
+                    conic
+                    className="opacity-100"
+                  />
+                </div>
+                <div className="w-[150px] h-[150px] z-10">
+                  <Image
+                    alt=""
+                    src={`/pack-logo.svg`}
+                    fill="true"
+                    className="block"
+                  />
+                </div>
+              </div>
+            </FadeIn>
+            <Gradient
+              width={1000}
+              height={700}
+              className="top-[-200px] opacity-20"
+              conic
+            />
+            {/* <div className="absolute top-0 z-10 w-full h-32 from-black to-transparent bg-gradient-to-b" /> */}
+          </section>
+
+          <section className="relative h-full flex items-center py-24 sm:pt-64 md:pt-8">
             <div className="flex flex-col md:flex-row w-full items-center justify-center gap-8 lg:gap-24">
               <FadeIn delay={0.3}>
                 <div
                   className={cn(
                     styles["counter-border"],
-                    "no-underline pointer-events-none"
+                    "no-underline"
                   )}
                 >
                   <motion.i
@@ -200,21 +272,19 @@ export default function Home() {
                       {/* </div> */}
                     </div>
                     <div className="flex justify-center">
-                      <span className="text-2xl mt-5 font-bold text-gray-200 tracking-wide">John Doe</span>
+                      <span className="text-2xl no-underline mt-5 font-bold text-gray-200 tracking-wide">John Doe</span>
                     </div>
                   </div>
                 </div>
               </FadeIn>
-              <FadeIn delay={0.4}>
-                <div className="relative z-10 flex items-center justify-center text-6xl sm:text-8xl text-transparent font-semibold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-500 to-sky-500">
-                  &
-                </div>
-              </FadeIn>
+              <div className="flex items-center justify-center text-6xl sm:text-8xl text-transparent font-semibold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-500 to-sky-500">
+                &
+              </div>
               <FadeIn delay={0.5}>
                 <div
                   className={cn(
                     styles["counter-border-blue"],
-                    "no-underline pointer-events-none"
+                    "no-underline"
                   )}
                 >
                   <motion.i
@@ -241,22 +311,15 @@ export default function Home() {
                       {/* </div> */}
                     </div>
                     <div className="flex justify-center">
-                      <span className="text-2xl mt-5 font-bold text-gray-200 tracking-wide">Jane Doe</span>
+                      <span className="text-2xl no-underline mt-5 font-bold text-gray-200 tracking-wide">Jane Doe</span>
                     </div>
                   </div>
                 </div>
               </FadeIn>
             </div>
-            <Gradient
-              width={1000}
-              height={700}
-              className="top-[-200px] opacity-20"
-              conic
-            />
-            {/* <div className="absolute top-0 z-10 w-full h-32 from-black to-transparent bg-gradient-to-b" /> */}
           </section>
 
-          <section id="title" className="relative h-screen min-h-screen w-full flex items-center my-16 pb-8">
+          <section id="title" className="relative h-screen w-full flex items-center my-16 pb-8">
             {/* <FadeIn delay={0.5}> */}
 
             <div className="w-full text-center">
@@ -558,7 +621,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="countdown" className="relative z-[1] h-screen w-screen mt-16 sm:mt-8 md:mt-0">
+          <section id="countdown" className="relative z-[1] h-screen w-screen mt-16">
             <span className={cn(styles.leftLights, "opacity-100")} />
             <span className={cn(styles.rightLights, "opacity-100")} />
             <span className="absolute bottom-0 left-0 right-0 w-full h-48 bg-gradient-to-t from-black to-transparent" />
