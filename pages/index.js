@@ -13,6 +13,7 @@ import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/react-splide/css';
 import Countdown from 'react-countdown';
 import Carousel, { Modal, ModalGateway } from "react-images";
+import Pattern from '@components/Pattern';
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
@@ -20,7 +21,7 @@ const eb = EB_Garamond({ subsets: ['latin'] });
 export default function Home() {
   const time = useTime();
   const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
-  const rainbow = ["#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9"];
+  const rainbow = ["#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9"];
   const { scrollYProgress } = useScroll();
   const range = Array.from(Array(rainbow.length).keys()).map(
     (v) => v / (rainbow.length - 1)
@@ -195,7 +196,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative z-20 w-full h-[180px] md:w-1/6 flex items-center justify-center">
-                <h1 className="text-6xl sm:text-8xl text-transparent font-bold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">
+                <h1 className="text-6xl sm:text-8xl text-transparent font-bold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-500 to-sky-500">
                   {/* <span className={eb.className}>&</span> */}
                   &
                 </h1>
@@ -275,7 +276,7 @@ export default function Home() {
                   </div>
                 </div>
               </FadeIn>
-              <div className="flex items-center justify-center text-6xl sm:text-8xl text-transparent font-semibold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">
+              <div className="flex items-center justify-center text-6xl sm:text-8xl text-transparent font-semibold bg-clip-text bg-gradient-to-r from-yellow-500 via-green-500 to-sky-500">
                 &
               </div>
               <FadeIn delay={0.5}>
@@ -317,12 +318,6 @@ export default function Home() {
             </div>
           </section>
 
-          <div id="ripple" className="relative min-h-screen h-screen flex items-center justify-center">
-            <h1 className="font-extrabold text-center mb-10 sm:mb-20 text-4xl md:text-5xl p-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
-              Ripple
-            </h1>
-          </div>
-
           <section id="title" className="relative h-screen w-full flex items-center my-16 pb-8">
             {/* <FadeIn delay={0.5}> */}
 
@@ -332,7 +327,7 @@ export default function Home() {
                 style={{
                   x: forwardX,
                   WebkitTextStrokeColor: rainbowColors,
-                  WebkitTextStroke: '1px currentColor',
+                  WebkitTextStroke: '2px currentColor',
                   // fontSize: 'calc(100vw / 20)',
                 }}
               >
@@ -341,7 +336,7 @@ export default function Home() {
               {/* <h1 className="z-10 font-extrabold md:text-left text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 John
               </h1> */}
-              <h1 className="z-10 font-extrabold md:text-center text-5xl lg:text-6xl p-4 text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-600 to-sky-500">
+              <h1 className="z-10 font-extrabold md:text-center text-5xl lg:text-6xl p-4 text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500">
                 /
               </h1>
               {/* <h1 className="z-10 font-extrabold md:text-right text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
@@ -352,7 +347,7 @@ export default function Home() {
                 style={{
                   x: backwardsX,
                   WebkitTextStrokeColor: rainbowColors,
-                  WebkitTextStroke: '1px currentColor',
+                  WebkitTextStroke: '2px currentColor',
                   // fontSize: 'calc(100vw / 20)',
                 }}
               >
@@ -365,7 +360,7 @@ export default function Home() {
             <span className="absolute bottom-0 left-0 right-0 w-full h-14 bg-gradient-to-t from-black to-transparent" />
           </section>
 
-          <section className="relative w-full h-screen flex items-center justify-center my-16 md:my-24">
+          <section id="event" className="relative w-full h-screen flex items-center justify-center my-16 md:my-24">
             <motion.div
               className="absolute inset-0"
               style={{
@@ -381,14 +376,45 @@ export default function Home() {
               <h1 className="z-10 mx-6 font-extrabold text-4xl md:text-5xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                 Schedule
               </h1>
-              {/* <h1 className="z-10 mx-6 font-extrabold text-2xl lg:text-3xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
-                Sabtu, 21 Desember
-              </h1>
+              <div className="flex justify-center mb-10">
+                <Pattern />
+              </div>
               <h1 className="z-10 mx-6 font-extrabold text-2xl lg:text-3xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
-                2022
-              </h1> */}
+                August 1, 2023
+              </h1>
+              <h1 className="z-10 mx-6 font-extrabold text-xl lg:text-2xl leading-tight text-center mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                5:00 PM - 6:00 PM
+              </h1>
             </div>
           </section>
+
+          <div id="ripple" className="relative min-h-screen h-screen flex items-center justify-center py-24 md:py-36">
+            {/* <div className="absolute top-[55%] z-10 flex items-center justify-center">
+              <Gradient
+                small
+                width={810}
+                height={400}
+                conic
+                className="opacity-100"
+              />
+            </div> */}
+            <div>
+              <h1 className="-mt-20 font-extrabold text-center mb-4 text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                Location
+              </h1>
+              <div className="flex justify-center mb-16">
+                <Pattern />
+              </div>
+              {/* <h1 className="mb-20 md:mb-0 text-center relative md:absolute md:right-4 md:[writing-mode:vertical-rl] z-20 font-extrabold text-4xl lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                Location
+              </h1> */}
+              <div className="z-20 relative shadow-xl shadow-green-600/40 rounded-2xl mx-4">
+                <iframe className="rounded-2xl hidden md:block shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" width={800} height={400} src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
+                <iframe className="rounded-2xl hidden xs:block md:hidden shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" width={500} height={300} src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
+                <iframe className="rounded-2xl block xs:hidden shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]" width={350} height={300} src="https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed" />
+              </div>
+            </div>
+          </div>
 
           <section id="gridd" className="min-h-screen relative flex items-center justify-between">
             <div className="gridd-bg"></div>
@@ -675,25 +701,28 @@ export default function Home() {
             </motion.svg>
             <div className="relative flex items-center h-screen justify-center">
               <div className="-mt-16">
-                <h1 className="font-extrabold text-center mb-10 sm:mb-20 text-4xl md:text-5xl p-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                <h1 className="font-extrabold text-center text-4xl md:text-5xl p-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
                   Countdown
                 </h1>
+                <div className="relative z-10 flex justify-center mb-10 sm:mb-32">
+                  <Pattern />
+                </div>
                 <Countdown date={'2023-11-14'} renderer={props => (
                   <div className="mx-auto max-w-2xl grid grid-cols-1 sm:grid-cols-4 gap-8 md:gap-16">
                     <div className="text-center">
-                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-600 to-sky-500">{props.days}</p>
+                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500">{props.days}</p>
                       <p className="text-xl font-medium mt-2 text-neutral-300">Days</p>
                     </div>
                     <div className="text-center">
-                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-t from-yellow-500 via-green-600 to-sky-500">{props.hours}</p>
+                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-t from-yellow-500 via-green-500 to-sky-500">{props.hours}</p>
                       <p className="text-xl font-medium mt-2 text-neutral-300">Hours</p>
                     </div>
                     <div className="text-center">
-                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-l from-yellow-500 via-green-600 to-sky-500">{props.minutes}</p>
+                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-l from-yellow-500 via-green-500 to-sky-500">{props.minutes}</p>
                       <p className="text-xl font-medium mt-2 text-neutral-300">Minutes</p>
                     </div>
                     <div className="text-center">
-                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">{props.seconds}</p>
+                      <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-500 to-sky-500">{props.seconds}</p>
                       <p className="text-xl font-medium mt-2 text-neutral-300">Seconds</p>
                     </div>
                   </div>

@@ -80,7 +80,7 @@ function GalleryIcon({ className }) {
 
 function Calendar({ className }) {
   return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path opacity="0.4" d="M1.09265 8.40445H18.9166" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path opacity="0.4" fillRule="evenodd" clipRule="evenodd" d="M4.80786 12.3096C4.80786 11.8954 5.14365 11.5596 5.55786 11.5596H5.56713C5.98134 11.5596 6.31713 11.8954 6.31713 12.3096C6.31713 12.7238 5.98134 13.0596 5.56713 13.0596H5.55786C5.14365 13.0596 4.80786 12.7238 4.80786 12.3096ZM10.0046 11.5596C9.59037 11.5596 9.25459 11.8954 9.25459 12.3096C9.25459 12.7238 9.59037 13.0596 10.0046 13.0596H10.0138C10.4281 13.0596 10.7638 12.7238 10.7638 12.3096C10.7638 11.8954 10.4281 11.5596 10.0138 11.5596H10.0046ZM14.442 11.5596C14.0278 11.5596 13.692 11.8954 13.692 12.3096C13.692 12.7238 14.0278 13.0596 14.442 13.0596H14.4513C14.8655 13.0596 15.2013 12.7238 15.2013 12.3096C15.2013 11.8954 14.8655 11.5596 14.4513 11.5596H14.442ZM14.442 15.446C14.0278 15.446 13.692 15.7818 13.692 16.196C13.692 16.6103 14.0278 16.946 14.442 16.946H14.4513C14.8655 16.946 15.2013 16.6103 15.2013 16.196C15.2013 15.7818 14.8655 15.446 14.4513 15.446H14.442ZM9.25459 16.196C9.25459 15.7818 9.59037 15.446 10.0046 15.446H10.0138C10.4281 15.446 10.7638 15.7818 10.7638 16.196C10.7638 16.6103 10.4281 16.946 10.0138 16.946H10.0046C9.59037 16.946 9.25459 16.6103 9.25459 16.196ZM5.55786 15.446C5.14365 15.446 4.80786 15.7818 4.80786 16.196C4.80786 16.6103 5.14365 16.946 5.55786 16.946H5.56713C5.98134 16.946 6.31713 16.6103 6.31713 16.196C6.31713 15.7818 5.98134 15.446 5.56713 15.446H5.55786Z" fill="#BABABA" />
       <path d="M14.0437 1V4.29078" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -91,7 +91,7 @@ function Calendar({ className }) {
 }
 function CalendarIcon({ className }) {
   return (
-    <svg className={className} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path opacity="0.4" d="M1.09265 8.40445H18.9166" stroke="url(#paint0_linear_138_13)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       <path opacity="0.4" fillRule="evenodd" clipRule="evenodd" d="M4.80786 12.3096C4.80786 11.8954 5.14365 11.5596 5.55786 11.5596H5.56713C5.98134 11.5596 6.31713 11.8954 6.31713 12.3096C6.31713 12.7238 5.98134 13.0596 5.56713 13.0596H5.55786C5.14365 13.0596 4.80786 12.7238 4.80786 12.3096ZM10.0046 11.5596C9.59037 11.5596 9.25459 11.8954 9.25459 12.3096C9.25459 12.7238 9.59037 13.0596 10.0046 13.0596H10.0138C10.4281 13.0596 10.7638 12.7238 10.7638 12.3096C10.7638 11.8954 10.4281 11.5596 10.0138 11.5596H10.0046ZM14.442 11.5596C14.0278 11.5596 13.692 11.8954 13.692 12.3096C13.692 12.7238 14.0278 13.0596 14.442 13.0596H14.4513C14.8655 13.0596 15.2013 12.7238 15.2013 12.3096C15.2013 11.8954 14.8655 11.5596 14.4513 11.5596H14.442ZM14.442 15.446C14.0278 15.446 13.692 15.7818 13.692 16.196C13.692 16.6103 14.0278 16.946 14.442 16.946H14.4513C14.8655 16.946 15.2013 16.6103 15.2013 16.196C15.2013 15.7818 14.8655 15.446 14.4513 15.446H14.442ZM9.25459 16.196C9.25459 15.7818 9.59037 15.446 10.0046 15.446H10.0138C10.4281 15.446 10.7638 15.7818 10.7638 16.196C10.7638 16.6103 10.4281 16.946 10.0138 16.946H10.0046C9.59037 16.946 9.25459 16.6103 9.25459 16.196ZM5.55786 15.446C5.14365 15.446 4.80786 15.7818 4.80786 16.196C4.80786 16.6103 5.14365 16.946 5.55786 16.946H5.56713C5.98134 16.946 6.31713 16.6103 6.31713 16.196C6.31713 15.7818 5.98134 15.446 5.56713 15.446H5.55786Z" fill="url(#paint1_linear_138_13)" />
       <path d="M14.0437 1V4.29078" stroke="url(#paint2_linear_138_13)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -396,7 +396,7 @@ export default function MobileNav() {
         </motion.div>
       </div> */}
 
-        <div className="bg-black/90 backdrop-blur pb-2 sm:pb-3 pt-2 mx-2 px-4 flex space-x-3 sm:max-w-md sm:mx-auto justify-between items-center rounded-t-lg overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-900">
+        <div className="bg-black/90 backdrop-blur pb-2 sm:pb-3 pt-2 mx-2 px-4 flex space-x-3 sm:max-w-lg sm:mx-auto justify-between items-center rounded-t-lg overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-900">
 
           <motion.div
             whileHover={{ scale: 1.15 }}
@@ -433,22 +433,51 @@ export default function MobileNav() {
             transition={{ type: "spring", stiffness: 400, damping: 17 }}>
             <LinkScroll
               activeClass="active"
-              to="title"
-              href="/#title"
+              to="event"
+              href="/#event"
               spy={true}
               smooth={true}
               aria-label="Location"
               duration={1000}
               onSetActive={() => {
-                setActiveLink("title");
+                setActiveLink("event");
               }}
               className={`animation-hover 
-            ${activeLink === "title" ? " animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
+            ${activeLink === "event" ? " animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
+            font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
+              }
+            >
+              <span className="hidden sm:block">EVENT</span>
+              {activeLink === "event" ?
+                <CalendarIcon className="block sm:hidden w-6 h-6 pb-1" />
+                :
+                <Calendar className="block sm:hidden w-6 h-6 pb-1" />
+              }
+            </LinkScroll>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            <LinkScroll
+              activeClass="active"
+              to="ripple"
+              href="/#ripple"
+              spy={true}
+              smooth={true}
+              aria-label="Location"
+              duration={1000}
+              onSetActive={() => {
+                setActiveLink("ripple");
+              }}
+              className={`animation-hover 
+            ${activeLink === "ripple" ? " animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
             font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
               }
             >
               <span className="hidden sm:block">LOCATION</span>
-              {activeLink === "title" ?
+              {activeLink === "ripple" ?
                 <MapIcon className="block sm:hidden w-6 h-6 pb-1" />
                 :
                 <Map className="block sm:hidden w-6 h-6 pb-1" />
