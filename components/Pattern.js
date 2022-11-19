@@ -12,52 +12,51 @@ export default function Pattern() {
       <path d="M31.6453 9.98975C32.6293 9.98975 34.5552 9.98975 34.3865 9.98975" stroke="url(#paint8_linear_187_145)" />
       <defs>
         <linearGradient id="paint0_linear_187_145" x1="158" y1="6.49964" x2="53.5" y2="23.9997" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.53125" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.5" />
         </linearGradient>
         <linearGradient id="paint1_linear_187_145" x1="172.976" y1="6.99219" x2="172.976" y2="12.7455" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.5" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.8" />
         </linearGradient>
         <linearGradient id="paint2_linear_187_145" x1="197.115" y1="3.48975" x2="197.115" y2="16.4972" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.5" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.8" />
         </linearGradient>
         <linearGradient id="paint3_linear_187_145" x1="180.714" y1="1.23877" x2="180.714" y2="18.7445" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.5" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.8" />
         </linearGradient>
         <linearGradient id="paint4_linear_187_145" x1="177.979" y1="9.99365" x2="177.979" y2="10.9937" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.5" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.8" />
         </linearGradient>
         <linearGradient id="paint5_linear_187_145" x1="38.024" y1="7.23793" x2="38.024" y2="12.9912" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.5" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.8" />
         </linearGradient>
         <linearGradient id="paint6_linear_187_145" x1="13.8852" y1="16.4932" x2="13.8852" y2="3.48574" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.5" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.8" />
         </linearGradient>
         <linearGradient id="paint7_linear_187_145" x1="30.2862" y1="18.7446" x2="30.2862" y2="1.23886" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.5" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.8" />
         </linearGradient>
         <linearGradient id="paint8_linear_187_145" x1="33.0211" y1="9.98975" x2="33.0211" y2="8.98975" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#FF9901" />
-          <stop offset="0.53125" stopColor="#57A625" />
-          <stop offset="1" stopColor="#02B2DE" />
+          <stop stopColor="#FF9901" stopOpacity="0.8" />
+          <stop offset="0.5" stopColor="#57A625" stopOpacity="0.8" />
+          <stop offset="1" stopColor="#02B2DE" stopOpacity="0.8" />
         </linearGradient>
       </defs>
     </svg>
-
   )
 }
