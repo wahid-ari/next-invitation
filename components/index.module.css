@@ -114,10 +114,14 @@
 .counter-border i {
   content: "";
   position: absolute;
-  top: var(--border-size);
+  /* top: var(--border-size);
   right: var(--border-size);
   bottom: var(--border-size);
-  left: var(--border-size);
+  left: var(--border-size); */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   padding: var(--border-size);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
@@ -165,10 +169,14 @@
 .counter-border-blue i {
   content: "";
   position: absolute;
-  top: var(--border-size);
+  /* top: var(--border-size);
   right: var(--border-size);
   bottom: var(--border-size);
-  left: var(--border-size);
+  left: var(--border-size); */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   padding: var(--border-size);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;

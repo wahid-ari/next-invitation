@@ -188,7 +188,7 @@ export default function Home() {
                   ></motion.i>
                   <div className="p-6">
                     <div className="relative flex items-center justify-center">
-                      <div className="z-10 absolute w-54 h-54 inset-0 bg-gradient-to-b from-sky-500 to-yellow-500 mix-blend-normal opacity-[0.3] blur-[60px]" />
+                      <div className="z-10 absolute w-54 h-54 inset-0 bg-gradient-to-b from-sky-500 via-green-600 to-yellow-500 mix-blend-normal opacity-[0.3] blur-[60px]" />
                       {/* <div className="bg-black h-64 w-64"> */}
                       <div className="relative w-64 h-64">
                         <Image
@@ -229,7 +229,7 @@ export default function Home() {
                   ></motion.i>
                   <div className="p-6">
                     <div className="relative flex items-center justify-center">
-                      <div className="z-10 absolute w-54 h-54 inset-0 bg-gradient-to-b from-sky-500 to-yellow-500 mix-blend-normal opacity-[0.3] blur-[60px]" />
+                      <div className="z-10 absolute w-54 h-54 inset-0 bg-gradient-to-b from-sky-500 via-green-600 to-yellow-500 mix-blend-normal opacity-[0.3] blur-[60px]" />
                       {/* <div className="bg-black h-64 w-64"> */}
                       <div className="relative w-64 h-64">
                         <Image
