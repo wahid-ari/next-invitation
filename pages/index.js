@@ -563,7 +563,144 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="countdown" className="relative z-[1] h-screen w-screen mt-16 sm:mt-8 md:mt-0">
+          <section id="countdown" className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden mt-16 sm:mt-8 md:mt-0">
+            <span className={cn(styles.leftLights, "opacity-100")} />
+            <span className={cn(styles.rightLights, "opacity-100")} />
+            <span className="bg-gradient-to-b from-black to-transparent absolute top-0 left-0 right-0 w-full h-[70vh]"></span>
+            <span className="absolute bottom-0 left-0 right-0 w-full h-64 bg-gradient-to-t from-black to-transparent" />
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute z-10 top-20 md:left-14"
+            >
+              <motion.circle
+                cx="100"
+                cy="100"
+                r="80"
+                className="stroke-yellow-500/50 fill-transparent"
+                variants={draw}
+                custom={1}
+              />
+            </motion.svg>
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute z-10 top-14 -left-40 md:-left-10"
+            >
+              <motion.rect
+                width="140"
+                height="140"
+                x="410"
+                y="30"
+                rx="20"
+                className="stroke-sky-500/50 stroke-1 fill-transparent"
+                variants={draw}
+                custom={3}
+              />
+            </motion.svg>
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute z-10 top-16 -right-32"
+            >
+              <motion.circle
+                cx="100"
+                cy="100"
+                r="50"
+                className="stroke-yellow-500/50"
+                variants={draw}
+                custom={1}
+              />
+            </motion.svg>
+            <motion.svg
+              width="200"
+              height="200"
+              viewBox="0 0 600 600"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute z-10 -right-16 top-16"
+            >
+              <motion.line
+                x1="220"
+                y1="30"
+                x2="360"
+                y2="170"
+                className="stroke-yellow-500/50"
+                variants={draw}
+                custom={2}
+              />
+              <motion.line
+                x1="220"
+                y1="170"
+                x2="360"
+                y2="30"
+                className="stroke-sky-500/50"
+                variants={draw}
+                custom={2.5}
+              />
+            </motion.svg>
+            <div className="relative flex items-center h-screen justify-center">
+              <div className="-mt-16">
+                <h1 className="font-extrabold text-center text-5xl md:text-6xl p-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
+                  <span className={eb.className}>Countdown</span>
+                </h1>
+                <div className="relative z-10 flex justify-center mb-16 sm:mb-32">
+                  <Pattern />
+                </div>
+                <Countdown date={'2023-11-14'} renderer={props => (
+                  <div className="mx-auto max-w-2xl grid grid-cols-1 sm:grid-cols-4 gap-8 md:gap-16">
+                    <FadeIn delay={0.2}>
+                      <div className="text-center">
+                        <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500">
+                          {props.days}
+                        </p>
+                        <p className="text-xl font-medium mt-2 text-neutral-300">Days</p>
+                      </div>
+                    </FadeIn>
+                    <FadeIn delay={0.3}>
+                      <div className="text-center">
+                        <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-t from-yellow-500 via-green-500 to-sky-500">
+                          {props.hours}
+                        </p>
+                        <p className="text-xl font-medium mt-2 text-neutral-300">Hours</p>
+                      </div>
+                    </FadeIn>
+                    <FadeIn delay={0.4}>
+                      <div className="text-center">
+                        <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-l from-yellow-500 via-green-500 to-sky-500">
+                          {props.minutes}
+                        </p>
+                        <p className="text-xl font-medium mt-2 text-neutral-300">Minutes</p>
+                      </div>
+                    </FadeIn>
+                    <FadeIn delay={0.5}>
+                      <div className="text-center">
+                        <p suppressHydrationWarning={true} className="font-bold text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-500 to-sky-500">
+                          {props.seconds}
+                        </p>
+                        <p className="text-xl font-medium mt-2 text-neutral-300">Seconds</p>
+                      </div>
+                    </FadeIn>
+                  </div>
+                )} />
+              </div>
+            </div>
+          </section>
+
+          {/* <section id="countdown" className="relative z-[1] h-screen w-screen mt-16 sm:mt-8 md:mt-0">
             <span className={cn(styles.leftLights, "opacity-100")} />
             <span className={cn(styles.rightLights, "opacity-100")} />
             <span className="absolute bottom-0 left-0 right-0 w-full h-48 bg-gradient-to-t from-black to-transparent" />
@@ -708,7 +845,7 @@ export default function Home() {
                 )} />
               </div>
             </div>
-          </section>
+          </section> */}
 
         </div>
       </main >

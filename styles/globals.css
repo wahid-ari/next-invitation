@@ -116,6 +116,16 @@ body {
 	background-image: url(../public/gridd-bg.svg);
 }
 
+#countdown {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(../public/field.svg);
+	/* https://loading.io/background/ */
+}
+
 .container {
 	position: absolute;
 	z-index: -6;

@@ -415,7 +415,7 @@ export default function MobileNav() {
               }}
               className={`animation-hover 
             ${activeLink === "pattern" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
-            font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
+            font-bold py-1 px-0.5 flex flex-col gap-2 items-center text-sm transition-all cursor-pointer`
               }
             >
               <span className="hidden sm:block">WELCOME</span>
@@ -444,7 +444,7 @@ export default function MobileNav() {
               }}
               className={`animation-hover 
             ${activeLink === "event" ? " animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
-            font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
+            font-bold py-1 px-0.5 flex flex-col gap-2 items-center text-sm transition-all cursor-pointer`
               }
             >
               <span className="hidden sm:block">EVENT</span>
@@ -473,7 +473,7 @@ export default function MobileNav() {
               }}
               className={`animation-hover 
             ${activeLink === "ripple" ? " animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
-            font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
+            font-bold py-1 px-0.5 flex flex-col gap-2 items-center text-sm transition-all cursor-pointer`
               }
             >
               <span className="hidden sm:block">LOCATION</span>
@@ -502,7 +502,7 @@ export default function MobileNav() {
               }}
               className={`animation-hover 
             ${activeLink === "gridd" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
-            font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
+            font-bold py-1 px-0.5 flex flex-col gap-2 items-center text-sm transition-all cursor-pointer`
               }
             >
               <span className="hidden sm:block">GALLERY</span>
@@ -531,7 +531,7 @@ export default function MobileNav() {
               }}
               className={`animation-hover 
             ${activeLink === "countdown" ? "animation-active text-transparent bg-clip-text bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500" : "bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]"} 
-            font-bold py-1 flex flex-col gap-1 items-center text-sm transition-all cursor-pointer`
+            font-bold py-1 px-0.5 flex flex-col gap-2 items-center text-sm transition-all cursor-pointer`
               }
             >
               <span className="hidden sm:block">COUNTDOWN</span>
