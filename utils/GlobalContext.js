@@ -5,7 +5,8 @@ import { createContext, useEffect, useState } from 'react';
 export const GlobalContext = createContext('');
 
 export function GlobalProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
+  const [modalOpen, setModalOpen] = useState(true);
 
   // check dark mode to true if theme in local storage is dark
   useEffect(() => {
@@ -25,5 +26,7 @@ export function GlobalProvider({ children }) {
     }
   }, [darkMode]);
 
-  return <GlobalContext.Provider value={[darkMode, setDarkMode]}>{children}</GlobalContext.Provider>;
+  return (
+    <GlobalContext.Provider value={[darkMode, setDarkMode, modalOpen, setModalOpen]}>{children}</GlobalContext.Provider>
+  );
 }
