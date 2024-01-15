@@ -844,21 +844,21 @@ export default function MobileNav() {
           >
             <LinkScroll
               activeClass='active'
-              to='pattern'
-              href='/#pattern'
+              to='invite'
+              href='/#invite'
               spy={true}
               smooth={true}
               aria-label='Welcome'
               duration={1000}
               onSetActive={() => {
-                setActiveLink('pattern');
+                setActiveLink('invite');
               }}
               className={`animation-hover 
-            ${activeLink === 'pattern' ? 'animation-active bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500 bg-clip-text text-transparent' : 'bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-transparent'} 
+            ${activeLink === 'invite' ? 'animation-active bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500 bg-clip-text text-transparent' : 'bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-transparent'} 
             flex cursor-pointer flex-col items-center gap-2 px-0.5 py-1 text-sm font-bold transition-all`}
             >
               <span className='hidden sm:block'>WELCOME</span>
-              {activeLink === 'pattern' ? (
+              {activeLink === 'invite' ? (
                 <HeartIcon className='block h-6 w-6 pb-1 sm:hidden' />
               ) : (
                 <Heart className='block h-6 w-6 pb-1 sm:hidden' />

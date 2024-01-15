@@ -201,7 +201,7 @@ export default function Home() {
                 {recipient.name}
               </h2>
               {recipient.name != 'Tamu Undangan' && (
-                <p className='mt-8 text-center text-xs italic text-neutral-400'>
+                <p className='mt-8 px-4 text-center text-xs italic text-neutral-400'>
                   *Mohon Maaf Apabila Ada Kesalahan Dalam Penulisan Nama/Gelar
                 </p>
               )}
@@ -214,7 +214,7 @@ export default function Home() {
           >
             <div className='flex w-full flex-col items-center justify-center gap-8 md:flex-row lg:gap-24'>
               <FadeIn delay={0.3}>
-                <div className={cn(styles['counter-border'], 'pointer-events-none no-underline')}>
+                <div className={cn(styles['counter-border'], 'pointer-events-none mt-20 no-underline md:mt-0')}>
                   <motion.i
                     initial='visible'
                     animate={{ opacity: 1 }}
@@ -234,7 +234,7 @@ export default function Home() {
                       {/* </div> */}
                     </div>
                     <div className='flex justify-center'>
-                      <span className='mt-5 text-2xl font-bold tracking-wide text-gray-200'>John Doe</span>
+                      {/* <span className='mt-5 text-2xl font-bold tracking-wide text-gray-200'>John Doe</span> */}
                     </div>
                   </div>
                 </div>
@@ -265,13 +265,13 @@ export default function Home() {
                       {/* </div> */}
                     </div>
                     <div className='flex justify-center'>
-                      <span className='mt-5 text-2xl font-bold tracking-wide text-gray-200'>Jane Doe</span>
+                      {/* <span className='mt-5 text-2xl font-bold tracking-wide text-gray-200'>Jane Doe</span> */}
                     </div>
                   </div>
                 </div>
               </FadeIn>
             </div>
-            <Gradient width={1000} height={500} className='top-[-100px] opacity-20' conic />
+            <Gradient width={1000} height={500} className='top-[-50px] opacity-20' conic />
             <div className='absolute top-0 z-10 h-32 w-full bg-gradient-to-b from-black to-transparent' />
           </section>
 
@@ -318,55 +318,38 @@ export default function Home() {
 
             {/* </FadeIn> */}
             <span className='absolute left-0 right-0 top-0 h-14 w-full bg-gradient-to-b from-black to-transparent' />
-            <span className='absolute bottom-0 left-0 right-0 h-14 w-full bg-gradient-to-t from-black to-transparent' />
+            <span className='absolute bottom-0 left-0 right-0 h-10 w-full bg-gradient-to-t from-black to-transparent' />
           </section>
 
-          <section
-            id='interstellar'
-            className='relative flex min-h-screen w-full items-center justify-center overflow-hidden'
-          >
-            <div>
+          <section id='grid' className='flex h-screen w-full items-center justify-center'>
+            <div className='grid-radial'></div>
+            <motion.div
+              id='gridd-bg'
+              animate={{
+                scale: [1, 1.1, 1, 0.9],
+                rotate: [0, 90, 180, 270, 360],
+              }}
+              transition={{
+                duration: 10,
+                ease: 'easeInOut',
+                times: [0.9, 1, 0.9, 1],
+                repeat: Infinity,
+              }}
+            />
+            <div className={cn(eb.className, 'z-10 mx-4 max-w-xl text-center text-2xl text-white')}>
               <FadeIn delay={0.3}>
-                <p
-                  className={cn(
-                    eb.className,
-                    'max-w-lg bg-gradient-to-b from-white via-neutral-100 to-neutral-200 bg-clip-text px-4 text-center text-2xl font-semibold text-transparent',
-                  )}
-                >
-                  Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan
-                  memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
+                <p className='bg-gradient-to-b from-white via-neutral-100 to-neutral-200 bg-clip-text px-4 text-center text-xl font-semibold text-transparent sm:text-2xl'>
+                  Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari
+                  (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan
+                  kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah)
+                  bagi kaum yang berpikir.
                 </p>
               </FadeIn>
+              <Border className='mx-auto my-2' />
               <FadeIn delay={0.4}>
-                <div className='mt-12 flex justify-center'>
-                  <Pattern />
-                </div>
-              </FadeIn>
-              <FadeIn delay={0.5}>
-                <div className='mt-8 flex items-center justify-center gap-4 px-4 italic'>
-                  <h1
-                    className={cn(
-                      eb.className,
-                      'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text py-2 pl-2 text-5xl font-bold italic text-transparent md:text-left',
-                    )}
-                  >
-                    <i>John</i>
-                  </h1>
-                  <h1 className='bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500 bg-clip-text text-5xl font-extrabold text-transparent md:text-center'>
-                    &
-                  </h1>
-                  <h1
-                    className={cn(
-                      eb.className,
-                      'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-2 text-5xl font-bold italic text-transparent md:text-left',
-                    )}
-                  >
-                    <i>Jane</i>
-                  </h1>
-                </div>
+                <span className='-mt-2 font-medium italic'>(Q.S Ar-Rum : 21)</span>
               </FadeIn>
             </div>
-            <Gradient width={1200} height={300} className='bottom-[-200px] opacity-20' conic />
           </section>
 
           <section id='event' className='relative my-10 flex h-screen w-full items-center justify-center md:my-20'>
@@ -434,36 +417,36 @@ export default function Home() {
                   <span className={eb.className}>Kota SBY, Jawa Timur</span>
                 </h1>
                 <div className='mb-4 flex justify-center'>
-                  <button
+                  {/* <button
                     onClick={() => setShowMap(!showMap)}
                     className='group relative mb-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-yellow-600 via-green-500 to-sky-500 p-0.5 text-sm font-medium text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-neutral-500 group-hover:from-yellow-600 group-hover:via-green-600 group-hover:to-sky-500'
                   >
                     <span className='relative rounded-md bg-black px-6 py-2 transition-all duration-75 ease-in group-hover:bg-opacity-0'>
                       {showMap ? 'Hide Map' : 'Show Map'}
                     </span>
-                  </button>
+                  </button> */}
                 </div>
               </FadeIn>
-              {showMap ? (
-                <div className='relative z-20 mx-4 flex justify-center rounded-2xl shadow-xl shadow-green-600/40'>
-                  <iframe
-                    className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] md:block'
-                    width={800}
-                    height={400}
-                    src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                  />
-                  <iframe
-                    className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:block md:hidden'
-                    width={500}
-                    height={300}
-                    src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                  />
-                  <iframe
-                    className='block h-64 w-full rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:hidden'
-                    src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                  />
-                </div>
-              ) : null}
+              {/* {showMap ? ( */}
+              <div className='relative z-20 mx-4 flex justify-center rounded-2xl shadow-xl shadow-green-600/40'>
+                <iframe
+                  className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] md:block'
+                  width={800}
+                  height={400}
+                  src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
+                />
+                <iframe
+                  className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:block md:hidden'
+                  width={500}
+                  height={300}
+                  src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
+                />
+                <iframe
+                  className='block h-64 w-full rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:hidden'
+                  src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
+                />
+              </div>
+              {/* ) : null} */}
             </div>
           </div>
 
@@ -618,6 +601,54 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </section>
+
+          <section
+            id='interstellar'
+            className='relative flex min-h-screen w-full items-center justify-center overflow-hidden'
+          >
+            <div>
+              <FadeIn delay={0.3}>
+                <p
+                  className={cn(
+                    eb.className,
+                    'max-w-lg bg-gradient-to-b from-white via-neutral-100 to-neutral-200 bg-clip-text px-4 text-center text-xl font-semibold text-transparent md:text-2xl',
+                  )}
+                >
+                  Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan
+                  memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.4}>
+                <div className='mt-12 flex justify-center'>
+                  <Border />
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.5}>
+                <div className='mt-8 flex items-center justify-center gap-4 px-4 italic'>
+                  <h1
+                    className={cn(
+                      eb.className,
+                      'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text py-2 pl-2 text-5xl font-bold italic text-transparent md:text-left',
+                    )}
+                  >
+                    <i>John</i>
+                  </h1>
+                  <h1 className='bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500 bg-clip-text text-5xl font-extrabold text-transparent md:text-center'>
+                    &
+                  </h1>
+                  <h1
+                    className={cn(
+                      eb.className,
+                      'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-2 text-5xl font-bold italic text-transparent md:text-left',
+                    )}
+                  >
+                    <i>Jane</i>
+                  </h1>
+                </div>
+              </FadeIn>
+            </div>
+            <Gradient width={1200} height={300} className='bottom-[-200px] opacity-20' conic />
           </section>
 
           <section
