@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head'
 import Image from 'next/image';
 import { Inter, EB_Garamond } from '@next/font/google';
-import MobileNav from '@components/MobileNav';
+import MobileNav, { Border } from '@components/MobileNav';
 import { FadeIn } from '@components/FadeIn';
 import { Gradient } from '@components/Gradient';
 import cn from "classnames";
@@ -14,11 +14,26 @@ import '@splidejs/react-splide/css';
 import Countdown from 'react-countdown';
 import Carousel, { Modal, ModalGateway } from "react-images";
 import Pattern from '@components/Pattern';
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
 
+const recipientLists = [
+  {
+    slug: 'john-doe',
+    name: 'John Doe'
+  },
+  {
+    slug: 'jane-doe',
+    name: 'Jane Doe'
+  }
+]
+
 export default function Home() {
+  const router = useRouter();
+  const query = router.query?.to
+  const recipient = recipientLists.find(item => item.slug == query) || { name: 'Tamu Undangan' }
   const time = useTime();
   const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
   // const rainbow = ["#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9"];
@@ -45,24 +60,6 @@ export default function Home() {
       };
     }
   };
-
-  const album = [
-    {
-      src: "https://images.unsplash.com/photo-1638091986258-0c285a62defd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1638201977889-7cf4026c7960?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1518387801569-c9372e7f2dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1638091986258-0c285a62defd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1638201977889-7cf4026c7960?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=80",
-    },
-  ]
 
   const albums = [
     {
@@ -168,6 +165,41 @@ export default function Home() {
 
           <MobileNav />
 
+          <section id="invite" className="min-h-screen relative flex items-center justify-center pt-20 pb-36 md:pb-16">
+            {/* <div className="invite-bg"></div> */}
+            <Gradient
+              width={1200}
+              height={500}
+              className="top-[-250px] opacity-30"
+              conic
+            />
+            <div>
+              <h1 className={cn(eb.className, "text-center mx-auto max-w-lg text-2xl sm:text-3xl font-semibold px-4")}>WE INVITE YOU TO CELEBRATE OUR WEDDING</h1>
+              {/* <Border className="mx-auto" /> */}
+              <div className="flex justify-center mb-2 mt-4">
+                <Pattern />
+              </div>
+              <div className='mt-4 mb-20 px-4 italic justify-center flex items-center gap-4'>
+                <h1 className={cn(eb.className, "italic font-bold md:text-left text-4xl bg-clip-text text-transparent bg-gradient-to-b from-white via-neutral-300 to-neutral-500")}>
+                  <i>John</i>
+                </h1>
+                <h1 className="font-extrabold md:text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500">
+                  &
+                </h1>
+                <h1 className={cn(eb.className, "italic px-2 font-bold md:text-left text-4xl bg-clip-text text-transparent bg-gradient-to-t from-white via-neutral-300 to-neutral-500")}>
+                  <i>Jane</i>
+                </h1>
+              </div>
+              <p className='text-center text-lg text-neutral-200 mb-4'>Kepada Bapak/Ibu/Saudara/i</p>
+              <h2 className={cn(eb.className, "text-center mx-auto max-w-lg text-4xl sm:text-5xl font-semibold px-4")}>
+                {recipient.name}
+              </h2>
+              {recipient.name != 'Tamu Undangan' &&
+                <p className='text-xs text-center text-neutral-400 italic mt-8'>*Mohon Maaf Apabila Ada Kesalahan Dalam Penulisan Nama/Gelar</p>
+              }
+            </div>
+          </section>
+
           <section id="pattern" className="relative w-full h-full min-h-screen flex items-center justify-center pt-16 sm:pt-8 md:pt-0 pb-16 sm:pb-8 md:pb-0">
             <div className="flex flex-col md:flex-row w-full items-center justify-center gap-8 lg:gap-24">
               <FadeIn delay={0.3}>
@@ -250,11 +282,11 @@ export default function Home() {
             </div>
             <Gradient
               width={1000}
-              height={700}
-              className="top-[-200px] opacity-20"
+              height={500}
+              className="top-[-100px] opacity-20"
               conic
             />
-            {/* <div className="absolute top-0 z-10 w-full h-32 from-black to-transparent bg-gradient-to-b" /> */}
+            <div className="absolute top-0 z-10 w-full h-32 from-black to-transparent bg-gradient-to-b" />
           </section>
 
           <section id="title" className="relative h-screen min-h-screen w-full flex items-center pb-8">
@@ -297,6 +329,40 @@ export default function Home() {
             {/* </FadeIn> */}
             <span className="absolute top-0 left-0 right-0 w-full h-14 bg-gradient-to-b from-black to-transparent" />
             <span className="absolute bottom-0 left-0 right-0 w-full h-14 bg-gradient-to-t from-black to-transparent" />
+          </section>
+
+          <section id='interstellar' className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+            <div>
+              <FadeIn delay={0.3}>
+                <p className={cn(eb.className, "text-center max-w-lg text-2xl font-semibold px-4 bg-clip-text text-transparent bg-gradient-to-b from-white via-neutral-100 to-neutral-200")}>
+                  Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.4}>
+                <div className="flex justify-center mt-12">
+                  <Pattern />
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.5}>
+                <div className='mt-8 px-4 italic justify-center flex items-center gap-4'>
+                  <h1 className={cn(eb.className, "pl-2 italic font-bold md:text-left py-2 text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white via-neutral-300 to-neutral-500")}>
+                  <i>John</i>
+                </h1>
+                <h1 className="font-extrabold md:text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500">
+                  &
+                </h1>
+                <h1 className={cn(eb.className, "italic px-2 font-bold md:text-left py-2 text-5xl bg-clip-text text-transparent bg-gradient-to-t from-white via-neutral-300 to-neutral-500")}>
+                  <i>Jane</i>
+                </h1>
+                </div>
+              </FadeIn>
+            </div>
+            <Gradient
+              width={1200}
+              height={300}
+              className="bottom-[-200px] opacity-20"
+              conic
+            />
           </section>
 
           <section id="event" className="relative w-full h-screen flex items-center justify-center my-10 md:my-20">
@@ -377,7 +443,7 @@ export default function Home() {
           </div>
 
           <section id="gridd" className="min-h-screen relative flex items-center justify-between pt-20 pb-36 md:pb-16">
-            <div className="gridd-bg"></div>
+            {/* <div className="gridd-bg"></div> */}
             {/* <h1 className="absolute right-0 top-[38%] lg:[writing-mode:vertical-rl] z-20 font-extrabold  text-2xl lg:text-4xl pt-10 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
               GALERI
             </h1>
@@ -660,7 +726,7 @@ export default function Home() {
                 <div className="relative z-10 flex justify-center mb-16 sm:mb-32">
                   <Pattern />
                 </div>
-                <Countdown date={'2023-11-14'} renderer={props => (
+                <Countdown date={'2024-11-14'} renderer={props => (
                   <div className="mx-auto max-w-2xl grid grid-cols-1 sm:grid-cols-4 gap-8 md:gap-16">
                     <FadeIn delay={0.2}>
                       <div className="text-center">
@@ -847,7 +913,7 @@ export default function Home() {
             </div>
           </section> */}
 
-        </div>
+        </div >
       </main >
     </>
   )

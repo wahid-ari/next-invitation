@@ -156,8 +156,8 @@ function NavigationIcon({ className }) {
 function Play({ className }) {
   return (
     <svg className={className} viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" clipRule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path opacity="0.4" fillRule="evenodd" clipRule="evenodd" d="M14.0501 11.4668C13.3211 12.2528 11.3371 13.5828 10.3221 14.0098C10.1601 14.0778 9.74709 14.2218 9.65809 14.2238C9.46909 14.2298 9.28709 14.1238 9.19909 13.9538C9.16509 13.8878 9.06509 13.4568 9.03309 13.2648C8.93809 12.6808 8.88909 11.7738 8.89009 10.8618C8.88909 9.90483 8.94209 8.95483 9.04809 8.37683C9.07609 8.22083 9.15809 7.86183 9.18209 7.80383C9.22709 7.69583 9.30909 7.61083 9.40809 7.55783C9.48409 7.51683 9.57109 7.49483 9.65809 7.49783C9.74709 7.49983 10.1091 7.62683 10.2331 7.67583C11.2111 8.05583 13.2801 9.43383 14.0401 10.2438C14.1081 10.3168 14.2951 10.5128 14.3261 10.5528C14.3971 10.6428 14.4321 10.7518 14.4321 10.8618C14.4321 10.9638 14.4011 11.0678 14.3371 11.1548C14.3041 11.1998 14.1131 11.3998 14.0501 11.4668Z" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke="#006D0B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path opacity="0.4" fillRule="evenodd" clipRule="evenodd" d="M14.0501 11.4668C13.3211 12.2528 11.3371 13.5828 10.3221 14.0098C10.1601 14.0778 9.74709 14.2218 9.65809 14.2238C9.46909 14.2298 9.28709 14.1238 9.19909 13.9538C9.16509 13.8878 9.06509 13.4568 9.03309 13.2648C8.93809 12.6808 8.88909 11.7738 8.89009 10.8618C8.88909 9.90483 8.94209 8.95483 9.04809 8.37683C9.07609 8.22083 9.15809 7.86183 9.18209 7.80383C9.22709 7.69583 9.30909 7.61083 9.40809 7.55783C9.48409 7.51683 9.57109 7.49483 9.65809 7.49783C9.74709 7.49983 10.1091 7.62683 10.2331 7.67583C11.2111 8.05583 13.2801 9.43383 14.0401 10.2438C14.1081 10.3168 14.2951 10.5128 14.3261 10.5528C14.3971 10.6428 14.4321 10.7518 14.4321 10.8618C14.4321 10.9638 14.4011 11.0678 14.3371 11.1548C14.3041 11.1998 14.1131 11.3998 14.0501 11.4668Z" stroke="#CB9F01" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -165,9 +165,9 @@ function Play({ className }) {
 function Pause({ className }) {
   return (
     <svg className={className} viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" clipRule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke="#BABABA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M12.4632 9V12.2908" stroke="#666666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M10 9V12.2908" stroke="#666666" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path fillRule="evenodd" clipRule="evenodd" d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z" stroke="#CB9F01" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12.4632 9V12.2908" stroke="#006D0B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 9V12.2908" stroke="#006D0B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -230,7 +230,7 @@ function TimeIcon({ className }) {
   )
 }
 
-function Border({ className }) {
+export function Border({ className }) {
   return (
     <svg className={className} width="250" height="63" viewBox="0 0 440 63" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M205.459 56.2496C196.98 33.138 129.64 28.6744 75.6013 48.5663C67.5091 50.8115 61.3581 52.6033 54.077 52.3469C50.2383 52.2117 46.7225 51.3036 43.6707 49.3575C34.3999 43.4455 36.4605 25.5001 50.7103 26.8674M50.7103 26.8674C51.1182 26.9065 51.5361 26.9615 51.9641 27.033M50.7103 26.8674C51.1325 26.8863 51.5517 26.9429 51.9641 27.033M50.7103 26.8674C50.6234 26.8635 50.5364 26.8612 50.4493 26.8605M51.9641 27.033C52.0638 27.0497 52.164 27.0672 52.2648 27.0857M51.9641 27.033C57.0883 28.1529 61.1496 34.4457 56.6095 37.7798C53.4013 40.1358 48.4663 38.2683 48.7637 33.4053" stroke="url(#paint0_linear_155_14)" strokeWidth="3" />
@@ -374,7 +374,7 @@ export default function MobileNav() {
   let [isOpen, setIsOpen] = useState(true)
   function closeModal() {
     setIsOpen(false)
-    // playAudio()
+    playAudio()
   }
 
   return (
@@ -382,26 +382,29 @@ export default function MobileNav() {
       <MyModal isOpen={isOpen} closeModal={closeModal} />
 
       <nav className="fixed bottom-0 left-0 right-0 z-50 shadow-t">
-        {/* <div className="hidden sm:block absolute left-0 bottom-2 bg-black/90 backdrop-blur py-0.5 mx-2 px-1.5 rounded-lg">
-        <motion.div
-          className="py-1 flex flex-col transition-all cursor-pointer"
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-          {isPlaying ?
-            <button aria-label="Play" onClick={pauseAudio}><Pause className="w-[26px] h-[26px] xs:w-[22px] xs:h-[22px]" /> </button>
-            :
-            <button aria-label="Pause" onClick={playAudio}><Play className="w-[26px] h-[26px] xs:w-[22px] xs:h-[22px]" /> </button>
-          }
-        </motion.div>
-      </div> */}
+        <div className="hidden sm:block absolute left-0 bottom-2 bg-black/90 backdrop-blur py-0.5 mx-2 px-1.5 rounded-lg">
+          <motion.div
+            className="py-1 flex flex-col transition-all cursor-pointer"
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            {isPlaying ?
+              <button aria-label="Play" title='Pause' onClick={pauseAudio}><Pause className="w-[26px] h-[26px] xs:w-[24px] xs:h-[24px]" /> </button>
+              :
+              <button aria-label="Pause" title='Play' onClick={playAudio}><Play className="w-[26px] h-[26px] xs:w-[24px] xs:h-[24px]" /> </button>
+            }
+          </motion.div>
+        </div>
 
         <div className="bg-black/90 backdrop-blur pb-2 sm:pb-3 pt-2 mx-2 px-4 flex space-x-3 sm:max-w-lg sm:mx-auto justify-between items-center rounded-t-lg overflow-auto scrollbar scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-neutral-900">
 
           <motion.div
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+
+            className="relative"
+          >
             <LinkScroll
               activeClass="active"
               to="pattern"
@@ -430,7 +433,7 @@ export default function MobileNav() {
           <motion.div
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            transition={{ type: "spring", stiffness: 400, damping: 17 }} className="relative">
             <LinkScroll
               activeClass="active"
               to="event"
@@ -459,7 +462,7 @@ export default function MobileNav() {
           <motion.div
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            transition={{ type: "spring", stiffness: 400, damping: 17 }} className="relative">
             <LinkScroll
               activeClass="active"
               to="ripple"
@@ -488,7 +491,7 @@ export default function MobileNav() {
           <motion.div
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            transition={{ type: "spring", stiffness: 400, damping: 17 }} className="relative">
             <LinkScroll
               activeClass="active"
               to="gridd"
@@ -517,7 +520,7 @@ export default function MobileNav() {
           <motion.div
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            transition={{ type: "spring", stiffness: 400, damping: 17 }} className="relative">
             <LinkScroll
               activeClass="active"
               to="countdown"
@@ -543,17 +546,17 @@ export default function MobileNav() {
             </LinkScroll>
           </motion.div>
 
-          {/* <motion.div
-          className="block sm:hidden transition-all cursor-pointer"
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-          {isPlaying ?
-            <button aria-label="Play" onClick={pauseAudio}><Pause className="w-[25px] h-[25px] sm:w-[22px] sm:h-[22px] pt-0.5" /> </button>
-            :
-            <button aria-label="Pause" onClick={playAudio}><Play className="w-[25px] h-[25px] sm:w-[22px] sm:h-[22px] pt-0.5" /> </button>
-          }
-        </motion.div> */}
+          <motion.div
+            className="block sm:hidden transition-all cursor-pointer"
+            whileHover={{ scale: 1.15 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+            {isPlaying ?
+              <button aria-label="Play" onClick={pauseAudio}><Pause className="w-[25px] h-[25px] sm:w-[22px] sm:h-[22px] pt-0.5" /> </button>
+              :
+              <button aria-label="Pause" onClick={playAudio}><Play className="w-[25px] h-[25px] sm:w-[22px] sm:h-[22px] pt-0.5" /> </button>
+            }
+          </motion.div>
         </div>
       </ nav>
     </>

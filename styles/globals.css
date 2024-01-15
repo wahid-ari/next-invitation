@@ -58,6 +58,33 @@ body {
 		fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
 }
 
+#invite {
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(../public/gridd.webp);
+}
+
+#invite-bg,
+.invite-bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(../public/gridd-bg.svg);
+}
+
+#interstellar {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(../public/interstellar.svg);
+	/* https://loading.io/background/ */
+}
+
 #title {
 	background: linear-gradient(
 			0deg,
