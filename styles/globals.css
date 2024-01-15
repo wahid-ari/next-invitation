@@ -3,204 +3,180 @@
 @tailwind utilities;
 
 body {
-	overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .scrollbar-track-rounded::-webkit-scrollbar-track {
-	border-radius: 999px;
+  border-radius: 999px;
 }
 
 .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
-	border-radius: 999px;
+  border-radius: 999px;
 }
 
 .animation-hover:after {
-	background: none repeat scroll 0 0 transparent;
-	content: "";
-	height: 2px;
-	transition: width 0.3s ease 0s, left 0.3s ease 0s;
-	@apply w-0 bg-gradient-to-r from-sky-500 via-green-500 to-yellow-500 left-1/2 block bottom-0 absolute;
+  background: none repeat scroll 0 0 transparent;
+  content: '';
+  height: 2px;
+  transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
+  @apply absolute bottom-0 left-1/2 block w-0 bg-gradient-to-r from-sky-500 via-green-500 to-yellow-500;
 }
 .animation-active:after {
-	@apply left-0 hidden;
+  @apply left-0 hidden;
 }
 .animation-hover:hover:after {
-	@apply left-0 w-full;
+  @apply left-0 w-full;
 }
 
 .onboard {
-	width: 100%;
-	height: 100vh;
-	max-height: 1900px;
-	background-size: cover;
-	position: relative;
-	background: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0) 0%,
-			rgb(0, 0, 0) 1000px
-		),
-		fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
-		fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
+  width: 100%;
+  height: 100vh;
+  max-height: 1900px;
+  background-size: cover;
+  position: relative;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 1000px),
+    fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
+    fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
 }
 
 #pattern {
-	width: 100%;
-	/* height: 100vh;
+  width: 100%;
+  /* height: 100vh;
 	max-height: 900px; */
-	background-size: cover;
-	position: relative;
-	background: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0) 0%,
-			rgb(0, 0, 0) 700px
-		),
-		fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
-		fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
+  background-size: cover;
+  position: relative;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 700px),
+    fixed 0 0 / 20px 20px radial-gradient(#313131 1px, transparent 0),
+    fixed 10px 10px / 20px 20px radial-gradient(#313131 1px, transparent 0);
 }
 
 #invite {
-	position: relative;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	background-image: url(../public/gridd.webp);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url(../public/gridd.webp);
 }
 
 #invite-bg,
 .invite-bg {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	background-image: url(../public/gridd-bg.svg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url(../public/gridd-bg.svg);
 }
 
 #interstellar {
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(../public/interstellar.svg);
-	/* https://loading.io/background/ */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../public/interstellar.svg);
+  /* https://loading.io/background/ */
 }
 
 #title {
-	background: linear-gradient(
-			0deg,
-			hsla(0, 0%, 10%, 0.3) 0,
-			#000 min(350vw, 1200px)
-		),
-		fixed
-			repeating-radial-gradient(
-				circle at 50% min(calc(50vw + 9rem), calc(300px + 5rem)),
-				#050505 0,
-				#000 70px
-			);
+  background:
+    linear-gradient(0deg, hsla(0, 0%, 10%, 0.3) 0, #000 min(350vw, 1200px)),
+    fixed repeating-radial-gradient(circle at 50% min(calc(50vw + 9rem), calc(300px + 5rem)), #050505 0, #000 70px);
 }
 
 #ripple {
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-image: url(../public/ripple.svg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../public/ripple.svg);
 }
 
 .home_spotlight {
-	background: radial-gradient(
-		50% 50% at 50% 50%,
-		rgb(255, 255, 255) 0,
-		hsla(0, 0%, 100%, 0) 100%
-	);
-	opacity: 0.06;
-	transform: rotate(45deg);
-	width: 100%;
-	top: -80px;
-	max-width: 1800px;
+  background: radial-gradient(50% 50% at 50% 50%, rgb(255, 255, 255) 0, hsla(0, 0%, 100%, 0) 100%);
+  opacity: 0.06;
+  transform: rotate(45deg);
+  width: 100%;
+  top: -80px;
+  max-width: 1800px;
 }
 
 .home_spotlight {
-	pointer-events: none;
-	position: absolute;
-	height: 100%;
+  pointer-events: none;
+  position: absolute;
+  height: 100%;
 }
 
 #gridd {
-	position: relative;
-	background-repeat: no-repeat;
-	background-position: 49%;
-	background-image: url(../public/gridd.webp);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 49%;
+  background-image: url(../public/gridd.webp);
 }
 
 #gridd-bg,
 .gridd-bg {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	background-image: url(../public/gridd-bg.svg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url(../public/gridd-bg.svg);
 }
 
 #countdown {
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(../public/field.svg);
-	/* https://loading.io/background/ */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../public/field.svg);
+  /* https://loading.io/background/ */
 }
 
 .container {
-	position: absolute;
-	z-index: -6;
-	inset: 0;
-	transition: perspective 3000ms ease 0s;
+  position: absolute;
+  z-index: -6;
+  inset: 0;
+  transition: perspective 3000ms ease 0s;
 }
 
 .lines {
-	--right: #00abfa;
-	--left: #ffd000;
-	position: absolute;
-	width: 200vw;
-	margin-left: -50%;
-	transform: translateY(0);
-	background-image: linear-gradient(
-		to right,
-		var(--left) 45%,
-		/* rgba(0, 0, 0, 0) 50%, */ var(--right) 55%
-	);
-	mask-image: linear-gradient(
-			to right,
-			rgba(0, 0, 0, 1) 2px,
-			rgba(0, 0, 0, 0) 1px
-		),
-		linear-gradient(to bottom, rgba(0, 0, 0, 1) 2px, rgba(0, 0, 0, 0) 1px);
-	mask-size: 60px 60px;
-	overflow: hidden;
-	mask-repeat: repeat repeat;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	inset: -100% 0px;
-	background-position-y: 100%;
-	mask-position: 50% 0px;
+  --right: #00abfa;
+  --left: #ffd000;
+  position: absolute;
+  width: 200vw;
+  margin-left: -50%;
+  transform: translateY(0);
+  background-image: linear-gradient(to right, var(--left) 45%, /* rgba(0, 0, 0, 0) 50%, */ var(--right) 55%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 2px, rgba(0, 0, 0, 0) 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 1) 2px, rgba(0, 0, 0, 0) 1px);
+  mask-size: 60px 60px;
+  overflow: hidden;
+  mask-repeat: repeat repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: -100% 0px;
+  background-position-y: 100%;
+  mask-position: 50% 0px;
 }
 
 @media (min-width: 1024px) {
-	.lines {
-		mask-size: 80px 80px;
-	}
+  .lines {
+    mask-size: 80px 80px;
+  }
 }
 
 /* SWIPER CONTINOUS PLAY  */
 .swiper-continous-play > .swiper-wrapper {
-	transition-timing-function: linear;
+  transition-timing-function: linear;
 }
 
 .react-images__view {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }

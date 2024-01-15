@@ -1,21 +1,12 @@
-import cn from "classnames";
-import gradients from "./gradients.module.css";
+import cn from 'classnames';
 
-export function Gradient({
-  width = 1000,
-  height = 200,
-  opacity,
-  pink,
-  blue,
-  conic,
-  gray,
-  className,
-  small,
-}) {
+import gradients from './gradients.module.css';
+
+export function Gradient({ width = 1000, height = 200, opacity, pink, blue, conic, gray, className, small }) {
   return (
     <span
       className={cn(
-        "absolute",
+        'absolute',
         gradients.glow,
         {
           [gradients.glowPink]: pink,
@@ -24,13 +15,13 @@ export function Gradient({
           [gradients.glowSmall]: small,
           [gradients.glowGray]: gray,
         },
-        className
+        className,
       )}
       style={{
         width: width,
         height: height,
         opacity: opacity,
-        borderRadius: "100%",
+        borderRadius: '100%',
       }}
     />
   );
