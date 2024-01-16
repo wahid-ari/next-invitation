@@ -1,8 +1,6 @@
-'use client';
-
 import { createContext, useEffect, useState } from 'react';
 
-export const GlobalContext = createContext('');
+export const GlobalContext = createContext(null);
 
 export function GlobalProvider({ children }) {
   const [darkMode, setDarkMode] = useState(true);
@@ -27,6 +25,8 @@ export function GlobalProvider({ children }) {
   }, [darkMode]);
 
   return (
-    <GlobalContext.Provider value={[darkMode, setDarkMode, modalOpen, setModalOpen]}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{ darkMode, setDarkMode, modalOpen, setModalOpen }}>
+      {children}
+    </GlobalContext.Provider>
   );
 }

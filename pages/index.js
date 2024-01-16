@@ -41,7 +41,7 @@ const RoundedText = dynamic(() => import('@components/RoundedText'), {
 });
 
 export default function Home() {
-  const [modalOpen, setModalOpen] = useContext(GlobalContext);
+  const { modalOpen, setModalOpen } = useContext(GlobalContext);
   const router = useRouter();
   const query = router.query?.to;
   const recipient = recipientLists.find((item) => item.slug == query) || { name: 'Tamu Undangan' };
@@ -183,7 +183,10 @@ export default function Home() {
               <Gradient width={1200} height={500} className='top-[-250px] opacity-30' conic />
               <div className='z-10'>
                 <h1
-                  className={cn(eb.className, 'mx-auto max-w-lg px-4 text-center text-2xl font-semibold sm:text-3xl')}
+                  className={cn(
+                    eb.className,
+                    'mx-auto max-w-lg px-4 text-center text-2xl font-semibold sm:text-3xl md:text-4xl',
+                  )}
                 >
                   <span className='min-[410px]:hidden'>WE INVITE YOU TO CELEBRATE OUR WEDDING</span>
                   <p className='hidden tracking-wide min-[410px]:block'>
@@ -193,7 +196,7 @@ export default function Home() {
                 <h1
                   className={cn(
                     eb.className,
-                    'mx-auto hidden max-w-lg px-4 text-center text-2xl font-semibold min-[410px]:block sm:-mt-5 sm:text-3xl',
+                    'mx-auto hidden max-w-lg px-4 text-center text-2xl font-semibold min-[410px]:block sm:-mt-5 sm:text-3xl md:text-4xl',
                   )}
                 >
                   OUR WEDDING
@@ -202,14 +205,14 @@ export default function Home() {
                 <div className='mb-2 mt-4 flex justify-center'>
                   <Pattern />
                 </div>
-                <div className='mb-20 mt-4 flex items-center justify-center gap-4 px-4 italic'>
+                <div className='mb-20 mt-4 flex items-center justify-center gap-4 px-4'>
                   <h1
                     className={cn(
                       eb.className,
-                      'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text text-4xl font-bold italic text-transparent md:text-left',
+                      'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text text-4xl font-bold text-transparent md:text-left',
                     )}
                   >
-                    <i>John</i>
+                    John
                   </h1>
                   <h1 className='bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500 bg-clip-text text-5xl font-extrabold text-transparent md:text-center'>
                     &
@@ -217,10 +220,10 @@ export default function Home() {
                   <h1
                     className={cn(
                       eb.className,
-                      'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 text-4xl font-bold italic text-transparent md:text-left',
+                      'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 text-4xl font-bold text-transparent md:text-left',
                     )}
                   >
-                    <i>Jane</i>
+                    Jane
                   </h1>
                 </div>
                 <p className='mb-4 text-center text-lg text-neutral-200'>Kepada Bapak/Ibu/Saudara/i</p>

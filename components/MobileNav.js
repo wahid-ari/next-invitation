@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { GlobalContext } from '@utils/GlobalContext';
 import { motion } from 'framer-motion';
 import { Link as LinkScroll } from 'react-scroll';
@@ -711,30 +711,49 @@ export function Border({ className }) {
 }
 
 export default function MobileNav() {
-  const [modalOpen] = useContext(GlobalContext);
+  const { modalOpen } = useContext(GlobalContext);
   const [activeLink, setActiveLink] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audio, setAudio] = useState(new Audio('/musiccc.mp3'));
+  // const [audio, setAudio] = useState(null);
+  // useEffect(() => {
+  //   // only run once on the first render on the client
+  //   setAudio(new Audio('/musiccc.mp3'))
+  // }, [])
+  const audioRef = useRef();
 
   useEffect(() => {
     if (!modalOpen) {
       playAudio();
     }
+    // [modalOpen, audio]
   }, [modalOpen]);
 
   function playAudio() {
     setIsPlaying(true);
-    audio?.play();
+    // audio?.play();
+    audioRef.current.play();
   }
 
   function pauseAudio() {
     setIsPlaying(false);
-    audio?.pause();
+    // audio?.pause();
+    audioRef.current.pause();
   }
 
   return (
     <>
       <nav className='shadow-t fixed bottom-0 left-0 right-0 z-50'>
+        <audio
+          controls='controls'
+          controlsList='nodownload'
+          preload='auto'
+          autobuffer='true'
+          loop={true}
+          style={{ display: 'none' }}
+          ref={audioRef}
+        >
+          <source src={'/musiccc.mp3'} />
+        </audio>
         <div className='absolute bottom-2 left-0 mx-2 hidden rounded-lg bg-black/90 px-1.5 py-0.5 backdrop-blur sm:block'>
           <motion.div
             className='flex cursor-pointer flex-col py-1 transition-all'
