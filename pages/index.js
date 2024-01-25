@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { EB_Garamond, Inter } from '@next/font/google';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
@@ -40,10 +39,14 @@ const RoundedText = dynamic(() => import('@components/RoundedText'), {
   ssr: false,
 });
 
-export default function Home() {
+export async function getServerSideProps(context) {
+  const query = context?.query?.to || '';
+  // Pass data to the page via props
+  return { props: { query } };
+}
+
+export default function Home({ query }) {
   const { modalOpen, setModalOpen } = useContext(GlobalContext);
-  const router = useRouter();
-  const query = router.query?.to;
   const recipient = recipientLists.find((item) => item.slug == query) || { name: 'Tamu Undangan' };
   const time = useTime();
   const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
