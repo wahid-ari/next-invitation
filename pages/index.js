@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -131,6 +131,11 @@ export default function Home() {
 
   const [showMap, setShowMap] = useState(false);
 
+  const og_url =
+    recipient.name !== 'Tamu Undangan'
+      ? `${process.env.WEB_URL}/api/og?name=${recipient.name}`
+      : `${process.env.WEB_URL}/og.jpg`;
+
   return (
     <>
       <Head>
@@ -141,16 +146,16 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
         {/* <!-- Open Graph / Facebook --/> */}
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://next-invitation.vercel.app/' />
+        <meta property='og:url' content={`${process.env.WEB_URL}`} />
         <meta property='og:title' content='Next Invitation' />
         <meta property='og:description' content='Next Invitation' />
-        <meta property='og:image' content='https://next-invitation.vercel.app/og.jpg' />
+        <meta property='og:image' content={og_url} />
         {/* <!-- Twitter --/> */}
         <meta property='twitter:card' content='summary_large_image' />
-        <meta property='twitter:url' content='https://next-invitation.vercel.app/' />
+        <meta property='twitter:url' content={`${process.env.WEB_URL}`} />
         <meta property='twitter:title' content='Next Invitation' />
         <meta property='twitter:description' content='Next Invitation' />
-        <meta property='twitter:image' content='https://next-invitation.vercel.app/og.jpg' />
+        <meta property='twitter:image' content={og_url} />
       </Head>
 
       <MyModal isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
@@ -209,7 +214,7 @@ export default function Home() {
                   <h1
                     className={cn(
                       eb.className,
-                      'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text text-4xl font-bold text-transparent md:text-left',
+                      'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text py-1 text-[40px] font-bold text-transparent md:text-left',
                     )}
                   >
                     John
@@ -220,7 +225,7 @@ export default function Home() {
                   <h1
                     className={cn(
                       eb.className,
-                      'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 text-4xl font-bold text-transparent md:text-left',
+                      'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-1 text-[40px] font-bold text-transparent md:text-left',
                     )}
                   >
                     Jane
@@ -303,7 +308,7 @@ export default function Home() {
                   </div>
                 </FadeIn>
               </div>
-              <Gradient width={1000} height={500} className='top-[-50px] opacity-20' conic />
+              <Gradient width={1000} height={300} className='opacity-20' conic />
               <div className='absolute top-0 z-10 h-32 w-full bg-gradient-to-b from-black to-transparent' />
             </section>
 
