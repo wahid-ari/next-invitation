@@ -787,6 +787,7 @@ export default function MobileNav() {
               spy={true}
               smooth={true}
               aria-label='Welcome'
+              title='Welcome'
               duration={1000}
               onSetActive={() => {
                 setActiveLink('invite');
@@ -816,7 +817,8 @@ export default function MobileNav() {
               href='/#event'
               spy={true}
               smooth={true}
-              aria-label='Location'
+              aria-label='Schedule'
+              title='Schedule'
               duration={1000}
               onSetActive={() => {
                 setActiveLink('event');
@@ -825,7 +827,7 @@ export default function MobileNav() {
             ${activeLink === 'event' ? ' animation-active bg-gradient-to-br from-sky-500 via-green-500 to-yellow-500 bg-clip-text text-transparent' : 'bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-transparent'} 
             flex cursor-pointer flex-col items-center gap-2 px-0.5 py-1 text-sm font-bold transition-all`}
             >
-              <span className='hidden sm:block'>EVENT</span>
+              <span className='hidden sm:block'>SCHEDULE</span>
               {activeLink === 'event' ? (
                 <CalendarIcon className='block h-6 w-6 pb-1 sm:hidden' />
               ) : (
@@ -847,6 +849,7 @@ export default function MobileNav() {
               spy={true}
               smooth={true}
               aria-label='Location'
+              title='Location'
               duration={1000}
               onSetActive={() => {
                 setActiveLink('ripple');
@@ -878,6 +881,7 @@ export default function MobileNav() {
               smooth={true}
               duration={1000}
               aria-label='Gallery'
+              title='Gallery'
               onSetActive={() => {
                 setActiveLink('gridd');
               }}
@@ -908,6 +912,7 @@ export default function MobileNav() {
               smooth={true}
               duration={1000}
               aria-label='Countdown'
+              title='Countdown'
               onSetActive={() => {
                 setActiveLink('countdown');
               }}
@@ -931,11 +936,11 @@ export default function MobileNav() {
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
             {isPlaying ? (
-              <button aria-label='Play' onClick={pauseAudio}>
+              <button aria-label='Play' title='Pause' onClick={pauseAudio}>
                 <Pause className='h-[25px] w-[25px] pt-0.5 sm:h-[22px] sm:w-[22px]' />{' '}
               </button>
             ) : (
-              <button aria-label='Pause' onClick={playAudio}>
+              <button aria-label='Pause' title='Play' onClick={playAudio}>
                 <Play className='h-[25px] w-[25px] pt-0.5 sm:h-[22px] sm:w-[22px]' />{' '}
               </button>
             )}

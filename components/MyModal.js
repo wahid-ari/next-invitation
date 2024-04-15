@@ -8,7 +8,7 @@ import { Border } from './MobileNav';
 export default function MyModal({ isOpen, closeModal }) {
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as='div' className=' relative z-[51]' onClose={closeModal}>
+      <Dialog as='div' className='relative z-[51]' title='Welcome' onClose={closeModal}>
         <Transition.Child
           as={Fragment}
           enter='ease-out duration-300'

@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
 import { EB_Garamond, Inter } from '@next/font/google';
@@ -13,27 +14,17 @@ import styles from '../components/index.module.css';
 
 import '@splidejs/react-splide/css';
 
-import dynamic from 'next/dynamic';
 import { FadeIn } from '@components/FadeIn';
 import { Gradient } from '@components/Gradient';
 import MobileNav, { Border } from '@components/MobileNav';
 import MyModal from '@components/MyModal';
 import Pattern from '@components/Pattern';
+import { albums } from '@data/albums';
+import { recipients } from '@data/recipients';
 import { GlobalContext } from '@utils/GlobalContext';
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
-
-const recipientLists = [
-  {
-    slug: 'john-doe',
-    name: 'John Doe',
-  },
-  {
-    slug: 'jane-doe',
-    name: 'Jane Doe',
-  },
-];
 
 const RoundedText = dynamic(() => import('@components/RoundedText'), {
   ssr: false,
@@ -47,7 +38,7 @@ export async function getServerSideProps(context) {
 
 export default function Home({ query }) {
   const { modalOpen, setModalOpen } = useContext(GlobalContext);
-  const recipient = recipientLists.find((item) => item.slug == query) || { name: 'Tamu Undangan' };
+  const recipient = recipients.find((item) => item.slug == query) || { name: 'Tamu Undangan' };
   const time = useTime();
   const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
   // const rainbow = ["#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9"];
@@ -55,8 +46,8 @@ export default function Home({ query }) {
   const { scrollYProgress } = useScroll();
   const range = Array.from(Array(rainbow.length).keys()).map((v) => v / (rainbow.length - 1));
   const rainbowColors = useTransform(scrollYProgress, range, rainbow);
-  const forwardX = useTransform(scrollYProgress, [0, 1], ['-50%', '100%']);
-  const backwardsX = useTransform(scrollYProgress, [0, 1], ['50%', '-100%']);
+  const forwardX = useTransform(scrollYProgress, [0, 1], ['-100%', '300%']);
+  const backwardsX = useTransform(scrollYProgress, [0, 1], ['100%', '-300%']);
 
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -72,24 +63,6 @@ export default function Home({ query }) {
       };
     },
   };
-
-  const albums = [
-    {
-      src: '/johns.png',
-    },
-    {
-      src: '/janes.png',
-    },
-    {
-      src: '/johns.png',
-    },
-    {
-      src: '/janes.png',
-    },
-    {
-      src: '/johns.png',
-    },
-  ];
 
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -111,6 +84,9 @@ export default function Home({ query }) {
       const top = '-10';
       return { ...base, opacity, transform, top };
     },
+    view: () => ({
+      height: 400,
+    }),
     navigation: (base) => {
       const opacity = 1;
       const background = 'rgba(0, 0, 0, 0.8)';
@@ -148,17 +124,19 @@ export default function Home({ query }) {
         <meta name='description' content='Next Invitation' />
         <link rel='icon' href='/favicon.ico' />
         {/* <!-- Open Graph / Facebook --/> */}
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content={`${process.env.WEB_URL}`} />
-        <meta property='og:title' content='Next Invitation' />
-        <meta property='og:description' content='Next Invitation' />
-        <meta property='og:image' content={og_url} />
+        <meta name='og:type' content='website' />
+        <meta name='og:url' content={`${process.env.WEB_URL}`} />
+        <meta name='og:title' content='Next Invitation' />
+        <meta name='og:description' content='Next Invitation' />
+        <meta name='og:image' content={og_url} />
         {/* <!-- Twitter --/> */}
-        <meta property='twitter:card' content='summary_large_image' />
-        <meta property='twitter:url' content={`${process.env.WEB_URL}`} />
-        <meta property='twitter:title' content='Next Invitation' />
-        <meta property='twitter:description' content='Next Invitation' />
-        <meta property='twitter:image' content={og_url} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site:domain' content={`${process.env.WEB_URL}`} />
+        <meta name='twitter:site' content={`${process.env.WEB_URL}`} />
+        <meta name='twitter:url' content={`${process.env.WEB_URL}`} />
+        <meta name='twitter:title' content='Next Invitation' />
+        <meta name='twitter:description' content='Next Invitation' />
+        <meta name='twitter:image' content={og_url} />
       </Head>
 
       <MyModal isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
@@ -180,7 +158,7 @@ export default function Home({ query }) {
             ) : null}
           </ModalGateway>
 
-          <div className={inter.className}>
+          <div className={`${inter.className}`}>
             <MobileNav />
 
             <section
@@ -269,7 +247,13 @@ export default function Home({ query }) {
                         <div className='w-54 h-54 absolute inset-0 z-10 bg-gradient-to-b from-sky-500 via-green-600 to-yellow-500 opacity-[0.3] mix-blend-normal blur-[60px]' />
                         {/* <div className="bg-black h-64 w-64"> */}
                         <div className='relative h-64 w-64'>
-                          <Image alt='John' src={`/johns.png`} fill='true' className='rounded-3xl' />
+                          <Image
+                            alt='John'
+                            src={`/johns.png`}
+                            fill='true'
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                            className='rounded-3xl'
+                          />
                         </div>
                         {/* </div> */}
                       </div>
@@ -300,7 +284,13 @@ export default function Home({ query }) {
                         <div className='w-54 h-54 absolute inset-0 z-10 bg-gradient-to-b from-sky-500 via-green-600 to-yellow-500 opacity-[0.3] mix-blend-normal blur-[60px]' />
                         {/* <div className="bg-black h-64 w-64"> */}
                         <div className='relative h-64 w-64'>
-                          <Image alt='Jane' src={`/janes.png`} fill='true' className='rounded-3xl' />
+                          <Image
+                            alt='Jane'
+                            src={`/janes.png`}
+                            fill='true'
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                            className='rounded-3xl'
+                          />
                         </div>
                         {/* </div> */}
                       </div>
@@ -367,7 +357,7 @@ export default function Home({ query }) {
                 id='gridd-bg'
                 animate={{
                   scale: [1, 1.1, 1, 0.9],
-                  rotate: [0, 90, 180, 270, 360],
+                  // rotate: [0, 90, 180, 270, 360],
                 }}
                 transition={{
                   duration: 10,
@@ -472,16 +462,19 @@ export default function Home({ query }) {
                   <iframe
                     className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] md:block'
                     width={800}
+                    title='Maps LG'
                     height={400}
                     src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
                   />
                   <iframe
                     className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:block md:hidden'
                     width={500}
+                    title='Maps MD'
                     height={300}
                     src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
                   />
                   <iframe
+                    title='Maps'
                     className='block h-64 w-full rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:hidden'
                     src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
                   />
@@ -534,9 +527,15 @@ export default function Home({ query }) {
                       <div className='p-8'>
                         <div
                           onClick={() => handleOpenGallery(0)}
-                          className='relative h-80 rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-yellow-500/40'
+                          className='relative h-80 rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-orange-500/40'
                         >
-                          <Image alt='John' src={`/johns.png`} fill='true' className='rounded-xl' />
+                          <Image
+                            alt='John'
+                            src={`/johns.png`}
+                            fill='true'
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                            className='rounded-xl'
+                          />
                         </div>
                       </div>
                     </SplideSlide>
@@ -546,7 +545,13 @@ export default function Home({ query }) {
                           onClick={() => handleOpenGallery(1)}
                           className='relative h-80 -rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-yellow-500/40'
                         >
-                          <Image alt='Jane' src={`/janes.png`} fill='true' className='rounded-xl' />
+                          <Image
+                            alt='Jane'
+                            src={`/janes.png`}
+                            fill='true'
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                            className='rounded-xl'
+                          />
                         </div>
                       </div>
                     </SplideSlide>
@@ -556,7 +561,13 @@ export default function Home({ query }) {
                           onClick={() => handleOpenGallery(2)}
                           className='relative h-80 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-teal-500/40'
                         >
-                          <Image alt='John' src={`/johns.png`} fill='true' className='rounded-xl' />
+                          <Image
+                            alt='John'
+                            src={`/johns.png`}
+                            fill='true'
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                            className='rounded-xl'
+                          />
                         </div>
                       </div>
                     </SplideSlide>
@@ -566,7 +577,13 @@ export default function Home({ query }) {
                           onClick={() => handleOpenGallery(3)}
                           className='relative h-80 rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-sky-600/40'
                         >
-                          <Image alt='Jane' src={`/janes.png`} fill='true' className='rounded-xl' />
+                          <Image
+                            alt='Jane'
+                            src={`/janes.png`}
+                            fill='true'
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                            className='rounded-xl'
+                          />
                         </div>
                       </div>
                     </SplideSlide>
@@ -574,9 +591,15 @@ export default function Home({ query }) {
                       <div className='p-8'>
                         <div
                           onClick={() => handleOpenGallery(4)}
-                          className='relative h-80 -rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-sky-600/40'
+                          className='relative h-80 -rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-purple-600/40'
                         >
-                          <Image alt='John' src={`/johns.png`} fill='true' className='rounded-xl' />
+                          <Image
+                            alt='John'
+                            src={`/johns.png`}
+                            fill='true'
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                            className='rounded-xl'
+                          />
                         </div>
                       </div>
                     </SplideSlide>
@@ -595,8 +618,14 @@ export default function Home({ query }) {
                           className='cursor-pointer'
                           onClick={() => handleOpenGallery(0)}
                         >
-                          <div className='relative aspect-[9/10] w-72 flex-none rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-yellow-500/40'>
-                            <Image alt='John' src={`/johns.png`} fill='true' className='rounded-2xl' />
+                          <div className='relative aspect-[9/10] w-72 flex-none rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-orange-500/40'>
+                            <Image
+                              alt='John'
+                              src={`/johns.png`}
+                              fill='true'
+                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                              className='rounded-2xl'
+                            />
                           </div>
                         </motion.div>
                         <motion.div
@@ -606,7 +635,13 @@ export default function Home({ query }) {
                           onClick={() => handleOpenGallery(1)}
                         >
                           <div className='relative aspect-[9/10] w-72 flex-none -rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-yellow-500/40'>
-                            <Image alt='Jane' src={`/janes.png`} fill='true' className='rounded-2xl' />
+                            <Image
+                              alt='Jane'
+                              src={`/janes.png`}
+                              fill='true'
+                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                              className='rounded-2xl'
+                            />
                           </div>
                         </motion.div>
                         <motion.div
@@ -616,7 +651,13 @@ export default function Home({ query }) {
                           onClick={() => handleOpenGallery(2)}
                         >
                           <div className='relative aspect-[9/10] w-72 flex-none rounded-2xl bg-black/50 shadow-lg shadow-teal-500/40'>
-                            <Image alt='John' src={`/johns.png`} fill='true' className='rounded-2xl' />
+                            <Image
+                              alt='John'
+                              src={`/johns.png`}
+                              fill='true'
+                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                              className='rounded-2xl'
+                            />
                           </div>
                         </motion.div>
                         <motion.div
@@ -626,7 +667,13 @@ export default function Home({ query }) {
                           onClick={() => handleOpenGallery(3)}
                         >
                           <div className='relative aspect-[9/10] w-72 flex-none rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-sky-600/40'>
-                            <Image alt='Jane' src={`/janes.png`} fill='true' className='rounded-2xl' />
+                            <Image
+                              alt='Jane'
+                              src={`/janes.png`}
+                              fill='true'
+                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                              className='rounded-2xl'
+                            />
                           </div>
                         </motion.div>
                         <motion.div
@@ -635,8 +682,14 @@ export default function Home({ query }) {
                           className='cursor-pointer'
                           onClick={() => handleOpenGallery(4)}
                         >
-                          <div className='relative aspect-[9/10] w-72 flex-none -rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-sky-600/40'>
-                            <Image alt='John' src={`/johns.png`} fill='true' className='rounded-2xl' />
+                          <div className='relative aspect-[9/10] w-72 flex-none -rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-purple-600/40'>
+                            <Image
+                              alt='John'
+                              src={`/johns.png`}
+                              fill='true'
+                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                              className='rounded-2xl'
+                            />
                           </div>
                         </motion.div>
                       </div>
@@ -691,6 +744,46 @@ export default function Home({ query }) {
                   </div>
                 </FadeIn>
               </div>
+              {/* <Gradient width={1200} height={300} className='bottom-[-200px] opacity-20' conic /> */}
+            </section>
+
+            <section
+              id='bank'
+              className='relative flex min-h-screen w-full items-center justify-center overflow-hidden'
+            >
+              <div className='absolute top-0 h-0.5 w-full bg-gradient-to-r from-orange-500 to-sky-500 opacity-10'></div>
+              <div className='mx-16 grid grid-cols-1 gap-16 sm:grid-cols-2 xl:gap-32'>
+                <div className='flex flex-col items-center justify-center gap-3'>
+                  <Image
+                    alt='Mandiri'
+                    src={`/mandiri.png`}
+                    width={300}
+                    height={100}
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    className='object-cover object-center'
+                  />
+                  <p className='mt-4 bg-gradient-to-r from-sky-500 via-blue-500 to-yellow-500 bg-clip-text text-3xl font-semibold text-transparent'>
+                    John Doe
+                  </p>
+                  <p className='text-3xl font-bold text-neutral-200'>123 456 789</p>
+                </div>
+                <div className='flex flex-col items-center justify-center gap-3'>
+                  <Image
+                    alt='BRI'
+                    src={`/bri.png`}
+                    width={200}
+                    height={100}
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                    className='object-cover object-center'
+                  />
+                  <p className='mt-4 bg-gradient-to-r from-sky-500 via-blue-500 to-yellow-500 bg-clip-text text-3xl font-semibold text-transparent'>
+                    John Doe
+                  </p>
+                  <p className='text-3xl font-bold text-neutral-200'>123 456 789</p>
+                </div>
+              </div>
+
+              <Gradient width={1200} height={300} className='top-[-200px] opacity-10' conic small />
               <Gradient width={1200} height={300} className='bottom-[-200px] opacity-20' conic />
             </section>
 
