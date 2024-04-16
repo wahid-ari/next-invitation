@@ -32,6 +32,7 @@ const RoundedText = dynamic(() => import('@components/RoundedText'), {
 
 export async function getServerSideProps(context) {
   const query = context?.query?.to || '';
+  console.log(query);
   // Pass data to the page via props
   return { props: { query } };
 }
@@ -41,11 +42,39 @@ export default function Home({ query }) {
   const recipient = recipients.find((item) => item.slug == query) || { name: 'Tamu Undangan' };
   const time = useTime();
   const rotate = useTransform(time, [0, 15000], [0, 360], { clamp: false });
-  // const rainbow = ["#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9", "#eab308", "#22c55e", "#0ea5e9"];
-  const rainbow = ['#191919', '#f5f5f5', '#050505', '#191919', '#f5f5f5', '#050505'];
+  const rainbow = [
+    '#eab308',
+    '#22c55e',
+    '#0ea5e9',
+    '#eab308',
+    '#22c55e',
+    '#0ea5e9',
+    '#eab308',
+    '#22c55e',
+    '#0ea5e9',
+    '#eab308',
+    '#22c55e',
+    '#0ea5e9',
+  ];
+  const rainboww = [
+    '#0ea5e9',
+    '#eab308',
+    '#22c55e',
+    '#0ea5e9',
+    '#eab308',
+    '#22c55e',
+    '#0ea5e9',
+    '#eab308',
+    '#22c55e',
+    '#0ea5e9',
+    '#eab308',
+    '#22c55e',
+  ];
+  // const rainbow = ['#191919', '#f5f5f5', '#050505', '#191919', '#f5f5f5', '#050505'];
   const { scrollYProgress } = useScroll();
   const range = Array.from(Array(rainbow.length).keys()).map((v) => v / (rainbow.length - 1));
   const rainbowColors = useTransform(scrollYProgress, range, rainbow);
+  const rainbowColorss = useTransform(scrollYProgress, range, rainboww);
   const forwardX = useTransform(scrollYProgress, [0, 1], ['-100%', '300%']);
   const backwardsX = useTransform(scrollYProgress, [0, 1], ['100%', '-300%']);
 
@@ -163,7 +192,7 @@ export default function Home({ query }) {
 
             <section
               id='invite'
-              className='relative flex min-h-screen items-center justify-center pb-36 pt-20 md:pb-16'
+              className='relative flex min-h-screen items-center justify-center pb-36 pt-20 md:pb-16 md:pt-10 xl:pt-6'
             >
               {/* <div className="invite-bg"></div> */}
               <Gradient width={1200} height={500} className='top-[-250px] opacity-30' conic />
@@ -171,7 +200,7 @@ export default function Home({ query }) {
                 <h1
                   className={cn(
                     eb.className,
-                    'mx-auto max-w-lg px-4 text-center text-2xl font-semibold sm:text-3xl md:text-4xl',
+                    'mx-auto max-w-lg px-4 text-center text-2xl font-semibold sm:text-3xl md:text-4xl 2xl:text-6xl',
                   )}
                 >
                   <span className='min-[410px]:hidden'>WE INVITE YOU TO CELEBRATE OUR WEDDING</span>
@@ -182,7 +211,7 @@ export default function Home({ query }) {
                 <h1
                   className={cn(
                     eb.className,
-                    'mx-auto hidden max-w-lg px-4 text-center text-2xl font-semibold min-[410px]:block sm:-mt-5 sm:text-3xl md:text-4xl',
+                    'mx-auto hidden max-w-lg px-4 text-center text-2xl font-semibold min-[410px]:block sm:-mt-5 sm:text-3xl md:text-4xl 2xl:text-6xl',
                   )}
                 >
                   OUR WEDDING
@@ -305,7 +334,7 @@ export default function Home({ query }) {
               <div className='absolute top-0 z-10 h-32 w-full bg-gradient-to-b from-black to-transparent' />
             </section>
 
-            <section id='title' className='relative flex h-screen min-h-screen w-full items-center pb-8'>
+            <section id='title' className='relative flex h-screen min-h-screen w-full items-center sm:py-32'>
               {/* <FadeIn delay={0.5}> */}
 
               <div className='w-full text-center'>
@@ -335,7 +364,7 @@ export default function Home({ query }) {
                   className='whitespace-nowrap bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text py-16 text-6xl font-bold tracking-wide text-transparent lg:text-8xl'
                   style={{
                     x: backwardsX,
-                    WebkitTextStrokeColor: rainbowColors,
+                    WebkitTextStrokeColor: rainbowColorss,
                     WebkitTextStroke: '2px currentColor',
                     // fontSize: 'calc(100vw / 20)',
                   }}
@@ -443,43 +472,43 @@ export default function Home({ query }) {
                   </h1>
                 </FadeIn>
                 <FadeIn delay={0.3}>
-                  <h1 className='z-10 mx-6 mb-4 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-center text-2xl font-extrabold leading-tight text-transparent lg:text-3xl'>
+                  <h1 className='z-10 mx-6 mb-4 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-center text-3xl font-extrabold leading-tight text-transparent lg:text-4xl'>
                     <span className={eb.className}>Kota SBY, Jawa Timur</span>
                   </h1>
-                  <div className='mb-4 flex justify-center'>
-                    {/* <button
-                    onClick={() => setShowMap(!showMap)}
-                    className='group relative mb-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-yellow-600 via-green-500 to-sky-500 p-0.5 text-sm font-medium text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-neutral-500 group-hover:from-yellow-600 group-hover:via-green-600 group-hover:to-sky-500'
-                  >
-                    <span className='relative rounded-md bg-black px-6 py-2 transition-all duration-75 ease-in group-hover:bg-opacity-0'>
-                      {showMap ? 'Hide Map' : 'Show Map'}
-                    </span>
-                  </button> */}
+                  <div className='mb-4 flex justify-center pt-4'>
+                    <button
+                      onClick={() => setShowMap(!showMap)}
+                      className='group relative mb-2 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-yellow-600 via-green-500 to-sky-500 p-0.5 text-sm font-medium text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-neutral-500 group-hover:from-yellow-600 group-hover:via-green-600 group-hover:to-sky-500'
+                    >
+                      <span className='relative rounded-md bg-black px-6 py-2 transition-all duration-75 ease-in group-hover:bg-opacity-0'>
+                        {showMap ? 'Hide Map' : 'Show Map'}
+                      </span>
+                    </button>
                   </div>
                 </FadeIn>
-                {/* {showMap ? ( */}
-                <div className='relative z-20 mx-4 flex justify-center rounded-2xl shadow-xl shadow-green-600/40'>
-                  <iframe
-                    className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] md:block'
-                    width={800}
-                    title='Maps LG'
-                    height={400}
-                    src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                  />
-                  <iframe
-                    className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:block md:hidden'
-                    width={500}
-                    title='Maps MD'
-                    height={300}
-                    src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                  />
-                  <iframe
-                    title='Maps'
-                    className='block h-64 w-full rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:hidden'
-                    src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                  />
-                </div>
-                {/* ) : null} */}
+                {showMap ? (
+                  <div className='relative z-20 mx-4 flex justify-center rounded-2xl shadow-xl shadow-green-600/40'>
+                    <iframe
+                      className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] md:block'
+                      width={800}
+                      title='Maps LG'
+                      height={400}
+                      src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
+                    />
+                    <iframe
+                      className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:block md:hidden'
+                      width={500}
+                      title='Maps MD'
+                      height={300}
+                      src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
+                    />
+                    <iframe
+                      title='Maps'
+                      className='block h-64 w-full rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:hidden'
+                      src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
+                    />
+                  </div>
+                ) : null}
               </div>
             </div>
 
@@ -747,44 +776,70 @@ export default function Home({ query }) {
               {/* <Gradient width={1200} height={300} className='bottom-[-200px] opacity-20' conic /> */}
             </section>
 
-            <section
-              id='bank'
-              className='relative flex min-h-screen w-full items-center justify-center overflow-hidden'
-            >
-              <div className='absolute top-0 h-0.5 w-full bg-gradient-to-r from-orange-500 to-sky-500 opacity-10'></div>
-              <div className='mx-16 grid grid-cols-1 gap-16 sm:grid-cols-2 xl:gap-32'>
-                <div className='flex flex-col items-center justify-center gap-3'>
-                  <Image
-                    alt='Mandiri'
-                    src={`/mandiri.png`}
-                    width={300}
-                    height={100}
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                    className='object-cover object-center'
-                  />
-                  <p className='mt-4 bg-gradient-to-r from-sky-500 via-blue-500 to-yellow-500 bg-clip-text text-3xl font-semibold text-transparent'>
-                    John Doe
-                  </p>
-                  <p className='text-3xl font-bold text-neutral-200'>123 456 789</p>
+            <section id='bank' className='relative h-full min-h-screen w-full overflow-hidden'>
+              <div className='absolute top-0 h-0.5 w-full bg-gradient-to-r from-orange-500 to-sky-500 opacity-10' />
+              <div className='pb-32 pt-24'>
+                <h1 className='bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text p-4 text-center text-5xl font-extrabold text-transparent md:text-6xl'>
+                  <span className={eb.className}>Gift</span>
+                </h1>
+                <div className='relative z-10 flex justify-center'>
+                  <Pattern />
                 </div>
-                <div className='flex flex-col items-center justify-center gap-3'>
-                  <Image
-                    alt='BRI'
-                    src={`/bri.png`}
-                    width={200}
-                    height={100}
-                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                    className='object-cover object-center'
-                  />
-                  <p className='mt-4 bg-gradient-to-r from-sky-500 via-blue-500 to-yellow-500 bg-clip-text text-3xl font-semibold text-transparent'>
-                    John Doe
-                  </p>
-                  <p className='text-3xl font-bold text-neutral-200'>123 456 789</p>
+              </div>
+              {/* remove min-h-screen below */}
+              <div className='min-h-scree flex items-center justify-center pb-32'>
+                <div className='mx-16 grid grid-cols-1 gap-16 sm:grid-cols-2 xl:gap-32'>
+                  <FadeIn delay={0.3}>
+                    <div className='flex flex-col items-center justify-center gap-3'>
+                      <Image
+                        alt='Mandiri'
+                        src={`/mandiri.png`}
+                        width={250}
+                        height={100}
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                        className='object-cover object-center'
+                      />
+                      <p
+                        className={cn(
+                          eb.className,
+                          'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-2 text-3xl font-bold italic text-transparent md:text-left md:text-4xl',
+                        )}
+                      >
+                        John Doe
+                      </p>
+                      <p className='bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text text-3xl font-semibold text-transparent'>
+                        123 456 789
+                      </p>
+                    </div>
+                  </FadeIn>
+                  <FadeIn delay={0.4}>
+                    <div className='flex flex-col items-center justify-center gap-3'>
+                      <Image
+                        alt='BRI'
+                        src={`/bri.png`}
+                        width={170}
+                        height={100}
+                        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                        className='mt-3 object-cover object-center'
+                      />
+                      <p
+                        className={cn(
+                          eb.className,
+                          'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-2 text-3xl font-bold italic text-transparent md:text-left md:text-4xl',
+                        )}
+                      >
+                        Jane Doe
+                      </p>
+                      <p className='bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text text-3xl font-semibold text-transparent'>
+                        123 456 789
+                      </p>
+                    </div>
+                  </FadeIn>
                 </div>
               </div>
 
               <Gradient width={1200} height={300} className='top-[-200px] opacity-10' conic small />
-              <Gradient width={1200} height={300} className='bottom-[-200px] opacity-20' conic />
+              <Gradient width={1500} height={300} className='bottom-[-200px] opacity-15' conic />
             </section>
 
             <section

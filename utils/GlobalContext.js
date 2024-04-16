@@ -4,7 +4,7 @@ export const GlobalContext = createContext(null);
 
 export function GlobalProvider({ children }) {
   const [darkMode, setDarkMode] = useState(true);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
 
   // check dark mode to true if theme in local storage is dark
   useEffect(() => {
