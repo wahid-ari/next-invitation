@@ -200,18 +200,18 @@ export default function Home({ query }) {
                 <h1
                   className={cn(
                     eb.className,
-                    'mx-auto max-w-lg px-4 text-center text-2xl font-semibold sm:text-3xl md:text-4xl 2xl:text-6xl',
+                    'mx-auto max-w-lg px-4 text-center text-[22px] min-[400px]:text-2xl font-semibold sm:text-3xl md:text-4xl 2xl:text-6xl',
                   )}
                 >
-                  <span className='min-[410px]:hidden'>WE INVITE YOU TO CELEBRATE OUR WEDDING</span>
-                  <p className='hidden tracking-wide min-[410px]:block'>
+                  <span className='min-[380px]:hidden'>WE INVITE YOU TO CELEBRATE OUR WEDDING</span>
+                  <p className='hidden tracking-wide min-[380px]:block'>
                     <RoundedText />
                   </p>
                 </h1>
                 <h1
                   className={cn(
                     eb.className,
-                    'mx-auto hidden max-w-lg px-4 text-center text-2xl font-semibold min-[410px]:block sm:-mt-5 sm:text-3xl md:text-4xl 2xl:text-6xl',
+                    'mx-auto hidden max-w-lg tracking-wider px-4 text-center text-[22px] min-[400px]:text-2xl font-semibold min-[380px]:block sm:-mt-2 sm:text-3xl md:text-4xl 2xl:text-6xl',
                   )}
                 >
                   OUR WEDDING
@@ -220,7 +220,7 @@ export default function Home({ query }) {
                 <div className='mb-2 mt-4 flex justify-center'>
                   <Pattern />
                 </div>
-                <div className='mb-20 mt-4 flex items-center justify-center gap-4 px-4'>
+                <div className='my-20 sm:my-16 flex items-center justify-center gap-4 px-4'>
                   <h1
                     className={cn(
                       eb.className,
@@ -243,7 +243,7 @@ export default function Home({ query }) {
                 </div>
                 <p className='mb-4 text-center text-lg text-neutral-200'>Kepada Bapak/Ibu/Saudara/i</p>
                 <h2
-                  className={cn(eb.className, 'mx-auto max-w-lg px-4 text-center text-4xl font-semibold sm:text-5xl')}
+                  className={cn(eb.className, 'mx-auto max-w-lg px-4 text-center text-3xl font-semibold sm:text-4xl')}
                 >
                   {recipient.name}
                 </h2>
