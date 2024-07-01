@@ -87,7 +87,7 @@ body {
 
 #title {
   background:
-    linear-gradient(0deg, hsla(0, 0%, 10%, 0.3) 0, #000 min(350vw, 1200px)),
+    linear-gradient(0deg, hsla(0, 0%, 10%, 0.4) 0, #000 min(350vw, 1200px)),
     fixed repeating-radial-gradient(circle at 50% min(calc(50vw + 9rem), calc(300px + 5rem)), #050505 0, #000 70px);
 }
 
