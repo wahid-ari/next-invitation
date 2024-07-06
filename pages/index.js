@@ -200,7 +200,7 @@ export default function Home({ query }) {
                 <h1
                   className={cn(
                     eb.className,
-                    'mx-auto max-w-lg px-4 text-center text-[22px] min-[400px]:text-2xl font-semibold sm:text-3xl md:text-4xl 2xl:text-6xl',
+                    'mx-auto max-w-lg px-4 text-center text-[22px] font-semibold min-[400px]:text-2xl sm:text-3xl md:text-4xl 2xl:text-6xl',
                   )}
                 >
                   <span className='min-[380px]:hidden'>WE INVITE YOU TO CELEBRATE OUR WEDDING</span>
@@ -211,7 +211,7 @@ export default function Home({ query }) {
                 <h1
                   className={cn(
                     eb.className,
-                    'mx-auto hidden max-w-lg tracking-wider px-4 text-center text-[22px] min-[400px]:text-2xl font-semibold min-[380px]:block sm:-mt-2 sm:text-3xl md:text-4xl 2xl:text-6xl',
+                    'mx-auto hidden max-w-lg px-4 text-center text-[22px] font-semibold tracking-wider min-[380px]:block min-[400px]:text-2xl sm:-mt-2 sm:text-3xl md:text-4xl 2xl:text-6xl',
                   )}
                 >
                   OUR WEDDING
@@ -220,7 +220,7 @@ export default function Home({ query }) {
                 <div className='mb-2 mt-4 flex justify-center'>
                   <Pattern />
                 </div>
-                <div className='my-20 sm:my-16 flex items-center justify-center gap-4 px-4'>
+                <div className='my-20 flex items-center justify-center gap-4 px-4 sm:my-16'>
                   <h1
                     className={cn(
                       eb.className,
