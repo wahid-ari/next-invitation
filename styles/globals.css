@@ -259,3 +259,19 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.shiny::after {
+  content: '';
+  position: absolute;
+  top: calc(var(--yy, 0) * 1px - 250px);
+  left: calc(var(--xx, 0) * 1px - 250px);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(#edebeb, #3984ff00 50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.shiny:hover::after {
+  opacity: 0.1;
+}

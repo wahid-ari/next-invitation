@@ -47,7 +47,7 @@ export default function Comment() {
   return (
     <div className='relative min-h-screen bg-black'>
       <div className='pointer-events-none absolute inset-x-0 bottom-0 top-0 z-0 flex justify-center'>
-        <div className='grid h-full min-h-screen w-full grid-cols-3 gap-3.5 px-4 sm:grid-cols-5'>
+        <div className='grid h-full min-h-screen w-full grid-cols-3 gap-3.5 px-4 sm:grid-cols-4 md:grid-cols-5'>
           <div className='h-full w-full rounded-md bg-gradient-to-br from-sky-600/20 via-green-600/20 to-yellow-600/20 px-[0.5px]'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
@@ -60,9 +60,24 @@ export default function Comment() {
           <div className='hidden h-full w-full rounded-md bg-gradient-to-br from-green-600/20 via-yellow-600/20 to-blue-600/20 px-[0.5px] sm:block'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
-          <div className='h-full w-full rounded-md bg-gradient-to-br from-yellow-600/20 via-blue-600/20 to-green-600/20 px-[0.5px]'>
+          <div className='hidden h-full w-full rounded-md bg-gradient-to-br from-blue-600/20 via-yellow-600/20 to-green-600/20 px-[0.5px] md:block'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
+          {/* <div className='h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px]'>
+            <div className='flex h-full w-full items-center justify-center bg-black'></div>
+          </div>
+          <div className='h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px]'>
+            <div className='flex h-full w-full items-center justify-center bg-black'></div>
+          </div>
+          <div className='h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px]'>
+            <div className='flex h-full w-full items-center justify-center bg-black'></div>
+          </div>
+          <div className='hidden h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px] sm:block'>
+            <div className='flex h-full w-full items-center justify-center bg-black'></div>
+          </div>
+          <div className='hidden h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px] md:block'>
+            <div className='flex h-full w-full items-center justify-center bg-black'></div>
+          </div> */}
         </div>
       </div>
       <div className='pointer-events-none absolute inset-x-0 z-0 flex justify-center'>
@@ -70,6 +85,9 @@ export default function Comment() {
           <div className='border-b border-t border-b-green-600/20 border-t-yellow-600/20'></div>
           <div className='border-b border-t border-b-yellow-600/20 border-t-sky-600/20'></div>
           <div className='border-b border-t border-b-green-600/20 border-t-sky-600/20'></div>
+          {/* <div className='border-b border-t border-b-neutral-600/20 border-t-neutral-600/20'></div>
+          <div className='border-b border-t border-b-neutral-600/20 border-t-neutral-600/20'></div>
+          <div className='border-b border-t border-b-neutral-600/20 border-t-neutral-600/20'></div> */}
         </div>
       </div>
       <div className='relative z-[1] mx-auto max-w-xl items-center gap-1.5 p-4'>

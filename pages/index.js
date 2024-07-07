@@ -16,6 +16,7 @@ import '@splidejs/react-splide/css';
 
 import { FadeIn } from '@components/FadeIn';
 import { Gradient } from '@components/Gradient';
+import HoverCard from '@components/HoverCard';
 import MobileNav, { Border } from '@components/MobileNav';
 import MyModal from '@components/MyModal';
 import Pattern from '@components/Pattern';
@@ -556,14 +557,14 @@ export default function Home({ query }) {
                       <div className='p-8'>
                         <div
                           onClick={() => handleOpenGallery(0)}
-                          className='relative h-80 rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-orange-500/40'
+                          className='group relative h-80 rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-orange-500/40'
                         >
                           <Image
                             alt='John'
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                           />
                         </div>
                       </div>
@@ -572,14 +573,14 @@ export default function Home({ query }) {
                       <div className='p-8'>
                         <div
                           onClick={() => handleOpenGallery(1)}
-                          className='relative h-80 -rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-yellow-500/40'
+                          className='group relative h-80 -rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-yellow-500/40'
                         >
                           <Image
                             alt='Jane'
                             src={`/janes.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                           />
                         </div>
                       </div>
@@ -588,14 +589,14 @@ export default function Home({ query }) {
                       <div className='p-8'>
                         <div
                           onClick={() => handleOpenGallery(2)}
-                          className='relative h-80 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-teal-500/40'
+                          className='group relative h-80 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-teal-500/40'
                         >
                           <Image
                             alt='John'
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                           />
                         </div>
                       </div>
@@ -604,14 +605,14 @@ export default function Home({ query }) {
                       <div className='p-8'>
                         <div
                           onClick={() => handleOpenGallery(3)}
-                          className='relative h-80 rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-sky-600/40'
+                          className='group relative h-80 rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-sky-600/40'
                         >
                           <Image
                             alt='Jane'
                             src={`/janes.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                           />
                         </div>
                       </div>
@@ -620,14 +621,14 @@ export default function Home({ query }) {
                       <div className='p-8'>
                         <div
                           onClick={() => handleOpenGallery(4)}
-                          className='relative h-80 -rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-purple-600/40'
+                          className='group relative h-80 -rotate-3 cursor-pointer rounded-xl bg-black/50 shadow-lg shadow-purple-600/40'
                         >
                           <Image
                             alt='John'
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                           />
                         </div>
                       </div>
@@ -640,86 +641,96 @@ export default function Home({ query }) {
                   </h1> */}
 
                     <FadeIn delay={0.3}>
-                      <div className='flex justify-center gap-10 overflow-hidden py-10'>
+                      <div className='flex justify-center gap-2 overflow-hidden py-10'>
                         <motion.div
                           whileHover={{ scale: 1.06 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                          className='cursor-pointer'
+                          className='group cursor-pointer'
                           onClick={() => handleOpenGallery(0)}
                         >
-                          <div className='relative aspect-[9/10] w-72 flex-none rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-orange-500/40'>
-                            <Image
-                              alt='John'
-                              src={`/johns.png`}
-                              fill='true'
-                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl'
-                            />
-                          </div>
+                          <HoverCard>
+                            <div className='relative aspect-[9/10] w-72 flex-none rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-orange-500/40'>
+                              <Image
+                                alt='John'
+                                src={`/johns.png`}
+                                fill='true'
+                                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              />
+                            </div>
+                          </HoverCard>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.06 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                          className='cursor-pointer'
+                          className='group cursor-pointer'
                           onClick={() => handleOpenGallery(1)}
                         >
-                          <div className='relative aspect-[9/10] w-72 flex-none -rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-yellow-500/40'>
-                            <Image
-                              alt='Jane'
-                              src={`/janes.png`}
-                              fill='true'
-                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl'
-                            />
-                          </div>
+                          <HoverCard>
+                            <div className='relative aspect-[9/10] w-72 flex-none -rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-yellow-500/40'>
+                              <Image
+                                alt='Jane'
+                                src={`/janes.png`}
+                                fill='true'
+                                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              />
+                            </div>
+                          </HoverCard>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.06 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                          className='cursor-pointer'
+                          className='group cursor-pointer'
                           onClick={() => handleOpenGallery(2)}
                         >
-                          <div className='relative aspect-[9/10] w-72 flex-none rounded-2xl bg-black/50 shadow-lg shadow-teal-500/40'>
-                            <Image
-                              alt='John'
-                              src={`/johns.png`}
-                              fill='true'
-                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl'
-                            />
-                          </div>
+                          <HoverCard>
+                            <div className='relative aspect-[9/10] w-72 flex-none rounded-2xl bg-black/50 shadow-lg shadow-teal-500/40'>
+                              <Image
+                                alt='John'
+                                src={`/johns.png`}
+                                fill='true'
+                                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              />
+                            </div>
+                          </HoverCard>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.06 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                          className='cursor-pointer'
+                          className='group cursor-pointer'
                           onClick={() => handleOpenGallery(3)}
                         >
-                          <div className='relative aspect-[9/10] w-72 flex-none rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-sky-600/40'>
-                            <Image
-                              alt='Jane'
-                              src={`/janes.png`}
-                              fill='true'
-                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl'
-                            />
-                          </div>
+                          <HoverCard>
+                            <div className='relative aspect-[9/10] w-72 flex-none rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-sky-600/40'>
+                              <Image
+                                alt='Jane'
+                                src={`/janes.png`}
+                                fill='true'
+                                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              />
+                            </div>
+                          </HoverCard>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.06 }}
                           transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                          className='cursor-pointer'
+                          className='group cursor-pointer'
                           onClick={() => handleOpenGallery(4)}
                         >
-                          <div className='relative aspect-[9/10] w-72 flex-none -rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-purple-600/40'>
-                            <Image
-                              alt='John'
-                              src={`/johns.png`}
-                              fill='true'
-                              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl'
-                            />
-                          </div>
+                          <HoverCard>
+                            <div className='relative aspect-[9/10] w-72 flex-none -rotate-3 rounded-2xl bg-black/50 shadow-lg shadow-purple-600/40'>
+                              <Image
+                                alt='John'
+                                src={`/johns.png`}
+                                fill='true'
+                                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              />
+                            </div>
+                          </HoverCard>
                         </motion.div>
                       </div>
                     </FadeIn>
