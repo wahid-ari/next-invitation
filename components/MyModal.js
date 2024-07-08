@@ -1,9 +1,13 @@
 import { Fragment } from 'react';
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
+import { EB_Garamond, Inter, Merienda } from '@next/font/google';
+import cn from 'classnames';
 
 import { Gradient } from './Gradient';
 import { Border } from './MobileNav';
+
+const merienda = Merienda({ subsets: ['latin'] });
 
 export default function MyModal({ isOpen, closeModal }) {
   return (
@@ -48,7 +52,12 @@ export default function MyModal({ isOpen, closeModal }) {
                       <Gradient small width={120} height={120} conic className='opacity-50' />
                     </div>
                     <div className='z-10'>
-                      <h1 className='mb-2 mt-8 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-5xl font-bold text-transparent text-white'>
+                      <h1
+                        className={cn(
+                          merienda.className,
+                          'mb-2 mt-8 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-5xl font-bold text-transparent text-white',
+                        )}
+                      >
                         John & Jane
                       </h1>
                       {/* <h3 className="text-5xl font-bold text-white mb-2 mt-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">John & Jane</h3> */}

@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
-import { EB_Garamond, Inter } from '@next/font/google';
+import { EB_Garamond, Inter, Merienda } from '@next/font/google';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import cn from 'classnames';
@@ -17,6 +17,7 @@ import '@splidejs/react-splide/css';
 import { FadeIn } from '@components/FadeIn';
 import { Gradient } from '@components/Gradient';
 import HoverCard from '@components/HoverCard';
+import HoverPrespective from '@components/HoverPrespective';
 import MobileNav, { Border } from '@components/MobileNav';
 import MyModal from '@components/MyModal';
 import Pattern from '@components/Pattern';
@@ -26,6 +27,7 @@ import { GlobalContext } from '@utils/GlobalContext';
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
+const merienda = Merienda({ subsets: ['latin'] });
 
 const RoundedText = dynamic(() => import('@components/RoundedText'), {
   ssr: false,
@@ -224,18 +226,23 @@ export default function Home({ query }) {
                 <div className='my-20 flex items-center justify-center gap-4 px-4 sm:my-16'>
                   <h1
                     className={cn(
-                      eb.className,
+                      merienda.className,
                       'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text py-1 text-[40px] font-bold text-transparent md:text-left',
                     )}
                   >
                     John
                   </h1>
-                  <h1 className='bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500 bg-clip-text text-5xl font-extrabold text-transparent md:text-center'>
+                  <h1
+                    className={cn(
+                      merienda.className,
+                      'bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500 bg-clip-text text-5xl font-extrabold text-transparent md:text-center',
+                    )}
+                  >
                     &
                   </h1>
                   <h1
                     className={cn(
-                      eb.className,
+                      merienda.className,
                       'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-1 text-[40px] font-bold text-transparent md:text-left',
                     )}
                   >
@@ -276,13 +283,13 @@ export default function Home({ query }) {
                       <div className='relative flex items-center justify-center'>
                         <div className='w-54 h-54 absolute inset-0 z-10 bg-gradient-to-b from-sky-500 via-green-600 to-yellow-500 opacity-[0.3] mix-blend-normal blur-[60px]' />
                         {/* <div className="bg-black h-64 w-64"> */}
-                        <div className='relative h-64 w-64'>
+                        <div className='relative h-72 w-64'>
                           <Image
                             alt='John'
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-3xl'
+                            className='rounded-3xl object-cover'
                           />
                         </div>
                         {/* </div> */}
@@ -313,13 +320,13 @@ export default function Home({ query }) {
                       <div className='relative flex items-center justify-center'>
                         <div className='w-54 h-54 absolute inset-0 z-10 bg-gradient-to-b from-sky-500 via-green-600 to-yellow-500 opacity-[0.3] mix-blend-normal blur-[60px]' />
                         {/* <div className="bg-black h-64 w-64"> */}
-                        <div className='relative h-64 w-64'>
+                        <div className='relative h-72 w-64'>
                           <Image
                             alt='Jane'
                             src={`/janes.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-3xl'
+                            className='rounded-3xl object-cover'
                           />
                         </div>
                         {/* </div> */}
@@ -488,26 +495,14 @@ export default function Home({ query }) {
                   </div>
                 </FadeIn>
                 {showMap ? (
-                  <div className='relative z-20 mx-4 flex justify-center rounded-2xl shadow-xl shadow-green-600/40'>
-                    <iframe
-                      className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] md:block'
-                      width={800}
-                      title='Maps LG'
-                      height={400}
-                      src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                    />
-                    <iframe
-                      className='hidden rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:block md:hidden'
-                      width={500}
-                      title='Maps MD'
-                      height={300}
-                      src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                    />
-                    <iframe
-                      title='Maps'
-                      className='block h-64 w-full rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)] xs:hidden'
-                      src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
-                    />
+                  <div className='relative z-20 flex justify-center rounded-2xl shadow-xl shadow-green-600/40'>
+                    <div className='iframe-container rounded-2xl shadow-[1px_4px_10px_0px_rgba(255,155,0,1)]'>
+                      <iframe
+                        title='Maps'
+                        className='iframe-responsive'
+                        src='https://maps.google.com/maps?q=-7.2677389,112.7443089&hl=es;z=18&amp;output=embed'
+                      />
+                    </div>
                   </div>
                 ) : null}
               </div>
