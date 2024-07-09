@@ -30,7 +30,7 @@ export default function HoverPrespective({ children }) {
   }
 
   function mouseLeaveEvent(e) {
-    console.log('mouseleave');
+    // console.log('mouseleave');
     document.documentElement.style.removeProperty('--x');
     document.documentElement.style.removeProperty('--y');
     document.documentElement.style.removeProperty('--bg-x');

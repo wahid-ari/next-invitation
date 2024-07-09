@@ -53,19 +53,19 @@ export default function Comment() {
       <Ornament />
       <div className='pointer-events-none absolute inset-x-0 bottom-0 top-0 z-0 flex justify-center'>
         <div className='grid h-full min-h-screen w-full grid-cols-3 gap-3.5 px-4 sm:grid-cols-4 md:grid-cols-5'>
-          <div className='h-full w-full rounded-md border-2 border-dashed border-black bg-gradient-to-br from-sky-600/20 via-green-600/20 to-yellow-600/20 px-[1.5px]'>
+          <div className='h-full w-full rounded-md border border-dashed border-black bg-gradient-to-br from-sky-600/20 via-green-600/20 to-yellow-600/20 px-[1px]'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
-          <div className='h-full w-full rounded-md border-2 border-dashed border-black bg-gradient-to-br from-yellow-600/20 via-blue-600/20 to-green-600/20 px-[1.5px]'>
+          <div className='h-full w-full rounded-md border border-dashed border-black bg-gradient-to-br from-yellow-600/20 via-blue-600/20 to-green-600/20 px-[1px]'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
-          <div className='h-full w-full rounded-md border-2 border-dashed border-black bg-gradient-to-br from-green-600/20 via-yellow-600/20 to-blue-600/20 px-[1.5px]'>
+          <div className='h-full w-full rounded-md border border-dashed border-black bg-gradient-to-br from-green-600/20 via-yellow-600/20 to-blue-600/20 px-[1px]'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
-          <div className='hidden h-full w-full rounded-md border-2 border-dashed border-black bg-gradient-to-br from-green-600/20 via-yellow-600/20 to-blue-600/20 px-[1.5px] sm:block'>
+          <div className='hidden h-full w-full rounded-md border border-dashed border-black bg-gradient-to-br from-green-600/20 via-yellow-600/20 to-blue-600/20 px-[1px] sm:block'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
-          <div className='hidden h-full w-full rounded-md border-2 border-dashed border-black bg-gradient-to-br from-blue-600/20 via-yellow-600/20 to-green-600/20 px-[1.5px] md:block'>
+          <div className='hidden h-full w-full rounded-md border border-dashed border-black bg-gradient-to-br from-blue-600/20 via-yellow-600/20 to-green-600/20 px-[1px] md:block'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
           {/* <div className='h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px]'>
@@ -151,6 +151,7 @@ export default function Comment() {
               name='name'
               placeholder='Name'
               required
+              autoComplete='off'
               className='relative z-10 flex h-full w-full rounded-md border border-neutral-600 bg-black px-3 py-2 text-sm placeholder:text-neutral-400 focus-visible:border-neutral-600 focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900'
             />
           </div>
@@ -248,17 +249,17 @@ export default function Comment() {
                         relativeTime: {
                           future: 'in %s',
                           past: '%s ',
-                          s: 'sec',
+                          s: 'baru saja',
                           m: '%d menit lalu',
                           mm: '%d menit lalu',
                           h: '%d jam lalu',
                           hh: '%d jam lalu',
                           d: '%d hari lalu',
                           dd: '%d hari lalu',
-                          M: 'a mth',
-                          MM: '%d mths',
-                          y: 'y',
-                          yy: '%d y',
+                          M: '1 bulan lalu',
+                          MM: '%d bulan lalu',
+                          y: '1 tahun lalu',
+                          yy: '%d tahun lalu',
                         },
                       }),
                     )}
@@ -459,8 +460,8 @@ function Ornament() {
         viewport={{ once: true }}
         className='absolute right-8 top-64 z-10 md:right-64'
       >
-        <motion.line x1='220' y1='30' x2='360' y2='170' className='stroke-yellow-500/40' variants={draw} custom={2} />
-        <motion.line x1='220' y1='170' x2='360' y2='30' className='stroke-sky-500/40' variants={draw} custom={2.5} />
+        <motion.line x1='220' y1='30' x2='360' y2='170' className='stroke-yellow-500/70' variants={draw} custom={2} />
+        <motion.line x1='220' y1='170' x2='360' y2='30' className='stroke-sky-500/70' variants={draw} custom={2.5} />
       </motion.svg>
       <motion.svg
         width='200'

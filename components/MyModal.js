@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
+import { Merienda } from 'next/font/google';
 import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
-import { EB_Garamond, Inter, Merienda } from '@next/font/google';
 import cn from 'classnames';
 
 import { Gradient } from './Gradient';

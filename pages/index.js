@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { EB_Garamond, Inter, Merienda } from 'next/font/google';
 import Head from 'next/head';
 import Image from 'next/image';
-import { EB_Garamond, Inter, Merienda } from '@next/font/google';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import cn from 'classnames';
@@ -35,7 +35,7 @@ const RoundedText = dynamic(() => import('@components/RoundedText'), {
 
 export async function getServerSideProps(context) {
   const query = context?.query?.to || '';
-  console.log(query);
+  // console.log(query);
   // Pass data to the page via props
   return { props: { query } };
 }
