@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Gradient } from '@components/Gradient';
 import { ClockIcon } from '@heroicons/react/24/outline';
-import { supabase } from '@utils/supabase';
 import { motion } from 'framer-motion';
 import moment, { updateLocale } from 'moment';
+
+import { supabase } from '@utils/supabase';
+
+import { Gradient } from '@components/Gradient';
 
 export default function Comment() {
   const [name, setName] = useState('');

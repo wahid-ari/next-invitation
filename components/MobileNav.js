@@ -1,7 +1,9 @@
 import { useContext, useEffect, useRef, useState } from 'react';
-import { GlobalContext } from '@utils/GlobalContext';
 import { motion } from 'framer-motion';
 import { Link as LinkScroll } from 'react-scroll';
+
+import { config } from '@data/config';
+import { GlobalContext } from '@utils/GlobalContext';
 
 function Heart({ className }) {
   return (
@@ -717,7 +719,7 @@ export default function MobileNav() {
   // const [audio, setAudio] = useState(null);
   // useEffect(() => {
   //   // only run once on the first render on the client
-  //   setAudio(new Audio('/musiccc.mp3'))
+  //   setAudio(new Audio(`/${config.music}`))
   // }, [])
   const audioRef = useRef();
 
@@ -752,7 +754,7 @@ export default function MobileNav() {
           style={{ display: 'none' }}
           ref={audioRef}
         >
-          <source src={'/musiccc.mp3'} />
+          <source src={`/${config.music}`} />
         </audio>
         <div className='absolute bottom-2 left-0 mx-2 hidden rounded-lg bg-black/90 px-1.5 py-0.5 backdrop-blur sm:block'>
           <motion.div

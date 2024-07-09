@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
 import cn from 'classnames';
 
+import { config } from '@data/config';
+
 import { Gradient } from './Gradient';
 import { Border } from './MobileNav';
 
@@ -58,14 +60,14 @@ export default function MyModal({ isOpen, closeModal }) {
                           'mb-2 mt-8 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-5xl font-bold text-transparent text-white',
                         )}
                       >
-                        John & Jane
+                        {config.man} & {config.woman}
                       </h1>
                       {/* <h3 className="text-5xl font-bold text-white mb-2 mt-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">John & Jane</h3> */}
 
                       <Border className='mx-auto' />
 
-                      <h2 className='mb-2 mt-4 text-xl font-semibold text-white'>Thursday, 22 Dec 2022</h2>
-                      <h2 className='text-xl font-semibold text-white'>Earth</h2>
+                      <h2 className='mb-2 mt-4 text-xl font-semibold text-white'>{config.date}</h2>
+                      <h2 className='text-xl font-semibold text-white'>{config.location}</h2>
                       <div className='mt-8'>
                         <button
                           onClick={closeModal}

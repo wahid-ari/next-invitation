@@ -14,16 +14,18 @@ import styles from '../components/index.module.css';
 
 import '@splidejs/react-splide/css';
 
+import { albums } from '@data/albums';
+import { config } from '@data/config';
+import { recipients } from '@data/recipients';
+import { GlobalContext } from '@utils/GlobalContext';
+
 import { FadeIn } from '@components/FadeIn';
 import { Gradient } from '@components/Gradient';
 import HoverCard from '@components/HoverCard';
-import HoverPrespective from '@components/HoverPrespective';
+// import HoverPrespective from '@components/HoverPrespective';
 import MobileNav, { Border } from '@components/MobileNav';
 import MyModal from '@components/MyModal';
 import Pattern from '@components/Pattern';
-import { albums } from '@data/albums';
-import { recipients } from '@data/recipients';
-import { GlobalContext } from '@utils/GlobalContext';
 
 const inter = Inter({ subsets: ['latin'] });
 const eb = EB_Garamond({ subsets: ['latin'] });
@@ -151,23 +153,23 @@ export default function Home({ query }) {
     <>
       <Head>
         {/* <!-- Primary Meta Tags --> */}
-        <title>Next Invitation</title>
-        <meta name='title' content='Next Invitation' />
-        <meta name='description' content='Next Invitation' />
+        <title>{config.title}</title>
+        <meta name='title' content={config.title} />
+        <meta name='description' content={config.description} />
         <link rel='icon' href='/favicon.ico' />
         {/* <!-- Open Graph / Facebook --/> */}
         <meta name='og:type' content='website' />
         <meta name='og:url' content={`${process.env.WEB_URL}`} />
-        <meta name='og:title' content='Next Invitation' />
-        <meta name='og:description' content='Next Invitation' />
+        <meta name='og:title' content={config.title} />
+        <meta name='og:description' content={config.description} />
         <meta name='og:image' content={og_url} />
         {/* <!-- Twitter --/> */}
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site:domain' content={`${process.env.WEB_URL}`} />
         <meta name='twitter:site' content={`${process.env.WEB_URL}`} />
         <meta name='twitter:url' content={`${process.env.WEB_URL}`} />
-        <meta name='twitter:title' content='Next Invitation' />
-        <meta name='twitter:description' content='Next Invitation' />
+        <meta name='twitter:title' content={config.title} />
+        <meta name='twitter:description' content={config.description} />
         <meta name='twitter:image' content={og_url} />
       </Head>
 
@@ -230,7 +232,7 @@ export default function Home({ query }) {
                       'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text py-1 text-[40px] font-bold text-transparent md:text-left',
                     )}
                   >
-                    John
+                    {config.man}
                   </h1>
                   <h1
                     className={cn(
@@ -246,7 +248,7 @@ export default function Home({ query }) {
                       'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-1 text-[40px] font-bold text-transparent md:text-left',
                     )}
                   >
-                    Jane
+                    {config.woman}
                   </h1>
                 </div>
                 <p className='mb-4 text-center text-lg text-neutral-200'>Kepada Bapak/Ibu/Saudara/i</p>
@@ -286,7 +288,7 @@ export default function Home({ query }) {
                         <div className='relative h-72 w-64'>
                           <Image
                             alt='John'
-                            src={`/johns.png`}
+                            src={`/${config.man_image}`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                             className='rounded-3xl object-cover'
@@ -323,7 +325,7 @@ export default function Home({ query }) {
                         <div className='relative h-72 w-64'>
                           <Image
                             alt='Jane'
-                            src={`/janes.png`}
+                            src={`/${config.woman_image}`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                             className='rounded-3xl object-cover'
@@ -356,7 +358,7 @@ export default function Home({ query }) {
                   }}
                 >
                   <span className={eb.className}>
-                    <i>John Doe</i>
+                    <i>{config.man}</i>
                   </span>
                 </motion.p>
                 {/* <h1 className="z-10 font-extrabold md:text-left text-5xl lg:text-6xl p-4 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-[#AAAAAA]">
@@ -378,7 +380,7 @@ export default function Home({ query }) {
                   }}
                 >
                   <span className={eb.className}>
-                    <i>Jane Doe</i>
+                    <i>{config.woman}</i>
                   </span>
                 </motion.p>
               </div>
@@ -440,12 +442,12 @@ export default function Home({ query }) {
                 </div>
                 <FadeIn delay={0.2}>
                   <h1 className='z-10 mx-6 mb-4 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-center text-3xl font-extrabold leading-tight text-transparent lg:text-4xl'>
-                    <span className={eb.className}>August 1, 2023</span>
+                    <span className={eb.className}>{config.date}</span>
                   </h1>
                 </FadeIn>
                 <FadeIn delay={0.3}>
                   <h1 className='z-10 mx-6 mb-4 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-center text-2xl font-extrabold leading-tight text-transparent lg:text-3xl'>
-                    <span className={eb.className}>5:00 PM - 6:00 PM</span>
+                    <span className={eb.className}>{config.time}</span>
                   </h1>
                 </FadeIn>
               </div>
@@ -476,12 +478,12 @@ export default function Home({ query }) {
               </h1> */}
                 <FadeIn delay={0.2}>
                   <h1 className='z-10 mx-6 mb-4 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-center text-3xl font-extrabold leading-tight text-transparent lg:text-4xl'>
-                    <span className={eb.className}>Jl. Panglima Sudirman, Kec. Genteng</span>
+                    <span className={eb.className}>{config.street}</span>
                   </h1>
                 </FadeIn>
                 <FadeIn delay={0.3}>
                   <h1 className='z-10 mx-6 mb-4 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-center text-3xl font-extrabold leading-tight text-transparent lg:text-4xl'>
-                    <span className={eb.className}>Kota SBY, Jawa Timur</span>
+                    <span className={eb.className}>{config.address}</span>
                   </h1>
                   <div className='mb-4 flex justify-center pt-4'>
                     <button
@@ -763,7 +765,7 @@ export default function Home({ query }) {
                         'bg-gradient-to-b from-white via-neutral-300 to-neutral-500 bg-clip-text py-2 pl-2 text-3xl font-bold italic text-transparent sm:text-4xl md:text-left md:text-5xl',
                       )}
                     >
-                      <i>John</i>
+                      <i>{config.man}</i>
                     </h1>
                     <h1 className='bg-gradient-to-b from-yellow-500 via-green-500 to-sky-500 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl md:text-center md:text-5xl'>
                       &
@@ -774,7 +776,7 @@ export default function Home({ query }) {
                         'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-2 text-3xl font-bold italic text-transparent sm:text-4xl md:text-left md:text-5xl',
                       )}
                     >
-                      <i>Jane</i>
+                      <i>{config.woman}</i>
                     </h1>
                   </div>
                 </FadeIn>
@@ -811,10 +813,10 @@ export default function Home({ query }) {
                           'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-2 text-3xl font-bold italic text-transparent md:text-left md:text-4xl',
                         )}
                       >
-                        John Doe
+                        {config.man_fullname}
                       </p>
                       <p className='bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text text-3xl font-semibold text-transparent'>
-                        123 456 789
+                        {config.man_card_number}
                       </p>
                     </div>
                   </FadeIn>
@@ -834,10 +836,10 @@ export default function Home({ query }) {
                           'bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text px-2 py-2 text-3xl font-bold italic text-transparent md:text-left md:text-4xl',
                         )}
                       >
-                        Jane Doe
+                        {config.woman_fullname}
                       </p>
                       <p className='bg-gradient-to-t from-white via-neutral-300 to-neutral-500 bg-clip-text text-3xl font-semibold text-transparent'>
-                        123 456 789
+                        {config.woman_card_number}
                       </p>
                     </div>
                   </FadeIn>
@@ -942,7 +944,7 @@ export default function Home({ query }) {
                     <Pattern />
                   </div>
                   <Countdown
-                    date={'2024-11-14'}
+                    date={config.date_countdown}
                     renderer={(props) => (
                       <div className='mx-auto grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-4 md:gap-16'>
                         <FadeIn delay={0.2}>
