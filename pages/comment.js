@@ -10,7 +10,7 @@ import { Gradient } from '@components/Gradient';
 export default function Comment() {
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
-  const [come, setCome] = useState('');
+  // const [come, setCome] = useState('');
   const [fetched, setFetched] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
 
@@ -43,7 +43,7 @@ export default function Comment() {
       setFetched(false);
       setName('');
       setComment('');
-      setCome('');
+      // setCome('');
     }
     setIsSubmiting(false);
   }
@@ -72,21 +72,6 @@ export default function Comment() {
           <div className='hidden h-full w-full rounded-md border border-dashed border-black bg-gradient-to-br from-blue-600/20 via-yellow-600/20 to-green-600/20 px-[1px] md:block'>
             <div className='flex h-full w-full items-center justify-center bg-black'></div>
           </div>
-          {/* <div className='h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px]'>
-            <div className='flex h-full w-full items-center justify-center bg-black'></div>
-          </div>
-          <div className='h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px]'>
-            <div className='flex h-full w-full items-center justify-center bg-black'></div>
-          </div>
-          <div className='h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px]'>
-            <div className='flex h-full w-full items-center justify-center bg-black'></div>
-          </div>
-          <div className='hidden h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px] sm:block'>
-            <div className='flex h-full w-full items-center justify-center bg-black'></div>
-          </div>
-          <div className='hidden h-full w-full rounded-md bg-gradient-to-br from-neutral-600/20 via-neutral-600/20 to-neutral-600/20 px-[0.5px] md:block'>
-            <div className='flex h-full w-full items-center justify-center bg-black'></div>
-          </div> */}
         </div>
       </div>
       <div className='pointer-events-none absolute inset-x-0 z-0 flex justify-center'>
@@ -94,37 +79,11 @@ export default function Comment() {
           <div className='border-b-2 border-t-2 border-dashed border-b-green-600/20 border-t-yellow-600/20'></div>
           <div className='border-b-2 border-t-2 border-dashed border-b-yellow-600/20 border-t-sky-600/20'></div>
           <div className='border-b-2 border-t-2 border-dashed border-b-green-600/20 border-t-sky-600/20'></div>
-          {/* <div className='border-b border-t border-b-neutral-600/20 border-t-neutral-600/20'></div>
-          <div className='border-b border-t border-b-neutral-600/20 border-t-neutral-600/20'></div>
-          <div className='border-b border-t border-b-neutral-600/20 border-t-neutral-600/20'></div> */}
         </div>
       </div>
       <div className='relative z-[10] mx-auto max-w-xl items-center gap-1.5 p-4'>
-        {/* <form>
-        <div className="h-10 w-full rounded-md bg-gradient-to-r from-sky-500 via-green-500 to-yellow-500 p-0.5">
-          <div className="flex h-full w-full items-center justify-center bg-transparent">
-            <input type="text" name="name" placeholder="Name" required className="flex h-full w-full rounded-md border border-neutral-600 bg-black px-3 py-2 text-sm placeholder:text-neutral-400 focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:border-neutral-600 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900" />
-          </div>
-        </div>
-        <div className="my-4 min-h-[80px] w-full rounded-md bg-gradient-to-r from-sky-500 via-green-500 to-yellow-500 p-0.5">
-          <div className="flex h-full w-full items-center justify-center bg-transparent">
-            <textarea type="text" name="comment" placeholder="Comment" required className="flex min-h-[80px] w-full rounded-md border border-neutral-600 bg-black px-3 py-2 text-sm placeholder:text-neutral-400 focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:border-neutral-600 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900" />
-          </div>
-        </div>
-        <div className="h-10 w-full rounded-md bg-gradient-to-r from-sky-500 via-green-500 to-yellow-500 p-0.5">
-          <div className="flex h-full w-full items-center justify-center bg-transparent">
-            <select className="flex invalid:text-gray-500 h-full cursor-pointer w-full rounded-md border border-neutral-600 bg-black px-3 py-2 text-sm placeholder:text-neutral-500 focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:border-neutral-600 focus-visible:ring-offset-1 focus-visible:ring-offset-neutral-900">
-              <option value="" disabled selected>Come ?</option>
-              <option value="1">come</option>
-              <option value="2">not come</option>
-              <option value="3">not sure</option>
-            </select>
-          </div>
-        </div>
-      </form> */}
-
         {/* {fetched && commentData ? (
-          <div className='justify-betwee grid grid-cols-3 divide-x divide-neutral-700 rounded border border-neutral-700'>
+          <div className='mb-8 grid grid-cols-3 justify-between divide-x divide-neutral-700 rounded border border-neutral-700'>
             <div className='px-3 py-1'>
               <p className='bg-gradient-to-b from-green-500 to-sky-500 bg-clip-text text-center text-3xl font-bold text-transparent'>
                 {gusetCome.length}
@@ -185,33 +144,7 @@ export default function Comment() {
               <option value='3'>not sure</option>
             </select>
           </div> */}
-          {/* <div className='mt-4 h-8 w-24 rounded-md bg-gradient-to-r from-sky-500 p-[0.5px] via-yellow-500 to-green-500'>
-            <div className='flex h-full items-center justify-center bg-black'>
-              <button
-                disabled={isSubmiting}
-                type='submit'
-                name='submit'
-                className='flex items-center gap-2 text-sm font-medium disabled:cursor-not-allowed'
-              >
-                {isSubmiting &&
-                  <svg
-                    className='h-5 w-5 animate-spin text-white'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                  >
-                    <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4'></circle>
-                    <path
-                      className='opacity-75'
-                      fill='currentColor'
-                      d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-                    ></path>
-                  </svg>
-                }
-                Submit
-              </button>
-            </div>
-          </div> */}
+
           <button
             disabled={isSubmiting}
             type='submit'
