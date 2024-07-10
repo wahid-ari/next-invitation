@@ -20,7 +20,7 @@ import { recipients } from '@data/recipients';
 import { GlobalContext } from '@utils/GlobalContext';
 
 import { FadeIn } from '@components/FadeIn';
-import Globe from '@components/Globe';
+import { Globe, GlobeDraggable } from '@components/Globe';
 import { Gradient } from '@components/Gradient';
 import HoverCard from '@components/HoverCard';
 // import HoverPrespective from '@components/HoverPrespective';
@@ -509,8 +509,10 @@ export default function Home({ query }) {
                   </div>
                 ) : (
                   <div className='flex justify-center'>
-                    <Globe width={350} height={350} className='md:hidden' />
-                    <Globe width={450} height={450} className='hidden md:block' />
+                    {/* <Globe globeWidth={350} globeHeight={350} className='md:hidden' />
+                    <Globe globeWidth={450} globeHeight={450} className='hidden md:block' /> */}
+                    <GlobeDraggable globeWidth={350} globeHeight={350} className='md:hidden' />
+                    <GlobeDraggable globeWidth={450} globeHeight={450} className='hidden md:block' />
                   </div>
                 )}
               </div>
