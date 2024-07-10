@@ -159,19 +159,22 @@ export default function Home({ query }) {
         <meta name='description' content={config.description} />
         <link rel='icon' href='/favicon.ico' />
         {/* <!-- Open Graph / Facebook --/> */}
-        <meta name='og:type' content='website' />
-        <meta name='og:url' content={`${process.env.WEB_URL}`} />
-        <meta name='og:title' content={config.title} />
-        <meta name='og:description' content={config.description} />
-        <meta name='og:image' content={og_url} />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content={`${process.env.WEB_URL}`} />
+        <meta property='og:title' content={config.title} />
+        <meta property='og:description' content={config.description} />
+        <meta property='og:image' content={og_url} />
+        <meta property='og:image:alt' content={config.title} />
         {/* <!-- Twitter --/> */}
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site:domain' content={`${process.env.WEB_URL}`} />
-        <meta name='twitter:site' content={`${process.env.WEB_URL}`} />
-        <meta name='twitter:url' content={`${process.env.WEB_URL}`} />
-        <meta name='twitter:title' content={config.title} />
-        <meta name='twitter:description' content={config.description} />
+        <meta property='twitter:card' content='summary_large_image' />
+        <meta property='twitter:site:domain' content={`${process.env.WEB_URL}`} />
+        <meta property='twitter:site' content={`${process.env.WEB_URL}`} />
+        <meta property='twitter:url' content={`${process.env.WEB_URL}`} />
+        <meta property='twitter:title' content={config.title} />
+        <meta property='twitter:description' content={config.description} />
+        <meta property='twitter:image' content={og_url} />
         <meta name='twitter:image' content={og_url} />
+        <meta property='twitter:image:alt' content={config.title} />
       </Head>
 
       <MyModal isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
