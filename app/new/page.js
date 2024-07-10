@@ -1,7 +1,8 @@
+import { recipients } from '@data/recipients';
+
 export async function generateMetadata({ searchParams }) {
-  const name = searchParams.to;
-  console.log(name);
-  const image = name !== undefined ? `/ogs?name=${searchParams.to}` : '/og.jpg';
+  const recipient = recipients.find((item) => item.slug == searchParams.to) || { name: 'Tamu Undangan' };
+  const image = recipient.name !== 'Tamu Undangan' ? `/ogs?name=${recipient.name}` : '/og.jpg';
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_WEB_URL),
     title: 'Next.js',
