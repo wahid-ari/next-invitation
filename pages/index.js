@@ -148,7 +148,7 @@ export default function Home({ query }) {
   const og_url =
     recipient.name !== 'Tamu Undangan'
       ? `${process.env.NEXT_PUBLIC_WEB_URL}/api/og?name=${recipient.name}`
-      : `${process.env.NEXT_PUBLIC_WEB_URL}/og.jpg`;
+      : `${process.env.NEXT_PUBLIC_WEB_URL}/og.png`;
 
   return (
     <>

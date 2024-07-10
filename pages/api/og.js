@@ -28,14 +28,14 @@ export default async function handler(req) {
             alt='bg'
             width='100%'
             height='100%'
-            src={`${process.env.NEXT_PUBLIC_WEB_URL}/ogs.jpg`}
+            src={`${process.env.NEXT_PUBLIC_WEB_URL}/ogs.png`}
             style={{
               position: 'absolute',
             }}
           />
 
           <h1
-            tw='h-full w-full flex items-center mt-40 justify-center'
+            tw='h-full w-full flex items-center mt-52 justify-center'
             style={{
               fontSize: 50,
               fontWeight: 900,

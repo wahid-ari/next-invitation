@@ -60,7 +60,17 @@ export default function MyModal({ isOpen, closeModal }) {
                           'mb-2 mt-8 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-5xl font-bold text-transparent text-white',
                         )}
                       >
-                        {config.man} & {config.woman}
+                        {/* {config.man} & {config.woman} */}
+                        {config.man}{' '}
+                        <span
+                          className={cn(
+                            merienda.className,
+                            'bg-gradient-to-r from-yellow-700 via-green-500 to-sky-500 bg-clip-text text-5xl font-extrabold text-transparent md:text-center',
+                          )}
+                        >
+                          &
+                        </span>{' '}
+                        {config.woman}
                       </h1>
                       {/* <h3 className="text-5xl font-bold text-white mb-2 mt-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-green-600 to-sky-500">John & Jane</h3> */}
 
