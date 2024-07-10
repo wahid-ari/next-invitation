@@ -53,6 +53,8 @@ export default function Comment() {
       <Gradient width={1000} height={800} className='z-[2] rotate-90 opacity-10' conic />
       <Gradient width={1000} height={400} className='t-0 -right-64 z-[2] -rotate-90 opacity-10' conic />
       <Ornament />
+      <Globe className='absolute z-[1] h-screen opacity-20 sm:h-full' />
+
       <div className='pointer-events-none absolute inset-x-0 bottom-0 top-0 z-0 flex justify-center'>
         <div className='grid h-full min-h-screen w-full grid-cols-3 gap-3.5 px-4 sm:grid-cols-4 md:grid-cols-5'>
           <div className='h-full w-full rounded-md border border-dashed border-black bg-gradient-to-br from-sky-600/20 via-green-600/20 to-yellow-600/20 px-[1px]'>
@@ -478,5 +480,534 @@ function Ornament() {
         <motion.line x1='220' y1='170' x2='360' y2='30' className='stroke-sky-500/40' variants={draw} custom={2.5} />
       </motion.svg>
     </>
+  );
+}
+
+function Globe({ ...props }) {
+  return (
+    <svg
+      aria-hidden='true'
+      height='100%'
+      style={{
+        overflow: 'visible',
+      }}
+      viewBox='-1 -1 802 402'
+      width='100%'
+      {...props}
+    >
+      <g data-testid='globe-wireframe' mask='url(#globe-gradient-mask)'>
+        <circle cx={400} cy={400} fill='var(--ds-background-100)' r={400} />
+        <path
+          d='M 400 800 A -400 400 0 0 0 400 0'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path
+          d='M 400 800 A -328.701 400 0 0 0 400 0'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path
+          d='M 400 800 A -235.355 400 0 0 0 400 0'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path
+          d='M 400 800 A -123.097 400 0 0 0 400 0'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path
+          d='M 400 800 A 0 400 0 0 0 400 0'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path
+          d='M 400 0 A 123.097 400 0 0 0 400 800'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path
+          d='M 400 0 A 235.355 400 0 0 0 400 800'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path
+          d='M 400 0 A 328.701 400 0 0 0 400 800'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path
+          d='M 400 0 A 400 400 0 0 0 400 800'
+          fill='none'
+          stroke='#313131'
+          strokeWidth={1}
+          vectorEffect='non-scaling-stroke'
+        />
+        <path d='M135.425,100 h529.15' fill='none' stroke='#313131' strokeWidth={1} vectorEffect='non-scaling-stroke' />
+        <path d='M53.59,200 h692.82' fill='none' stroke='#313131' strokeWidth={1} vectorEffect='non-scaling-stroke' />
+        <path d='M12.702,300 h774.597' fill='none' stroke='#313131' strokeWidth={1} vectorEffect='non-scaling-stroke' />
+        <path d='M0,400 h800' fill='none' stroke='#313131' strokeWidth={1} vectorEffect='non-scaling-stroke' />
+        <path d='M12.702,500 h774.597' fill='none' stroke='#313131' strokeWidth={1} vectorEffect='non-scaling-stroke' />
+        <path d='M53.59,600 h692.82' fill='none' stroke='#313131' strokeWidth={1} vectorEffect='non-scaling-stroke' />
+        <path d='M135.425,700 h529.15' fill='none' stroke='#313131' strokeWidth={1} vectorEffect='non-scaling-stroke' />
+      </g>
+      <mask id='globe-gradient-mask'>
+        <rect fill='url(#globe-mask-gradient)' height='100%' width='100%' x={0} y={0} />
+      </mask>
+      <g id='lldll33' mask='url(#globe-gradient-mask)' opacity={1}>
+        <path
+          d='M617.415,100 h-61.743M555.673,100 h-74.252M 506.605 200 A 123.097 400 0 0 0 481.421 100M506.605,200 h-106.605M400,200 h-106.605'
+          fill='none'
+          stroke='url(#lldll33-gradient)'
+          strokeLinecap='round'
+          strokeWidth={2}
+          vectorEffect='non-scaling-stroke'
+        >
+          <animate
+            attributeName='opacity'
+            dur='6.5s'
+            id='opacity-lldll33'
+            keyTimes='0;0.088;0.176;0.264;0.352;0.44;0.527;0.615;1'
+            repeatCount='indefinite'
+            values='0;1;1;1;1;1;1;0;0'
+          />
+        </path>
+        <defs>
+          <radialGradient
+            className='path_gradient__z0qlN'
+            cx={100}
+            cy={100}
+            gradientUnits='userSpaceOnUse'
+            id='lldll33-gradient'
+            r={0}
+            style={{
+              '--normal-color': '#EBE51A',
+              '--p3-color': 'color(display-p3 0.9176 0.898 0.3137)',
+            }}
+          >
+            <stop offset={0} stopColor='var(--color)' />
+            <stop offset={0.4} stopColor='var(--color)' />
+            <stop offset={1} stopColor='var(--color)' stopOpacity={0} />
+            <animate
+              attributeName='cx'
+              dur='6.5s'
+              id='cx-lldll33'
+              keyTimes='0;0.088;0.176;0.264;0.352;0.44;0.527;0.615;1'
+              repeatCount='indefinite'
+              values='617.415;617.415;555.673;481.421;506.605;400;293.395;293.395;0'
+            />
+            <animate
+              attributeName='cy'
+              dur='6.5s'
+              id='cy-lldll33'
+              keyTimes='0;0.088;0.176;0.264;0.352;0.44;0.527;0.615;1'
+              repeatCount='indefinite'
+              values='100;100;100;100;200;200;200;200;0'
+            />
+            <animate
+              attributeName='r'
+              dur='6.5s'
+              id='r-lldll33'
+              keyTimes='0;0.088;0.176;0.264;0.352;0.44;0.527;0.615;1'
+              repeatCount='indefinite'
+              values='0;50;50;50;50;50;50;0;0'
+            />
+          </radialGradient>
+        </defs>
+      </g>
+      <g id='ld22' mask='url(#globe-gradient-mask)' opacity={1}>
+        <path
+          d='M603.824,200 h-97.219M 519.188 300 A 123.097 400 0 0 0 506.605 200'
+          fill='none'
+          stroke='url(#ld22-gradient)'
+          strokeLinecap='round'
+          strokeWidth={2}
+          vectorEffect='non-scaling-stroke'
+        >
+          <animate
+            attributeName='opacity'
+            dur='4.1s'
+            id='opacity-ld22'
+            keyTimes='0;0.098;0.195;0.293;0.39;1'
+            repeatCount='indefinite'
+            values='0;1;1;1;0;0'
+          />
+        </path>
+        <defs>
+          <radialGradient
+            className='path_gradient__z0qlN'
+            cx={100}
+            cy={100}
+            gradientUnits='userSpaceOnUse'
+            id='ld22-gradient'
+            r={0}
+            style={{
+              '--normal-color': '#A4E600',
+              '--p3-color': 'color(display-p3 0.698 0.8941 0.2667)',
+            }}
+          >
+            <stop offset={0} stopColor='var(--color)' />
+            <stop offset={0.4} stopColor='var(--color)' />
+            <stop offset={1} stopColor='var(--color)' stopOpacity={0} />
+            <animate
+              attributeName='cx'
+              dur='4.1s'
+              id='cx-ld22'
+              keyTimes='0;0.098;0.195;0.293;0.39;1'
+              repeatCount='indefinite'
+              values='603.824;603.824;506.605;519.188;519.188;0'
+            />
+            <animate
+              attributeName='cy'
+              dur='4.1s'
+              id='cy-ld22'
+              keyTimes='0;0.098;0.195;0.293;0.39;1'
+              repeatCount='indefinite'
+              values='200;200;200;300;300;0'
+            />
+            <animate
+              attributeName='r'
+              dur='4.1s'
+              id='r-ld22'
+              keyTimes='0;0.098;0.195;0.293;0.39;1'
+              repeatCount='indefinite'
+              values='0;50;50;50;0;0'
+            />
+          </radialGradient>
+        </defs>
+      </g>
+      <g id='lull31' mask='url(#globe-gradient-mask)' opacity={1}>
+        <path
+          d='M718.264,300 h-90.382M 627.882 300 A 235.355 400 0 0 0 603.824 200M603.824,200 h-97.219M506.605,200 h-106.605'
+          fill='none'
+          stroke='url(#lull31-gradient)'
+          strokeLinecap='round'
+          strokeWidth={2}
+          vectorEffect='non-scaling-stroke'
+        >
+          <animate
+            attributeName='opacity'
+            dur='5.7s'
+            id='opacity-lull31'
+            keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+            repeatCount='indefinite'
+            values='0;1;1;1;1;1;0;0'
+          />
+        </path>
+        <defs>
+          <radialGradient
+            className='path_gradient__z0qlN'
+            cx={100}
+            cy={100}
+            gradientUnits='userSpaceOnUse'
+            id='lull31-gradient'
+            r={0}
+            style={{
+              '--normal-color': '#2DDD69',
+              '--p3-color': 'color(display-p3 0.4235 0.8549 0.4627)',
+            }}
+          >
+            <stop offset={0} stopColor='var(--color)' />
+            <stop offset={0.4} stopColor='var(--color)' />
+            <stop offset={1} stopColor='var(--color)' stopOpacity={0} />
+            <animate
+              attributeName='cx'
+              dur='5.7s'
+              id='cx-lull31'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='718.264;718.264;627.882;603.824;506.605;400;400;0'
+            />
+            <animate
+              attributeName='cy'
+              dur='5.7s'
+              id='cy-lull31'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='300;300;300;200;200;200;200;0'
+            />
+            <animate
+              attributeName='r'
+              dur='5.7s'
+              id='r-lull31'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='0;50;50;50;50;50;0;0'
+            />
+          </radialGradient>
+        </defs>
+      </g>
+      <g id='llld21' mask='url(#globe-gradient-mask)' opacity={1}>
+        <path
+          d='M627.882,300 h-108.694M519.188,300 h-119.188M400,300 h-119.188M 280.812 300 A -123.097 400 0 0 0 276.903 400'
+          fill='none'
+          stroke='url(#llld21-gradient)'
+          strokeLinecap='round'
+          strokeWidth={2}
+          vectorEffect='non-scaling-stroke'
+        >
+          <animate
+            attributeName='opacity'
+            dur='5.7s'
+            id='opacity-llld21'
+            keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+            repeatCount='indefinite'
+            values='0;1;1;1;1;1;0;0'
+          />
+        </path>
+        <defs>
+          <radialGradient
+            className='path_gradient__z0qlN'
+            cx={100}
+            cy={100}
+            gradientUnits='userSpaceOnUse'
+            id='llld21-gradient'
+            r={0}
+            style={{
+              '--normal-color': '#FF904D',
+              '--p3-color': 'color(display-p3 0.9843 0.5882 0.3608)',
+            }}
+          >
+            <stop offset={0} stopColor='var(--color)' />
+            <stop offset={0.4} stopColor='var(--color)' />
+            <stop offset={1} stopColor='var(--color)' stopOpacity={0} />
+            <animate
+              attributeName='cx'
+              dur='5.7s'
+              id='cx-llld21'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='627.882;627.882;519.188;400;280.812;276.903;276.903;0'
+            />
+            <animate
+              attributeName='cy'
+              dur='5.7s'
+              id='cy-llld21'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='300;300;300;300;300;400;400;0'
+            />
+            <animate
+              attributeName='r'
+              dur='5.7s'
+              id='r-llld21'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='0;50;50;50;50;50;0;0'
+            />
+          </radialGradient>
+        </defs>
+      </g>
+      <g id='lld-13' mask='url(#globe-gradient-mask)' opacity={1}>
+        <path
+          d='M318.579,100 h-74.252M244.327,100 h-61.743M 182.585 100 A -328.701 400 0 0 0 115.336 200'
+          fill='none'
+          stroke='url(#lld-13-gradient)'
+          strokeLinecap='round'
+          strokeWidth={2}
+          vectorEffect='non-scaling-stroke'
+        >
+          <animate
+            attributeName='opacity'
+            dur='4.9s'
+            id='opacity-lld-13'
+            keyTimes='0;0.098;0.196;0.294;0.392;0.49;1'
+            repeatCount='indefinite'
+            values='0;1;1;1;1;0;0'
+          />
+        </path>
+        <defs>
+          <radialGradient
+            className='path_gradient__z0qlN'
+            cx={100}
+            cy={100}
+            gradientUnits='userSpaceOnUse'
+            id='lld-13-gradient'
+            r={0}
+            style={{
+              '--normal-color': '#62DE00',
+              '--p3-color': 'color(display-p3 0.5176 0.8588 0.251)',
+            }}
+          >
+            <stop offset={0} stopColor='var(--color)' />
+            <stop offset={0.4} stopColor='var(--color)' />
+            <stop offset={1} stopColor='var(--color)' stopOpacity={0} />
+            <animate
+              attributeName='cx'
+              dur='4.9s'
+              id='cx-lld-13'
+              keyTimes='0;0.098;0.196;0.294;0.392;0.49;1'
+              repeatCount='indefinite'
+              values='318.579;318.579;244.327;182.585;115.336;115.336;0'
+            />
+            <animate
+              attributeName='cy'
+              dur='4.9s'
+              id='cy-lld-13'
+              keyTimes='0;0.098;0.196;0.294;0.392;0.49;1'
+              repeatCount='indefinite'
+              values='100;100;100;100;200;200;0'
+            />
+            <animate
+              attributeName='r'
+              dur='4.9s'
+              id='r-lld-13'
+              keyTimes='0;0.098;0.196;0.294;0.392;0.49;1'
+              repeatCount='indefinite'
+              values='0;50;50;50;50;0;0'
+            />
+          </radialGradient>
+        </defs>
+      </g>
+      <g id='lld-22' mask='url(#globe-gradient-mask)' opacity={1}>
+        <path
+          d='M196.176,200 h-80.84M115.336,200 h-61.747M 53.59 200 A -400 400 0 0 0 12.702 300'
+          fill='none'
+          stroke='url(#lld-22-gradient)'
+          strokeLinecap='round'
+          strokeWidth={2}
+          vectorEffect='non-scaling-stroke'
+        >
+          <animate
+            attributeName='opacity'
+            dur='4.9s'
+            id='opacity-lld-22'
+            keyTimes='0;0.098;0.196;0.294;0.392;0.49;1'
+            repeatCount='indefinite'
+            values='0;1;1;1;1;0;0'
+          />
+        </path>
+        <defs>
+          <radialGradient
+            className='path_gradient__z0qlN'
+            cx={100}
+            cy={100}
+            gradientUnits='userSpaceOnUse'
+            id='lld-22-gradient'
+            r={0}
+            style={{
+              '--normal-color': '#FFBB3D',
+              '--p3-color': 'color(display-p3 0.9608 0.7451 0.3412)',
+            }}
+          >
+            <stop offset={0} stopColor='var(--color)' />
+            <stop offset={0.4} stopColor='var(--color)' />
+            <stop offset={1} stopColor='var(--color)' stopOpacity={0} />
+            <animate
+              attributeName='cx'
+              dur='4.9s'
+              id='cx-lld-22'
+              keyTimes='0;0.098;0.196;0.294;0.392;0.49;1'
+              repeatCount='indefinite'
+              values='196.176;196.176;115.336;53.59;12.702;12.702;0'
+            />
+            <animate
+              attributeName='cy'
+              dur='4.9s'
+              id='cy-lld-22'
+              keyTimes='0;0.098;0.196;0.294;0.392;0.49;1'
+              repeatCount='indefinite'
+              values='200;200;200;200;300;300;0'
+            />
+            <animate
+              attributeName='r'
+              dur='4.9s'
+              id='r-lld-22'
+              keyTimes='0;0.098;0.196;0.294;0.392;0.49;1'
+              repeatCount='indefinite'
+              values='0;50;50;50;50;0;0'
+            />
+          </radialGradient>
+        </defs>
+      </g>
+      <g id='llld-11' mask='url(#globe-gradient-mask)' opacity={1}>
+        <path
+          d='M280.812,300 h-108.694M172.118,300 h-90.382M81.736,300 h-69.035M 12.702 300 A -400 400 0 0 0 0 400'
+          fill='none'
+          stroke='url(#llld-11-gradient)'
+          strokeLinecap='round'
+          strokeWidth={2}
+          vectorEffect='non-scaling-stroke'
+        >
+          <animate
+            attributeName='opacity'
+            dur='5.7s'
+            id='opacity-llld-11'
+            keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+            repeatCount='indefinite'
+            values='0;1;1;1;1;1;0;0'
+          />
+        </path>
+        <defs>
+          <radialGradient
+            className='path_gradient__z0qlN'
+            cx={100}
+            cy={100}
+            gradientUnits='userSpaceOnUse'
+            id='llld-11-gradient'
+            r={0}
+            style={{
+              '--normal-color': '#F8E52C',
+              '--p3-color': 'color(display-p3 0.9608 0.8988 0.3412)',
+            }}
+          >
+            <stop offset={0} stopColor='var(--color)' />
+            <stop offset={0.4} stopColor='var(--color)' />
+            <stop offset={1} stopColor='var(--color)' stopOpacity={0} />
+            <animate
+              attributeName='cx'
+              dur='5.7s'
+              id='cx-llld-11'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='280.812;280.812;172.118;81.736;12.702;0;0;0'
+            />
+            <animate
+              attributeName='cy'
+              dur='5.7s'
+              id='cy-llld-11'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='300;300;300;300;300;400;400;0'
+            />
+            <animate
+              attributeName='r'
+              dur='5.7s'
+              id='r-llld-11'
+              keyTimes='0;0.094;0.187;0.281;0.374;0.468;0.561;1'
+              repeatCount='indefinite'
+              values='0;50;50;50;50;50;0;0'
+            />
+          </radialGradient>
+        </defs>
+      </g>
+      <defs>
+        <linearGradient gradientUnits='userSpaceOnUse' id='globe-gradient' x1={0} x2={0} y1={0} y2={400}>
+          <stop offset='0%' stopColor='var(--guide-color)' />
+          <stop offset='100%' stopColor='var(--guide-color)' />
+        </linearGradient>
+        <linearGradient gradientTransform='rotate(90)' id='globe-mask-gradient'>
+          <stop offset={0.7} stopColor='white' stopOpacity={1} />
+          <stop offset={1} stopColor='white' stopOpacity={0} />
+        </linearGradient>
+      </defs>
+    </svg>
   );
 }

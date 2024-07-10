@@ -20,6 +20,7 @@ import { recipients } from '@data/recipients';
 import { GlobalContext } from '@utils/GlobalContext';
 
 import { FadeIn } from '@components/FadeIn';
+import Globe from '@components/Globe';
 import { Gradient } from '@components/Gradient';
 import HoverCard from '@components/HoverCard';
 // import HoverPrespective from '@components/HoverPrespective';
@@ -455,7 +456,7 @@ export default function Home({ query }) {
 
             <div
               id='ripple'
-              className='relative flex h-screen min-h-screen items-center justify-center pb-36 pt-16 md:pt-44'
+              className='relative flex h-screen min-h-screen items-center justify-center pb-28 pt-16 md:pt-44'
             >
               {/* <div className="absolute top-[55%] z-10 flex items-center justify-center">
               <Gradient
@@ -506,7 +507,12 @@ export default function Home({ query }) {
                       />
                     </div>
                   </div>
-                ) : null}
+                ) : (
+                  <div className='flex justify-center'>
+                    <Globe width={350} height={350} className='md:hidden' />
+                    <Globe width={450} height={450} className='hidden md:block' />
+                  </div>
+                )}
               </div>
             </div>
 
@@ -561,7 +567,7 @@ export default function Home({ query }) {
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                            className='rounded-xl'
                           />
                         </div>
                       </div>
@@ -577,7 +583,7 @@ export default function Home({ query }) {
                             src={`/janes.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                            className='rounded-xl'
                           />
                         </div>
                       </div>
@@ -593,7 +599,7 @@ export default function Home({ query }) {
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                            className='rounded-xl'
                           />
                         </div>
                       </div>
@@ -609,7 +615,7 @@ export default function Home({ query }) {
                             src={`/janes.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                            className='rounded-xl'
                           />
                         </div>
                       </div>
@@ -625,7 +631,7 @@ export default function Home({ query }) {
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                            className='rounded-xl'
                           />
                         </div>
                       </div>
