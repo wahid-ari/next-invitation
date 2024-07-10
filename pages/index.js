@@ -147,8 +147,10 @@ export default function Home({ query }) {
 
   const og_url =
     recipient.name !== 'Tamu Undangan'
-      ? `${process.env.WEB_URL}/api/og?name=${recipient.name}`
-      : `${process.env.WEB_URL}/og.jpg`;
+      ? `${process.env.NEXT_PUBLIC_WEB_URL}/api/og?name=${recipient.name}`
+      : `${process.env.NEXT_PUBLIC_WEB_URL}/og.jpg`;
+
+  console.log(og_url);
 
   return (
     <>
@@ -160,16 +162,16 @@ export default function Home({ query }) {
         <link rel='icon' href='/favicon.ico' />
         {/* <!-- Open Graph / Facebook --/> */}
         <meta property='og:type' content='website' />
-        <meta property='og:url' content={`${process.env.WEB_URL}`} />
+        <meta property='og:url' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
         <meta property='og:title' content={config.title} />
         <meta property='og:description' content={config.description} />
         <meta property='og:image' content={og_url} />
         <meta property='og:image:alt' content={config.title} />
         {/* <!-- Twitter --/> */}
         <meta property='twitter:card' content='summary_large_image' />
-        <meta property='twitter:site:domain' content={`${process.env.WEB_URL}`} />
-        <meta property='twitter:site' content={`${process.env.WEB_URL}`} />
-        <meta property='twitter:url' content={`${process.env.WEB_URL}`} />
+        <meta property='twitter:site:domain' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
+        <meta property='twitter:site' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
+        <meta property='twitter:url' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
         <meta property='twitter:title' content={config.title} />
         <meta property='twitter:description' content={config.description} />
         <meta property='twitter:image' content={og_url} />

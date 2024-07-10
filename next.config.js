@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    // WEB_URL: 'https://next-invitation.vercel.app',
-    WEB_URL: 'http://localhost:3000',
-  },
   reactStrictMode: true,
   images: {
     remotePatterns: [
