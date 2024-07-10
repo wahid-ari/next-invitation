@@ -150,8 +150,6 @@ export default function Home({ query }) {
       ? `${process.env.NEXT_PUBLIC_WEB_URL}/api/og?name=${recipient.name}`
       : `${process.env.NEXT_PUBLIC_WEB_URL}/og.jpg`;
 
-  console.log(og_url);
-
   return (
     <>
       <Head>
@@ -160,6 +158,10 @@ export default function Home({ query }) {
         <meta name='title' content={config.title} />
         <meta name='description' content={config.description} />
         <link rel='icon' href='/favicon.ico' />
+        {/* <!-- Google / Search Engine Tags --> */}
+        <meta itemprop='name' content={config.title} />
+        <meta itemprop='description' content={config.description} />
+        <meta itemprop='image' content={og_url} />
         {/* <!-- Open Graph / Facebook --/> */}
         <meta property='og:type' content='website' />
         <meta property='og:url' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
@@ -175,8 +177,14 @@ export default function Home({ query }) {
         <meta property='twitter:title' content={config.title} />
         <meta property='twitter:description' content={config.description} />
         <meta property='twitter:image' content={og_url} />
-        <meta name='twitter:image' content={og_url} />
         <meta property='twitter:image:alt' content={config.title} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site:domain' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
+        <meta name='twitter:site' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
+        <meta name='twitter:url' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
+        <meta name='twitter:title' content={config.title} />
+        <meta name='twitter:description' content={config.description} />
+        <meta name='twitter:image' content={og_url} />
       </Head>
 
       <MyModal isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
