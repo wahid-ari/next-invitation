@@ -314,7 +314,7 @@ function Ornament() {
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
-        className='absolute bottom-8 right-32 z-10 md:right-12'
+        className='absolute bottom-8 right-56 z-10 md:right-12'
       >
         <motion.circle
           cx='100'
@@ -332,7 +332,7 @@ function Ornament() {
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
-        className='absolute left-40 top-32 z-10'
+        className='absolute left-40 top-64 z-10'
       >
         <motion.rect
           width='140'
@@ -352,7 +352,7 @@ function Ornament() {
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
-        className='absolute right-32 top-32 z-10'
+        className='absolute right-32 top-64 z-10'
       >
         <motion.rect
           width='140'
@@ -392,7 +392,7 @@ function Ornament() {
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}
-        className='absolute -right-8 top-32 z-10'
+        className='absolute -right-8 top-5 z-10'
       >
         <motion.circle
           cx='100'
