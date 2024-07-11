@@ -19,6 +19,7 @@ import { config } from '@data/config';
 import { recipients } from '@data/recipients';
 import { GlobalContext } from '@utils/GlobalContext';
 
+import CommentComp from '@components/CommentComp';
 import { FadeIn } from '@components/FadeIn';
 import { Globe, GlobeDraggable } from '@components/Globe';
 import { Gradient } from '@components/Gradient';
@@ -805,6 +806,8 @@ export default function Home({ query }) {
               </div>
               {/* <Gradient width={1200} height={300} className='bottom-[-200px] opacity-20' conic /> */}
             </section>
+
+            <CommentComp />
 
             <section id='bank' className='relative h-full min-h-screen w-full overflow-hidden'>
               <div className='absolute top-0 h-0.5 w-full bg-gradient-to-r from-orange-500 to-sky-500 opacity-10' />

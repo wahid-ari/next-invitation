@@ -28,6 +28,8 @@ import MobileNav, { Border } from '@components/MobileNav';
 import MyModal from '@components/MyModal';
 import Pattern from '@components/Pattern';
 
+import CommentComp from './CommentComp';
+
 const eb = EB_Garamond({ subsets: ['latin'] });
 const merienda = Merienda({ subsets: ['latin'] });
 
@@ -698,6 +700,8 @@ export default function NewPage({ slug }) {
               </FadeIn>
             </div>
           </section>
+
+          <CommentComp />
 
           <section id='bank' className='relative h-full min-h-screen w-full overflow-hidden'>
             <div className='absolute top-0 h-0.5 w-full bg-gradient-to-r from-orange-500 to-sky-500 opacity-10' />
