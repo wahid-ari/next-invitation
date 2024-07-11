@@ -191,10 +191,10 @@ export default function CommentComp() {
             <div className='scrollbar-thumb-rounded mt-12 h-72 overflow-auto px-4 py-2 scrollbar-thin'>
               {commentData.map((data, index) => (
                 <div key={data.id} className='mb-3'>
-                  <p className='text-[17px] font-medium text-sky-500'>{data.name}</p>
+                  <p className='text-base font-medium text-sky-500'>{data.name}</p>
                   {/* <p className='font-medium bg-gradient-to-r from-green-500 via-orange-500 to-sky-500 bg-clip-text text-transparent'>{data.name}</p> */}
-                  <p className='text-neutral-200'>{data.comment}</p>
-                  <p className='mt-1 flex items-center gap-1 text-[13px] text-neutral-400'>
+                  <p className='mt-1 text-[15px] text-neutral-300'>{data.comment}</p>
+                  <p className='mt-1 flex items-center gap-1 text-[12px] text-neutral-400'>
                     <ClockIcon className='h-4 w-4' />
                     {moment(new Date(data.created_at)).fromNow(
                       updateLocale('en', {

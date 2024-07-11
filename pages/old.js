@@ -414,12 +414,12 @@ export default function Home({ query }) {
                   scale: [1, 1.1, 1, 0.9],
                   // rotate: [0, 90, 180, 270, 360],
                 }}
-                transition={{
-                  duration: 10,
-                  ease: 'easeInOut',
-                  times: [0.9, 1, 0.9, 1],
-                  repeat: Infinity,
-                }}
+                // transition={{
+                //   duration: 10,
+                //   ease: 'easeInOut',
+                //   times: [0.9, 1, 0.9, 1],
+                //   repeat: Infinity,
+                // }}
               />
               <div className={cn(eb.className, 'z-10 mx-4 max-w-xl text-center text-xl text-white sm:text-2xl')}>
                 <FadeIn delay={0.3}>

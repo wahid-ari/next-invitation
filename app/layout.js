@@ -27,8 +27,6 @@ export const metadata = {
   },
   icons: {
     icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-icon-180x180.png',
   },
 };
 

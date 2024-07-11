@@ -340,12 +340,6 @@ export default function NewPage({ slug }) {
               animate={{
                 scale: [1, 1.1, 1, 0.9],
               }}
-              transition={{
-                duration: 10,
-                ease: 'easeInOut',
-                times: [0.9, 1, 0.9, 1],
-                repeat: Infinity,
-              }}
             />
             <div className={cn(eb.className, 'z-10 mx-4 max-w-xl text-center text-xl text-white sm:text-2xl')}>
               <FadeIn delay={0.3}>
