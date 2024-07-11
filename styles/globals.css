@@ -239,11 +239,11 @@ body {
 }
 
 .rotate-border-1::before {
-  background: linear-gradient(90deg, rgb(2, 130, 61) 0%, rgb(0, 172, 246) 50%, rgba(234, 242, 0, 0.758) 100%);
+  background: linear-gradient(90deg, rgb(2, 130, 61) 0%, rgb(0, 172, 246) 50%, rgba(234, 242, 0) 100%);
 }
 
 .rotate-border-2::before {
-  background: linear-gradient(90deg, rgb(0, 172, 246) 30%, rgba(234, 242, 0, 0.726) 40%, rgb(2, 130, 61) 100%);
+  background: linear-gradient(90deg, rgba(234, 242, 0, 0.726) 0%, rgb(0, 172, 246) 40%, rgb(2, 130, 61) 100%);
 }
 
 .rotate-border-3::before {

@@ -42,7 +42,7 @@ export default function MyModal({ isOpen, closeModal }) {
                 <div className='onboard flex items-center justify-center'>
                   <Gradient width={1000} height={700} className='top-[-200px] opacity-20' conic />
                   <div className='relative flex h-[200px] w-full items-center justify-center'>
-                    <div className='absolute z-10 min-h-[650px] min-w-[650px] sm:min-h-[800px] sm:min-w-[800px]'>
+                    <div className='absolute z-10 min-h-[680px] min-w-[680px] sm:min-h-[800px] sm:min-w-[800px]'>
                       <Image
                         alt='Turborepo'
                         src='/pack-hexagons.svg'
@@ -57,7 +57,7 @@ export default function MyModal({ isOpen, closeModal }) {
                       <h1
                         className={cn(
                           merienda.className,
-                          'mb-2 mt-8 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-4xl font-bold text-transparent text-white sm:text-5xl',
+                          'mb-2 mt-8 bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text text-[40px] font-bold text-transparent text-white sm:text-5xl',
                         )}
                       >
                         {/* {config.man} & {config.woman} */}
@@ -65,7 +65,7 @@ export default function MyModal({ isOpen, closeModal }) {
                         <span
                           className={cn(
                             merienda.className,
-                            'bg-gradient-to-r from-yellow-700 via-green-500 to-sky-500 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl md:text-center',
+                            'bg-gradient-to-r from-yellow-700 via-green-500 to-sky-500 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-5xl md:text-center',
                           )}
                         >
                           &
