@@ -137,7 +137,7 @@ export default function CommentComp() {
         </form>
         {fetched && commentData.length > 0 ? (
           <BorderFrame>
-            <div className='scrollbar-thumb-rounded scrollbar-thi mt-12 h-72 overflow-auto px-4 py-2'>
+            <div className='scrollbar-thumb-rounded mt-12 h-72 overflow-auto px-4 py-2 scrollbar-thin'>
               {commentData.map((data) => (
                 <div key={data.id} className='mb-3'>
                   <p className='text-base font-medium text-sky-500'>{data.name}</p>
