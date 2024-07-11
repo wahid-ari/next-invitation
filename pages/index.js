@@ -385,7 +385,7 @@ export default function Home({ query }) {
                 Doe
               </h1> */}
                 <motion.p
-                  className='whitespace-nowrap bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text py-16 text-6xl font-bold tracking-wide text-transparent lg:text-8xl'
+                  className='whitespace-nowrap bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text py-16 text-6xl font-bold tracking-wide text-transparent md:pb-32 lg:text-8xl'
                   style={{
                     x: backwardsX,
                     WebkitTextStrokeColor: rainbowColorss,
@@ -400,8 +400,9 @@ export default function Home({ query }) {
               </div>
 
               {/* </FadeIn> */}
-              <span className='absolute left-0 right-0 top-0 h-14 w-full bg-gradient-to-b from-black to-transparent' />
-              <span className='absolute bottom-0 left-0 right-0 h-10 w-full bg-gradient-to-t from-black to-transparent' />
+              <span className='absolute left-0 right-0 top-0 h-10 w-full bg-gradient-to-b from-black to-transparent' />
+              <span className='absolute bottom-0 left-0 right-0 z-[1] h-10 w-full bg-gradient-to-t from-black to-transparent' />
+              <Gradient width={1500} height={300} className='bottom-[-200px] opacity-10' small conic />
             </section>
 
             <section id='grid' className='flex h-screen w-full items-center justify-center'>

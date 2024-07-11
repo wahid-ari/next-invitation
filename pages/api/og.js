@@ -35,7 +35,7 @@ export default async function handler(req) {
           />
 
           <h1
-            tw='h-full w-full flex items-center mt-52 justify-center'
+            tw='h-full w-full flex items-center mt-56 justify-center'
             style={{
               fontSize: 50,
               fontWeight: 900,
