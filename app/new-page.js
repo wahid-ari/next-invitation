@@ -252,7 +252,7 @@ export default function NewPage({ slug }) {
                           src={`/${config.man_image}`}
                           fill='true'
                           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                          className='rounded-3xl object-cover'
+                          className='rounded-3xl object-cover object-center'
                         />
                       </div>
                     </div>
@@ -285,7 +285,7 @@ export default function NewPage({ slug }) {
                           src={`/${config.woman_image}`}
                           fill='true'
                           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                          className='rounded-3xl object-cover'
+                          className='rounded-3xl object-cover object-center'
                         />
                       </div>
                     </div>
@@ -477,7 +477,7 @@ export default function NewPage({ slug }) {
                           src={`/johns.png`}
                           fill='true'
                           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                          className='rounded-xl'
+                          className='rounded-xl object-cover object-center'
                         />
                       </div>
                     </div>
@@ -493,7 +493,7 @@ export default function NewPage({ slug }) {
                           src={`/janes.png`}
                           fill='true'
                           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                          className='rounded-xl'
+                          className='rounded-xl object-cover object-center'
                         />
                       </div>
                     </div>
@@ -509,7 +509,7 @@ export default function NewPage({ slug }) {
                           src={`/johns.png`}
                           fill='true'
                           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                          className='rounded-xl'
+                          className='rounded-xl object-cover object-center'
                         />
                       </div>
                     </div>
@@ -525,7 +525,7 @@ export default function NewPage({ slug }) {
                           src={`/janes.png`}
                           fill='true'
                           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                          className='rounded-xl'
+                          className='rounded-xl object-cover object-center'
                         />
                       </div>
                     </div>
@@ -541,7 +541,7 @@ export default function NewPage({ slug }) {
                           src={`/johns.png`}
                           fill='true'
                           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                          className='rounded-xl'
+                          className='rounded-xl object-cover object-center'
                         />
                       </div>
                     </div>
@@ -564,7 +564,7 @@ export default function NewPage({ slug }) {
                               src={`/johns.png`}
                               fill='true'
                               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                             />
                           </div>
                         </HoverCard>
@@ -582,7 +582,7 @@ export default function NewPage({ slug }) {
                               src={`/janes.png`}
                               fill='true'
                               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                             />
                           </div>
                         </HoverCard>
@@ -600,7 +600,7 @@ export default function NewPage({ slug }) {
                               src={`/johns.png`}
                               fill='true'
                               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                             />
                           </div>
                         </HoverCard>
@@ -618,7 +618,7 @@ export default function NewPage({ slug }) {
                               src={`/janes.png`}
                               fill='true'
                               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                             />
                           </div>
                         </HoverCard>
@@ -636,7 +636,7 @@ export default function NewPage({ slug }) {
                               src={`/johns.png`}
                               fill='true'
                               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                              className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                              className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                             />
                           </div>
                         </HoverCard>

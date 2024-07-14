@@ -32,7 +32,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang='id'>
       <body className={inter.className}>
         <GlobalProvider>{children}</GlobalProvider>
       </body>

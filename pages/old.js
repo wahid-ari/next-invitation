@@ -160,9 +160,9 @@ export default function Home({ query }) {
         <meta name='description' content={config.description} />
         <link rel='icon' href='/favicon.ico' />
         {/* <!-- Google / Search Engine Tags --> */}
-        <meta itemprop='name' content={config.title} />
-        <meta itemprop='description' content={config.description} />
-        <meta itemprop='image' content={og_url} />
+        <meta itemProp='name' content={config.title} />
+        <meta itemProp='description' content={config.description} />
+        <meta itemProp='image' content={og_url} />
         {/* <!-- Open Graph / Facebook --/> */}
         <meta property='og:type' content='website' />
         <meta property='og:url' content={`${process.env.NEXT_PUBLIC_WEB_URL}`} />
@@ -306,7 +306,7 @@ export default function Home({ query }) {
                             src={`/${config.man_image}`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-3xl object-cover'
+                            className='rounded-3xl object-cover object-center'
                           />
                         </div>
                         {/* </div> */}
@@ -343,7 +343,7 @@ export default function Home({ query }) {
                             src={`/${config.woman_image}`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-3xl object-cover'
+                            className='rounded-3xl object-cover object-center'
                           />
                         </div>
                         {/* </div> */}
@@ -584,7 +584,7 @@ export default function Home({ query }) {
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl object-cover object-center'
                           />
                         </div>
                       </div>
@@ -600,7 +600,7 @@ export default function Home({ query }) {
                             src={`/janes.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl object-cover object-center'
                           />
                         </div>
                       </div>
@@ -616,7 +616,7 @@ export default function Home({ query }) {
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl object-cover object-center'
                           />
                         </div>
                       </div>
@@ -632,7 +632,7 @@ export default function Home({ query }) {
                             src={`/janes.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl object-cover object-center'
                           />
                         </div>
                       </div>
@@ -648,7 +648,7 @@ export default function Home({ query }) {
                             src={`/johns.png`}
                             fill='true'
                             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                            className='rounded-xl'
+                            className='rounded-xl object-cover object-center'
                           />
                         </div>
                       </div>
@@ -675,7 +675,7 @@ export default function Home({ query }) {
                                 src={`/johns.png`}
                                 fill='true'
                                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                                className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                               />
                             </div>
                           </HoverCard>
@@ -693,7 +693,7 @@ export default function Home({ query }) {
                                 src={`/janes.png`}
                                 fill='true'
                                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                                className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                               />
                             </div>
                           </HoverCard>
@@ -711,7 +711,7 @@ export default function Home({ query }) {
                                 src={`/johns.png`}
                                 fill='true'
                                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                                className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                               />
                             </div>
                           </HoverCard>
@@ -729,7 +729,7 @@ export default function Home({ query }) {
                                 src={`/janes.png`}
                                 fill='true'
                                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                                className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                               />
                             </div>
                           </HoverCard>
@@ -747,7 +747,7 @@ export default function Home({ query }) {
                                 src={`/johns.png`}
                                 fill='true'
                                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                                className='rounded-2xl blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
+                                className='rounded-2xl object-cover object-center blur-sm brightness-90 transition-all duration-500 group-hover:blur-none group-hover:brightness-100'
                               />
                             </div>
                           </HoverCard>
