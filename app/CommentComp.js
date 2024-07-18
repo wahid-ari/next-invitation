@@ -144,7 +144,7 @@ export default function CommentComp() {
                   ></path>
                 </svg>
               )}
-              Submit
+              {isSubmiting ? 'Saving' : 'Submit'}
             </span>
           </button>
         </form>
