@@ -4,8 +4,6 @@ import { ClockIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import moment, { updateLocale } from 'moment';
 
-import { supabase } from '@utils/supabase';
-
 import Pattern from '@components/Pattern';
 
 const eb = EB_Garamond({ subsets: ['latin'] });
@@ -22,27 +20,42 @@ export default function CommentComp() {
   }, [fetched]);
 
   async function getComments() {
-    const { data } = await supabase.from('invitation_comment').select().order('id', { ascending: false });
-    setCommentData(data);
-    setFetched(true);
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api`);
+      if (!res.ok) {
+        setCommentData([]);
+      }
+      const data = await res.json();
+      setCommentData(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setFetched(true);
+    }
   }
 
   async function onSubmit(e) {
     e.preventDefault();
     setIsSubmiting(true);
-    const { error } = await supabase.from('invitation_comment').insert([
-      {
-        name: name,
-        comment: comment,
-        come: 0,
-      },
-    ]);
-    if (!error) {
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api`, {
+        method: 'POST',
+        body: JSON.stringify({
+          name: name,
+          comment: comment,
+        }),
+      });
+      if (!res.ok) {
+        throw new Error('fail to save comment');
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
       setFetched(false);
       setName('');
       setComment('');
+      setIsSubmiting(false);
     }
-    setIsSubmiting(false);
   }
 
   return (
