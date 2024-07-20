@@ -1,38 +1,45 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { EB_Garamond } from 'next/font/google';
 import { ClockIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import moment, { updateLocale } from 'moment';
+import useSWR, { useSWRConfig } from 'swr';
 
 import Pattern from '@components/Pattern';
 
 const eb = EB_Garamond({ subsets: ['latin'] });
 
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
 export default function CommentComp() {
+  // FIX: dont use useState
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
-  const [fetched, setFetched] = useState(false);
+  // const [fetched, setFetched] = useState(false);
   const [isSubmiting, setIsSubmiting] = useState(false);
-  const [commentData, setCommentData] = useState([]);
+  // const [commentData, setCommentData] = useState([]);
 
-  useEffect(() => {
-    if (!fetched) getComments();
-  }, [fetched]);
+  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_WEB_URL}/api`, fetcher);
+  const { mutate } = useSWRConfig();
 
-  async function getComments() {
-    try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api`);
-      if (!res.ok) {
-        setCommentData([]);
-      }
-      const data = await res.json();
-      setCommentData(data);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setFetched(true);
-    }
-  }
+  // useEffect(() => {
+  //   if (!fetched) getComments();
+  // }, [fetched]);
+
+  // async function getComments() {
+  //   try {
+  //     const res = await fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api`);
+  //     if (!res.ok) {
+  //       setCommentData([]);
+  //     }
+  //     const data = await res.json();
+  //     setCommentData(data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   } finally {
+  //     setFetched(true);
+  //   }
+  // }
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -51,7 +58,8 @@ export default function CommentComp() {
     } catch (error) {
       console.error(error);
     } finally {
-      setFetched(false);
+      // setFetched(false);
+      mutate(`${process.env.NEXT_PUBLIC_WEB_URL}/api`);
       setName('');
       setComment('');
       setIsSubmiting(false);
@@ -148,7 +156,7 @@ export default function CommentComp() {
             </span>
           </button>
         </form>
-        {fetched && commentData.length > 0 ? (
+        {/* {fetched && commentData.length > 0 ? (
           <BorderFrame>
             <div className='scrollbar-thumb-rounded mt-12 h-72 overflow-auto px-4 py-2 scrollbar-thin'>
               {commentData.map((data) => (
@@ -189,6 +197,58 @@ export default function CommentComp() {
           <BorderFrame>
             <p className='mt-12 px-4 py-2'>Loading comment...</p>
           </BorderFrame>
+        )} */}
+
+        {isLoading && (
+          <BorderFrame>
+            <p className='mt-12 px-4 py-2'>Loading comment...</p>
+          </BorderFrame>
+        )}
+        {error && (
+          <BorderFrame>
+            <p className='mt-12 px-4 py-2'>Error Loading comment...</p>
+          </BorderFrame>
+        )}
+        {data && data.length > 0 ? (
+          <BorderFrame>
+            <div className='scrollbar-thumb-rounded mt-12 h-72 overflow-auto px-4 py-2 scrollbar-thin'>
+              {data.map((data) => (
+                <div key={data.id} className='mb-3'>
+                  <p className='text-base font-medium text-sky-500'>{data.name}</p>
+                  <p className='mt-1 text-[15px] text-neutral-300'>{data.comment}</p>
+                  <p className='mt-1 flex items-center gap-1 text-[12px] text-neutral-400'>
+                    <ClockIcon className='h-4 w-4' />
+                    {moment(new Date(data.created_at)).fromNow(
+                      updateLocale('en', {
+                        relativeTime: {
+                          future: 'in %s',
+                          past: '%s ',
+                          s: 'baru saja',
+                          m: '%d menit lalu',
+                          mm: '%d menit lalu',
+                          h: '%d jam lalu',
+                          hh: '%d jam lalu',
+                          d: '%d hari lalu',
+                          dd: '%d hari lalu',
+                          M: '1 bulan lalu',
+                          MM: '%d bulan lalu',
+                          y: '1 tahun lalu',
+                          yy: '%d tahun lalu',
+                        },
+                      }),
+                    )}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </BorderFrame>
+        ) : (
+          data &&
+          data.length == 0 && (
+            <BorderFrame>
+              <p className='mt-12 px-4 py-2'>No comment found.</p>
+            </BorderFrame>
+          )
         )}
       </div>
     </section>
