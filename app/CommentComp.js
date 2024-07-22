@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { EB_Garamond } from 'next/font/google';
 import { ClockIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
@@ -12,34 +12,12 @@ const eb = EB_Garamond({ subsets: ['latin'] });
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function CommentComp() {
-  // FIX: dont use useState
-  const [name, setName] = useState('');
-  const [comment, setComment] = useState('');
-  // const [fetched, setFetched] = useState(false);
+  const scroolToNewComment = useRef(null);
+  const name = useRef();
+  const comment = useRef();
   const [isSubmiting, setIsSubmiting] = useState(false);
-  // const [commentData, setCommentData] = useState([]);
-
   const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_WEB_URL}/api`, fetcher);
   const { mutate } = useSWRConfig();
-
-  // useEffect(() => {
-  //   if (!fetched) getComments();
-  // }, [fetched]);
-
-  // async function getComments() {
-  //   try {
-  //     const res = await fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api`);
-  //     if (!res.ok) {
-  //       setCommentData([]);
-  //     }
-  //     const data = await res.json();
-  //     setCommentData(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   } finally {
-  //     setFetched(true);
-  //   }
-  // }
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -48,21 +26,21 @@ export default function CommentComp() {
       const res = await fetch(`${process.env.NEXT_PUBLIC_WEB_URL}/api`, {
         method: 'POST',
         body: JSON.stringify({
-          name: name,
-          comment: comment,
+          name: name.current.value,
+          comment: comment.current.value,
         }),
       });
       if (!res.ok) {
         throw new Error('fail to save comment');
       }
+      mutate(`${process.env.NEXT_PUBLIC_WEB_URL}/api`);
+      name.current.value = '';
+      comment.current.value = '';
     } catch (error) {
       console.error(error);
     } finally {
-      // setFetched(false);
-      mutate(`${process.env.NEXT_PUBLIC_WEB_URL}/api`);
-      setName('');
-      setComment('');
       setIsSubmiting(false);
+      scroolToNewComment.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
     }
   }
 
@@ -109,8 +87,7 @@ export default function CommentComp() {
         <form className='' onSubmit={onSubmit}>
           <div className='rotate-border rotate-border-1 relative flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-transparent p-0.5'>
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              ref={name}
               type='text'
               name='name'
               placeholder='Name'
@@ -121,9 +98,8 @@ export default function CommentComp() {
           </div>
           <div className='rotate-border rotate-border-2 relative mt-4 flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-transparent p-0.5'>
             <textarea
-              onChange={(e) => setComment(e.target.value)}
               type='text'
-              value={comment}
+              ref={comment}
               name='comment'
               placeholder='Comment'
               required
@@ -156,49 +132,6 @@ export default function CommentComp() {
             </span>
           </button>
         </form>
-        {/* {fetched && commentData.length > 0 ? (
-          <BorderFrame>
-            <div className='scrollbar-thumb-rounded mt-12 h-72 overflow-auto px-4 py-2 scrollbar-thin'>
-              {commentData.map((data) => (
-                <div key={data.id} className='mb-3'>
-                  <p className='text-base font-medium text-sky-500'>{data.name}</p>
-                  <p className='mt-1 text-[15px] text-neutral-300'>{data.comment}</p>
-                  <p className='mt-1 flex items-center gap-1 text-[12px] text-neutral-400'>
-                    <ClockIcon className='h-4 w-4' />
-                    {moment(new Date(data.created_at)).fromNow(
-                      updateLocale('en', {
-                        relativeTime: {
-                          future: 'in %s',
-                          past: '%s ',
-                          s: 'baru saja',
-                          m: '%d menit lalu',
-                          mm: '%d menit lalu',
-                          h: '%d jam lalu',
-                          hh: '%d jam lalu',
-                          d: '%d hari lalu',
-                          dd: '%d hari lalu',
-                          M: '1 bulan lalu',
-                          MM: '%d bulan lalu',
-                          y: '1 tahun lalu',
-                          yy: '%d tahun lalu',
-                        },
-                      }),
-                    )}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </BorderFrame>
-        ) : fetched && commentData.length == 0 ? (
-          <BorderFrame>
-            <p className='mt-12 px-4 py-2'>No comment found.</p>
-          </BorderFrame>
-        ) : (
-          <BorderFrame>
-            <p className='mt-12 px-4 py-2'>Loading comment...</p>
-          </BorderFrame>
-        )} */}
-
         {isLoading && (
           <BorderFrame>
             <p className='mt-12 px-4 py-2'>Loading comment...</p>
@@ -211,7 +144,10 @@ export default function CommentComp() {
         )}
         {data && data.length > 0 ? (
           <BorderFrame>
-            <div className='scrollbar-thumb-rounded mt-12 h-72 overflow-auto px-4 py-2 scrollbar-thin'>
+            <div className='scrollbar-thumb-rounded mt-12 h-72 overflow-auto px-4 pb-2 scrollbar-thin'>
+              <div ref={scroolToNewComment} className=''>
+                &#8203;
+              </div>
               {data.map((data) => (
                 <div key={data.id} className='mb-3'>
                   <p className='text-base font-medium text-sky-500'>{data.name}</p>
