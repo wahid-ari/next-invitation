@@ -301,7 +301,7 @@ export default function NewPage({ slug }) {
           <section id='title' className='relative flex h-screen min-h-screen w-full items-center sm:py-32'>
             <div className='w-full text-center'>
               <motion.p
-                className='whitespace-nowrap bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text py-16 text-6xl font-bold tracking-wide text-transparent lg:text-8xl'
+                className='whitespace-nowrap bg-gradient-to-b from-black to-neutral-800 bg-clip-text py-16 text-6xl font-bold tracking-wide text-transparent lg:text-8xl'
                 style={{
                   x: forwardX,
                   WebkitTextStrokeColor: rainbowColors,
@@ -316,7 +316,7 @@ export default function NewPage({ slug }) {
                 /
               </h1>
               <motion.p
-                className='whitespace-nowrap bg-gradient-to-b from-white to-[#AAAAAA] bg-clip-text py-16 text-6xl font-bold tracking-wide text-transparent md:pb-32 lg:text-8xl'
+                className='whitespace-nowrap bg-gradient-to-b from-black to-neutral-800 bg-clip-text py-16 text-6xl font-bold tracking-wide text-transparent md:pb-32 lg:text-8xl'
                 style={{
                   x: backwardsX,
                   WebkitTextStrokeColor: rainbowColorss,
